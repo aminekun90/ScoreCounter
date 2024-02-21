@@ -14,6 +14,12 @@
 		522308082B861CAD007CE1A7 /* ScoreCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522308072B861CAD007CE1A7 /* ScoreCounterTests.swift */; };
 		522308122B861CAD007CE1A7 /* ScoreCounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522308112B861CAD007CE1A7 /* ScoreCounterUITests.swift */; };
 		522308142B861CAD007CE1A7 /* ScoreCounterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522308132B861CAD007CE1A7 /* ScoreCounterUITestsLaunchTests.swift */; };
+		524B87712B864FA500DECBF9 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B87702B864FA500DECBF9 /* Player.swift */; };
+		524B87732B864FF300DECBF9 /* PlayerEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B87722B864FF300DECBF9 /* PlayerEditView.swift */; };
+		524B87752B86579000DECBF9 /* PlayerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B87742B86579000DECBF9 /* PlayerRow.swift */; };
+		524B87772B866BC700DECBF9 /* PlayerActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B87762B866BC700DECBF9 /* PlayerActionsView.swift */; };
+		524B87792B866C6900DECBF9 /* PlayerFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B87782B866C6900DECBF9 /* PlayerFunctions.swift */; };
+		524B877B2B86731600DECBF9 /* LandingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B877A2B86731500DECBF9 /* LandingPageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +50,12 @@
 		5223080D2B861CAD007CE1A7 /* ScoreCounterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScoreCounterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		522308112B861CAD007CE1A7 /* ScoreCounterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCounterUITests.swift; sourceTree = "<group>"; };
 		522308132B861CAD007CE1A7 /* ScoreCounterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCounterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		524B87702B864FA500DECBF9 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		524B87722B864FF300DECBF9 /* PlayerEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEditView.swift; sourceTree = "<group>"; };
+		524B87742B86579000DECBF9 /* PlayerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRow.swift; sourceTree = "<group>"; };
+		524B87762B866BC700DECBF9 /* PlayerActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerActionsView.swift; sourceTree = "<group>"; };
+		524B87782B866C6900DECBF9 /* PlayerFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFunctions.swift; sourceTree = "<group>"; };
+		524B877A2B86731500DECBF9 /* LandingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +110,12 @@
 				522307F82B861CAA007CE1A7 /* ContentView.swift */,
 				522307FA2B861CAC007CE1A7 /* Assets.xcassets */,
 				522307FC2B861CAC007CE1A7 /* Preview Content */,
+				524B87702B864FA500DECBF9 /* Player.swift */,
+				524B87722B864FF300DECBF9 /* PlayerEditView.swift */,
+				524B87742B86579000DECBF9 /* PlayerRow.swift */,
+				524B87762B866BC700DECBF9 /* PlayerActionsView.swift */,
+				524B87782B866C6900DECBF9 /* PlayerFunctions.swift */,
+				524B877A2B86731500DECBF9 /* LandingPageView.swift */,
 			);
 			path = ScoreCounter;
 			sourceTree = "<group>";
@@ -258,7 +276,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				522307F92B861CAA007CE1A7 /* ContentView.swift in Sources */,
+				524B87732B864FF300DECBF9 /* PlayerEditView.swift in Sources */,
+				524B87712B864FA500DECBF9 /* Player.swift in Sources */,
+				524B87772B866BC700DECBF9 /* PlayerActionsView.swift in Sources */,
+				524B87752B86579000DECBF9 /* PlayerRow.swift in Sources */,
+				524B877B2B86731600DECBF9 /* LandingPageView.swift in Sources */,
 				522307F72B861CAA007CE1A7 /* ScoreCounterApp.swift in Sources */,
+				524B87792B866C6900DECBF9 /* PlayerFunctions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +371,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -404,7 +428,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -425,11 +449,13 @@
 				DEVELOPMENT_TEAM = WGF76DKK38;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_CFBundleDisplayName[sdk=*]" = "Score Counter";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -454,11 +480,14 @@
 				DEVELOPMENT_TEAM = WGF76DKK38;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Score Counter";
+				"INFOPLIST_KEY_CFBundleDisplayName[sdk=*]" = "Score Counter";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

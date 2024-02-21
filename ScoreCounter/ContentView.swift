@@ -8,17 +8,37 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State public var players: [Player] = []
+    @State private var selectedPlayer: Player? = nil
+    let horizontalMargin: CGFloat = 10
+    @State private var isShowingDialog = false
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            ScrollView {
+                VStack(spacing: 10) {
+                    PlayerActionsView(players: $players, isShowingDialog: $isShowingDialog, addPlayer: addPlayer,removeAllPlayers:removeAllPlayers)
+                    if(players.count==0)
+                    {
+                        LandingPageView(addPlayer: addPlayer)
+                    }
+                    ForEach(players) { player in
+                        PlayerRow(player: player, horizontalMargin: horizontalMargin, updateScore: updateScore, selectedPlayer: $selectedPlayer)
+                    }
+                }
+                .padding(.horizontal, horizontalMargin)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+            .background()
+            .sheet(item: $selectedPlayer) { player in
+                PlayerEditView(players: $players, selectedPlayer: $selectedPlayer)
+            }
         }
-        .padding()
     }
 }
 
-#Preview {
-    ContentView()
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }
