@@ -1,5 +1,7 @@
 #  Score counter app for iOS
 
+![Score counter iOS App](docs/assets/Artboard.png)
+
 An easy to use app on iOS to keep scores for all sort of games.
 
 - Keep track of scores for any game or activity

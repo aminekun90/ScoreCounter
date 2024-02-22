@@ -38,7 +38,7 @@ extension ContentView {
         }
     private func showNotification(name: String) {
         let image = UIImageView(image: UIImage(systemName: "gamecontroller.fill"))
-        NotificationPresenter.shared.present(name, subtitle: "Added succesfully!",duration: 1)
+        NotificationPresenter.shared.present(name, subtitle: "Added succesfully!",duration:15)
         NotificationPresenter.shared.displayLeftView(image)
        }
     func loadListFromJSON() -> ListData? {

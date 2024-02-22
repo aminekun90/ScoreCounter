@@ -97,6 +97,7 @@
 		522307EA2B861CAA007CE1A7 = {
 			isa = PBXGroup;
 			children = (
+				525C5BF92B8773D800287B61 /* docs */,
 				525C5BF72B876FFF00287B61 /* .gitignore */,
 				525C5BF52B876FA800287B61 /* LICENSE */,
 				525C5BF42B86C92B00287B61 /* README.md */,
@@ -159,6 +160,21 @@
 				522308132B861CAD007CE1A7 /* ScoreCounterUITestsLaunchTests.swift */,
 			);
 			path = ScoreCounterUITests;
+			sourceTree = "<group>";
+		};
+		525C5BF92B8773D800287B61 /* docs */ = {
+			isa = PBXGroup;
+			children = (
+				525C5BFA2B8773EA00287B61 /* assets */,
+			);
+			path = docs;
+			sourceTree = "<group>";
+		};
+		525C5BFA2B8773EA00287B61 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
