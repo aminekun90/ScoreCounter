@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,9 @@
 		524B87772B866BC700DECBF9 /* PlayerActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B87762B866BC700DECBF9 /* PlayerActionsView.swift */; };
 		524B87792B866C6900DECBF9 /* PlayerFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B87782B866C6900DECBF9 /* PlayerFunctions.swift */; };
 		524B877B2B86731600DECBF9 /* LandingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B877A2B86731500DECBF9 /* LandingPageView.swift */; };
+		525C5BEF2B86B32600287B61 /* JDStatusBarNotification in Frameworks */ = {isa = PBXBuildFile; productRef = 525C5BEE2B86B32600287B61 /* JDStatusBarNotification */; };
+		525C5BF12B86B9F800287B61 /* FileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5BF02B86B9F700287B61 /* FileLoader.swift */; };
+		525C5BF32B86BA7E00287B61 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 525C5BF22B86BA7E00287B61 /* data.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,8 @@
 		524B87762B866BC700DECBF9 /* PlayerActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerActionsView.swift; sourceTree = "<group>"; };
 		524B87782B866C6900DECBF9 /* PlayerFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFunctions.swift; sourceTree = "<group>"; };
 		524B877A2B86731500DECBF9 /* LandingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageView.swift; sourceTree = "<group>"; };
+		525C5BF02B86B9F700287B61 /* FileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoader.swift; sourceTree = "<group>"; };
+		525C5BF22B86BA7E00287B61 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				525C5BEF2B86B32600287B61 /* JDStatusBarNotification in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +122,8 @@
 				524B87762B866BC700DECBF9 /* PlayerActionsView.swift */,
 				524B87782B866C6900DECBF9 /* PlayerFunctions.swift */,
 				524B877A2B86731500DECBF9 /* LandingPageView.swift */,
+				525C5BF02B86B9F700287B61 /* FileLoader.swift */,
+				525C5BF22B86BA7E00287B61 /* data.json */,
 			);
 			path = ScoreCounter;
 			sourceTree = "<group>";
@@ -161,6 +169,9 @@
 			dependencies = (
 			);
 			name = ScoreCounter;
+			packageProductDependencies = (
+				525C5BEE2B86B32600287B61 /* JDStatusBarNotification */,
+			);
 			productName = ScoreCounter;
 			productReference = 522307F32B861CAA007CE1A7 /* ScoreCounter.app */;
 			productType = "com.apple.product-type.application";
@@ -233,6 +244,9 @@
 				Base,
 			);
 			mainGroup = 522307EA2B861CAA007CE1A7;
+			packageReferences = (
+				525C5BED2B86B32500287B61 /* XCLocalSwiftPackageReference "JDStatusBarNotification" */,
+			);
 			productRefGroup = 522307F42B861CAA007CE1A7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -250,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				522307FE2B861CAC007CE1A7 /* Preview Assets.xcassets in Resources */,
+				525C5BF32B86BA7E00287B61 /* data.json in Resources */,
 				522307FB2B861CAC007CE1A7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,6 +296,7 @@
 				524B87772B866BC700DECBF9 /* PlayerActionsView.swift in Sources */,
 				524B87752B86579000DECBF9 /* PlayerRow.swift in Sources */,
 				524B877B2B86731600DECBF9 /* LandingPageView.swift in Sources */,
+				525C5BF12B86B9F800287B61 /* FileLoader.swift in Sources */,
 				522307F72B861CAA007CE1A7 /* ScoreCounterApp.swift in Sources */,
 				524B87792B866C6900DECBF9 /* PlayerFunctions.swift in Sources */,
 			);
@@ -617,6 +633,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		525C5BED2B86B32500287B61 /* XCLocalSwiftPackageReference "JDStatusBarNotification" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = JDStatusBarNotification;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		525C5BEE2B86B32600287B61 /* JDStatusBarNotification */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = JDStatusBarNotification;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 522307EB2B861CAA007CE1A7 /* Project object */;
 }

@@ -1,0 +1,1278 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		28D81A942B010C7500DE2CDF /* DiscoveryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D81A932B010C7500DE2CDF /* DiscoveryHelper.swift */; };
+		28D81A952B0110C700DE2CDF /* DiscoveryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D81A932B010C7500DE2CDF /* DiscoveryHelper.swift */; };
+		28D81A9B2B01217100DE2CDF /* NotificationWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D81A9A2B01217100DE2CDF /* NotificationWindow.swift */; };
+		28D81A9C2B01217100DE2CDF /* NotificationWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D81A9A2B01217100DE2CDF /* NotificationWindow.swift */; };
+		28D81A9E2B01257A00DE2CDF /* StyleCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D81A9D2B01257A00DE2CDF /* StyleCache.swift */; };
+		28D81A9F2B01257A00DE2CDF /* StyleCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D81A9D2B01257A00DE2CDF /* StyleCache.swift */; };
+		28D81AA12B012B0800DE2CDF /* NotificationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D81AA02B012B0800DE2CDF /* NotificationAnimator.swift */; };
+		28D81AA22B012B0800DE2CDF /* NotificationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D81AA02B012B0800DE2CDF /* NotificationAnimator.swift */; };
+		28D81AA42B012F7F00DE2CDF /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D81AA32B012F7E00DE2CDF /* NotificationViewController.swift */; };
+		28D81AA52B012F7F00DE2CDF /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D81AA32B012F7E00DE2CDF /* NotificationViewController.swift */; };
+		28D81AA72B0140C100DE2CDF /* NotificationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D81AA62B0140C100DE2CDF /* NotificationStyle.swift */; };
+		28D81AA82B0140C100DE2CDF /* NotificationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D81AA62B0140C100DE2CDF /* NotificationStyle.swift */; };
+		7E008F5B2B02D38D00968AFE /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E008F5A2B02D38D00968AFE /* NotificationView.swift */; };
+		7E008F5C2B02D38D00968AFE /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E008F5A2B02D38D00968AFE /* NotificationView.swift */; };
+		7E0FCB75285DAEB200E7CB78 /* FontPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0FCB74285DAEB200E7CB78 /* FontPickerView.swift */; };
+		7E0FCB76285DAEB200E7CB78 /* FontPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0FCB74285DAEB200E7CB78 /* FontPickerView.swift */; };
+		7E0FCB77285DAEB200E7CB78 /* FontPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0FCB74285DAEB200E7CB78 /* FontPickerView.swift */; };
+		7E0FCB79285DAEE800E7CB78 /* FormViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0FCB78285DAEE800E7CB78 /* FormViews.swift */; };
+		7E0FCB7A285DAEE800E7CB78 /* FormViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0FCB78285DAEE800E7CB78 /* FormViews.swift */; };
+		7E0FCB7B285DAEE800E7CB78 /* FormViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0FCB78285DAEE800E7CB78 /* FormViews.swift */; };
+		7E1878B72B1142FF00E0FA2D /* SwiftAPI_tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1878B62B1142FF00E0FA2D /* SwiftAPI_tests.swift */; };
+		7E1C2837285226F5004315CC /* EnumPickerOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1C2836285226F5004315CC /* EnumPickerOptionView.swift */; };
+		7E1C2838285226F5004315CC /* EnumPickerOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1C2836285226F5004315CC /* EnumPickerOptionView.swift */; };
+		7E1C2839285226F5004315CC /* EnumPickerOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1C2836285226F5004315CC /* EnumPickerOptionView.swift */; };
+		7E2A4E852AE70A4B001F0DB0 /* NotificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB914CF2ADC11F4004B3435 /* NotificationPresenter.swift */; };
+		7E2F3BBB284F6144002B2181 /* ObservableCustomStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F3BBA284F6144002B2181 /* ObservableCustomStyle.swift */; };
+		7E2F3BBC284F6144002B2181 /* ObservableCustomStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F3BBA284F6144002B2181 /* ObservableCustomStyle.swift */; };
+		7E2F3BBD284F6144002B2181 /* ObservableCustomStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F3BBA284F6144002B2181 /* ObservableCustomStyle.swift */; };
+		7E5402C6286708850079C579 /* JDStatusBarNotification.docc in Sources */ = {isa = PBXBuildFile; fileRef = 7E5402C5286708850079C579 /* JDStatusBarNotification.docc */; };
+		7E67050D284A4BE900AD58E1 /* ExamplesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E67050C284A4BE900AD58E1 /* ExamplesScreen.swift */; };
+		7E67050E284A4BE900AD58E1 /* ExamplesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E67050C284A4BE900AD58E1 /* ExamplesScreen.swift */; };
+		7E670513284B177B00AD58E1 /* StyleEditorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E670512284B177B00AD58E1 /* StyleEditorScreen.swift */; };
+		7E670514284B177B00AD58E1 /* StyleEditorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E670512284B177B00AD58E1 /* StyleEditorScreen.swift */; };
+		7E6AAB2F2B26117A001D82FE /* FontPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0FCB74285DAEB200E7CB78 /* FontPickerView.swift */; };
+		7E6AAB302B26117A001D82FE /* ObservableCustomStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F3BBA284F6144002B2181 /* ObservableCustomStyle.swift */; };
+		7E6AAB312B26117A001D82FE /* FormViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0FCB78285DAEE800E7CB78 /* FormViews.swift */; };
+		7E6AAB322B26117A001D82FE /* EnumPickerOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1C2836285226F5004315CC /* EnumPickerOptionView.swift */; };
+		7E6AAB342B26117A001D82FE /* StyleEditorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E670512284B177B00AD58E1 /* StyleEditorScreen.swift */; };
+		7E6AAB352B26117A001D82FE /* TextStyleEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8C519F2858857200C7C003 /* TextStyleEditorView.swift */; };
+		7E6AAB362B26117A001D82FE /* ExamplesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E67050C284A4BE900AD58E1 /* ExamplesScreen.swift */; };
+		7E6AAB372B26117A001D82FE /* ExampleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6FBC21285EF3B100A63FEF /* ExampleStyle.swift */; };
+		7E6AAB3B2B26117A001D82FE /* JDStatusBarNotification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5402C2286708840079C579 /* JDStatusBarNotification.framework */; };
+		7E6AAB3C2B26117A001D82FE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D264F8941820213200DA0E53 /* UIKit.framework */; };
+		7E6AAB3D2B26117A001D82FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D264F8901820213200DA0E53 /* Foundation.framework */; };
+		7E6AAB3F2B26117A001D82FE /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E8B9AEE283B6FD300507BC1 /* Launch Screen.storyboard */; };
+		7E6AAB402B26117A001D82FE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D264F8A21820213200DA0E53 /* Images.xcassets */; };
+		7E6AAB422B26117A001D82FE /* JDStatusBarNotification.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5402C2286708840079C579 /* JDStatusBarNotification.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7E6AAB482B261302001D82FE /* ExampleApp_SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6AAB472B261302001D82FE /* ExampleApp_SwiftUI.swift */; };
+		7E6AAB8A2B261EB4001D82FE /* SBSceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6AAB892B261E77001D82FE /* SBSceneDelegate.m */; };
+		7E6AAB8B2B261EED001D82FE /* SBSceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6AAB892B261E77001D82FE /* SBSceneDelegate.m */; };
+		7E6AAB932B262659001D82FE /* StatusBarPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6AAB922B262659001D82FE /* StatusBarPreviewView.swift */; };
+		7E6AAB942B262659001D82FE /* StatusBarPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6AAB922B262659001D82FE /* StatusBarPreviewView.swift */; };
+		7E6FBC22285EF3B100A63FEF /* ExampleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6FBC21285EF3B100A63FEF /* ExampleStyle.swift */; };
+		7E6FBC23285EF3B100A63FEF /* ExampleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6FBC21285EF3B100A63FEF /* ExampleStyle.swift */; };
+		7E6FBC24285EF3B100A63FEF /* ExampleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6FBC21285EF3B100A63FEF /* ExampleStyle.swift */; };
+		7E8B9AEF283B6FD300507BC1 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E8B9AEE283B6FD300507BC1 /* Launch Screen.storyboard */; };
+		7E8C51A02858857200C7C003 /* TextStyleEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8C519F2858857200C7C003 /* TextStyleEditorView.swift */; };
+		7E8C51A12858857200C7C003 /* TextStyleEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8C519F2858857200C7C003 /* TextStyleEditorView.swift */; };
+		7E8C51A22858857200C7C003 /* TextStyleEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8C519F2858857200C7C003 /* TextStyleEditorView.swift */; };
+		7EA91CB0284EF3AF00F32F09 /* SBExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D264F8C41820219F00DA0E53 /* SBExampleViewController.m */; };
+		7EA91CB2284EF3AF00F32F09 /* StyleEditorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E670512284B177B00AD58E1 /* StyleEditorScreen.swift */; };
+		7EA91CB3284EF3AF00F32F09 /* ExamplesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E67050C284A4BE900AD58E1 /* ExamplesScreen.swift */; };
+		7EA91CB6284EF3AF00F32F09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D264F89C1820213200DA0E53 /* main.m */; };
+		7EA91CBB284EF3AF00F32F09 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D264F8941820213200DA0E53 /* UIKit.framework */; };
+		7EA91CBC284EF3AF00F32F09 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D264F8901820213200DA0E53 /* Foundation.framework */; };
+		7EA91CBE284EF3AF00F32F09 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E8B9AEE283B6FD300507BC1 /* Launch Screen.storyboard */; };
+		7EA91CBF284EF3AF00F32F09 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D264F8A21820213200DA0E53 /* Images.xcassets */; };
+		7EDAEE5D2AF6E982001B6ABE /* JDStatusBarNotification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5402C2286708840079C579 /* JDStatusBarNotification.framework */; };
+		7EDAEE5E2AF6E982001B6ABE /* JDStatusBarNotification.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5402C2286708840079C579 /* JDStatusBarNotification.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7EDAEE622AF6E985001B6ABE /* JDStatusBarNotification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5402C2286708840079C579 /* JDStatusBarNotification.framework */; };
+		7EDAEE632AF6E985001B6ABE /* JDStatusBarNotification.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5402C2286708840079C579 /* JDStatusBarNotification.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7EDAEE972AF6EC5E001B6ABE /* NotificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB914CF2ADC11F4004B3435 /* NotificationPresenter.swift */; };
+		7EDAEEA22AF6EC5E001B6ABE /* JDStatusBarNotification.docc in Sources */ = {isa = PBXBuildFile; fileRef = 7E5402C5286708850079C579 /* JDStatusBarNotification.docc */; };
+		7EDAEEA92AF6ECAB001B6ABE /* JDStatusBarNotification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EDAEEA82AF6EC5E001B6ABE /* JDStatusBarNotification.framework */; };
+		7EDAEEAA2AF6ECAB001B6ABE /* JDStatusBarNotification.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7EDAEEA82AF6EC5E001B6ABE /* JDStatusBarNotification.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7EF32BB12B1018A1000E7CAE /* NotificationPresenterLegacyOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF32BB02B10167B000E7CAE /* NotificationPresenterLegacyOverlay.swift */; };
+		7EF32BB22B1018A2000E7CAE /* NotificationPresenterLegacyOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF32BB02B10167B000E7CAE /* NotificationPresenterLegacyOverlay.swift */; };
+		7EF32BBA2B113A0B000E7CAE /* API_tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF32BB92B113A0B000E7CAE /* API_tests.m */; };
+		7EF32BC22B113BCE000E7CAE /* JDStatusBarNotification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5402C2286708840079C579 /* JDStatusBarNotification.framework */; };
+		7EF32BC32B113BCE000E7CAE /* JDStatusBarNotification.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5402C2286708840079C579 /* JDStatusBarNotification.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7EF32BC52B113C1F000E7CAE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D264F8941820213200DA0E53 /* UIKit.framework */; };
+		7EF32BC62B113C26000E7CAE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D264F8901820213200DA0E53 /* Foundation.framework */; };
+		7EFD77902843461D000BFBF1 /* SBExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D264F8C41820219F00DA0E53 /* SBExampleViewController.m */; };
+		7EFD77982843461D000BFBF1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D264F8941820213200DA0E53 /* UIKit.framework */; };
+		7EFD77992843461D000BFBF1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D264F8901820213200DA0E53 /* Foundation.framework */; };
+		7EFD779B2843461D000BFBF1 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E8B9AEE283B6FD300507BC1 /* Launch Screen.storyboard */; };
+		7EFD779D2843461D000BFBF1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D264F8A21820213200DA0E53 /* Images.xcassets */; };
+		7EFD77A728434A03000BFBF1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D264F89C1820213200DA0E53 /* main.m */; };
+		D264F8911820213200DA0E53 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D264F8901820213200DA0E53 /* Foundation.framework */; };
+		D264F8951820213200DA0E53 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D264F8941820213200DA0E53 /* UIKit.framework */; };
+		D264F89D1820213200DA0E53 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D264F89C1820213200DA0E53 /* main.m */; };
+		D264F8A11820213200DA0E53 /* SBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D264F8A01820213200DA0E53 /* SBAppDelegate.m */; };
+		D264F8A31820213200DA0E53 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D264F8A21820213200DA0E53 /* Images.xcassets */; };
+		D264F8C61820219F00DA0E53 /* SBExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D264F8C41820219F00DA0E53 /* SBExampleViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7E6AAB2D2B26117A001D82FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D264F8851820213200DA0E53 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E5402C1286708840079C579;
+			remoteInfo = JDStatusBarNotification;
+		};
+		7EDAEE5F2AF6E982001B6ABE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D264F8851820213200DA0E53 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E5402C1286708840079C579;
+			remoteInfo = JDStatusBarNotification;
+		};
+		7EDAEE642AF6E985001B6ABE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D264F8851820213200DA0E53 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E5402C1286708840079C579;
+			remoteInfo = JDStatusBarNotification;
+		};
+		7EDAEEAB2AF6ECAB001B6ABE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D264F8851820213200DA0E53 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7EDAEE882AF6EC5E001B6ABE;
+			remoteInfo = JDStatusBarNotification_LayoutDebug;
+		};
+		7EF32BBF2B113B96000E7CAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D264F8851820213200DA0E53 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E5402C1286708840079C579;
+			remoteInfo = JDStatusBarNotification;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7E6AAB412B26117A001D82FE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7E6AAB422B26117A001D82FE /* JDStatusBarNotification.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EDAEE612AF6E982001B6ABE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7EDAEE5E2AF6E982001B6ABE /* JDStatusBarNotification.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EDAEE662AF6E985001B6ABE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7EDAEE632AF6E985001B6ABE /* JDStatusBarNotification.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EDAEEAD2AF6ECAB001B6ABE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7EDAEEAA2AF6ECAB001B6ABE /* JDStatusBarNotification.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EF32BC42B113BCE000E7CAE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7EF32BC32B113BCE000E7CAE /* JDStatusBarNotification.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		28D81A932B010C7500DE2CDF /* DiscoveryHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryHelper.swift; sourceTree = "<group>"; };
+		28D81A9A2B01217100DE2CDF /* NotificationWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationWindow.swift; sourceTree = "<group>"; };
+		28D81A9D2B01257A00DE2CDF /* StyleCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleCache.swift; sourceTree = "<group>"; };
+		28D81AA02B012B0800DE2CDF /* NotificationAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAnimator.swift; sourceTree = "<group>"; };
+		28D81AA32B012F7E00DE2CDF /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		28D81AA62B0140C100DE2CDF /* NotificationStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationStyle.swift; sourceTree = "<group>"; };
+		7E008F5A2B02D38D00968AFE /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		7E0FCB74285DAEB200E7CB78 /* FontPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontPickerView.swift; sourceTree = "<group>"; };
+		7E0FCB78285DAEE800E7CB78 /* FormViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViews.swift; sourceTree = "<group>"; };
+		7E1878B62B1142FF00E0FA2D /* SwiftAPI_tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAPI_tests.swift; sourceTree = "<group>"; };
+		7E1C2836285226F5004315CC /* EnumPickerOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumPickerOptionView.swift; sourceTree = "<group>"; };
+		7E2F3BBA284F6144002B2181 /* ObservableCustomStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableCustomStyle.swift; sourceTree = "<group>"; };
+		7E5402C2286708840079C579 /* JDStatusBarNotification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JDStatusBarNotification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E5402C5286708850079C579 /* JDStatusBarNotification.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = JDStatusBarNotification.docc; sourceTree = "<group>"; };
+		7E67050C284A4BE900AD58E1 /* ExamplesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplesScreen.swift; sourceTree = "<group>"; };
+		7E670512284B177B00AD58E1 /* StyleEditorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleEditorScreen.swift; sourceTree = "<group>"; };
+		7E6AAB452B26117A001D82FE /* JDSBN_SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JDSBN_SwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E6AAB462B26117A001D82FE /* SwiftUI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftUI-Info.plist"; path = "/Users/chaetwo/Projects/JDStatusBarNotification/SwiftUI-Info.plist"; sourceTree = "<absolute>"; };
+		7E6AAB472B261302001D82FE /* ExampleApp_SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp_SwiftUI.swift; sourceTree = "<group>"; };
+		7E6AAB882B261E76001D82FE /* SBSceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBSceneDelegate.h; sourceTree = "<group>"; };
+		7E6AAB892B261E77001D82FE /* SBSceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBSceneDelegate.m; sourceTree = "<group>"; };
+		7E6AAB922B262659001D82FE /* StatusBarPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarPreviewView.swift; sourceTree = "<group>"; };
+		7E6FBC21285EF3B100A63FEF /* ExampleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleStyle.swift; sourceTree = "<group>"; };
+		7E83FF1A2AF1AA630011EA4C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		7E83FF1B2AF1AA630011EA4C /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		7E8B9AEE283B6FD300507BC1 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		7E8C519F2858857200C7C003 /* TextStyleEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyleEditorView.swift; sourceTree = "<group>"; };
+		7EA91CC3284EF3AF00F32F09 /* JDSBN_LayoutDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JDSBN_LayoutDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EB82C4B2A31BACE004E2B19 /* JDStatusBarNotification.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = JDStatusBarNotification.podspec; sourceTree = "<group>"; };
+		7EB82C4C2A31BACE004E2B19 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		7EB914CF2ADC11F4004B3435 /* NotificationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationPresenter.swift; sourceTree = "<group>"; };
+		7EDAEEA82AF6EC5E001B6ABE /* JDStatusBarNotification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JDStatusBarNotification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EF32BB02B10167B000E7CAE /* NotificationPresenterLegacyOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPresenterLegacyOverlay.swift; sourceTree = "<group>"; };
+		7EF32BB72B113A0B000E7CAE /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EF32BB92B113A0B000E7CAE /* API_tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = API_tests.m; sourceTree = "<group>"; };
+		7EFD77A12843461D000BFBF1 /* JDSBN_SceneDelegate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JDSBN_SceneDelegate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EFD77A32843462F000BFBF1 /* WindowScene-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WindowScene-Info.plist"; sourceTree = "<group>"; };
+		D264F88D1820213200DA0E53 /* JDSBN_AppDelegate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JDSBN_AppDelegate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D264F8901820213200DA0E53 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D264F8941820213200DA0E53 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D264F8981820213200DA0E53 /* Classic-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Classic-Info.plist"; sourceTree = "<group>"; };
+		D264F89C1820213200DA0E53 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D264F89F1820213200DA0E53 /* SBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBAppDelegate.h; sourceTree = "<group>"; };
+		D264F8A01820213200DA0E53 /* SBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBAppDelegate.m; sourceTree = "<group>"; };
+		D264F8A21820213200DA0E53 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D264F8C31820219F00DA0E53 /* SBExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBExampleViewController.h; sourceTree = "<group>"; };
+		D264F8C41820219F00DA0E53 /* SBExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBExampleViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7E6AAB3A2B26117A001D82FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E6AAB3B2B26117A001D82FE /* JDStatusBarNotification.framework in Frameworks */,
+				7E6AAB3C2B26117A001D82FE /* UIKit.framework in Frameworks */,
+				7E6AAB3D2B26117A001D82FE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EA91CBA284EF3AF00F32F09 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EA91CBB284EF3AF00F32F09 /* UIKit.framework in Frameworks */,
+				7EDAEEA92AF6ECAB001B6ABE /* JDStatusBarNotification.framework in Frameworks */,
+				7EA91CBC284EF3AF00F32F09 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EDAEEA32AF6EC5E001B6ABE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EF32BB42B113A0B000E7CAE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EF32BC62B113C26000E7CAE /* Foundation.framework in Frameworks */,
+				7EF32BC52B113C1F000E7CAE /* UIKit.framework in Frameworks */,
+				7EF32BC22B113BCE000E7CAE /* JDStatusBarNotification.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EFD77952843461D000BFBF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EDAEE5D2AF6E982001B6ABE /* JDStatusBarNotification.framework in Frameworks */,
+				7EFD77982843461D000BFBF1 /* UIKit.framework in Frameworks */,
+				7EFD77992843461D000BFBF1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D264F88A1820213200DA0E53 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EDAEE622AF6E985001B6ABE /* JDStatusBarNotification.framework in Frameworks */,
+				D264F8951820213200DA0E53 /* UIKit.framework in Frameworks */,
+				D264F8911820213200DA0E53 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7E5402C3286708850079C579 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7E83FF1A2AF1AA630011EA4C /* README.md */,
+				7E83FF1B2AF1AA630011EA4C /* CHANGELOG.md */,
+				7EB82C4C2A31BACE004E2B19 /* Package.swift */,
+				7EB82C4B2A31BACE004E2B19 /* JDStatusBarNotification.podspec */,
+				7E5402C5286708850079C579 /* JDStatusBarNotification.docc */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7E6AAB8C2B261F0E001D82FE /* AppEntrypoints */ = {
+			isa = PBXGroup;
+			children = (
+				7E6AAB8D2B261F33001D82FE /* AppDelegate-SceneDelegate */,
+				7E6AAB8E2B261F4B001D82FE /* SwiftUI Lifecycle */,
+			);
+			name = AppEntrypoints;
+			sourceTree = "<group>";
+		};
+		7E6AAB8D2B261F33001D82FE /* AppDelegate-SceneDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				D264F89F1820213200DA0E53 /* SBAppDelegate.h */,
+				D264F8A01820213200DA0E53 /* SBAppDelegate.m */,
+				7E6AAB882B261E76001D82FE /* SBSceneDelegate.h */,
+				7E6AAB892B261E77001D82FE /* SBSceneDelegate.m */,
+				D264F8C31820219F00DA0E53 /* SBExampleViewController.h */,
+				D264F8C41820219F00DA0E53 /* SBExampleViewController.m */,
+			);
+			name = "AppDelegate-SceneDelegate";
+			sourceTree = "<group>";
+		};
+		7E6AAB8E2B261F4B001D82FE /* SwiftUI Lifecycle */ = {
+			isa = PBXGroup;
+			children = (
+				7E6AAB472B261302001D82FE /* ExampleApp_SwiftUI.swift */,
+			);
+			name = "SwiftUI Lifecycle";
+			sourceTree = "<group>";
+		};
+		7E6FBC1F285EB4C600A63FEF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7E8C519F2858857200C7C003 /* TextStyleEditorView.swift */,
+				7E0FCB74285DAEB200E7CB78 /* FontPickerView.swift */,
+				7E0FCB78285DAEE800E7CB78 /* FormViews.swift */,
+				7E1C2836285226F5004315CC /* EnumPickerOptionView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		7E8C519228585BE400C7C003 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				7EB914CF2ADC11F4004B3435 /* NotificationPresenter.swift */,
+				7EF32BB02B10167B000E7CAE /* NotificationPresenterLegacyOverlay.swift */,
+				28D81AA62B0140C100DE2CDF /* NotificationStyle.swift */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		7EBE340B2844CA2D0096CD55 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				28D81A9A2B01217100DE2CDF /* NotificationWindow.swift */,
+				28D81AA32B012F7E00DE2CDF /* NotificationViewController.swift */,
+				7E008F5A2B02D38D00968AFE /* NotificationView.swift */,
+				28D81AA02B012B0800DE2CDF /* NotificationAnimator.swift */,
+				28D81A9D2B01257A00DE2CDF /* StyleCache.swift */,
+				28D81A932B010C7500DE2CDF /* DiscoveryHelper.swift */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		7EF32BB82B113A0B000E7CAE /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				7EF32BB92B113A0B000E7CAE /* API_tests.m */,
+				7E1878B62B1142FF00E0FA2D /* SwiftAPI_tests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		D264F8841820213200DA0E53 = {
+			isa = PBXGroup;
+			children = (
+				D264F8BF1820216300DA0E53 /* JDStatusBarNotification */,
+				7EF32BB82B113A0B000E7CAE /* Tests */,
+				D264F8961820213200DA0E53 /* ExampleProject */,
+				7E5402C3286708850079C579 /* Supporting Files */,
+				D264F88F1820213200DA0E53 /* Frameworks */,
+				D264F88E1820213200DA0E53 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D264F88E1820213200DA0E53 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D264F88D1820213200DA0E53 /* JDSBN_AppDelegate.app */,
+				7EFD77A12843461D000BFBF1 /* JDSBN_SceneDelegate.app */,
+				7EA91CC3284EF3AF00F32F09 /* JDSBN_LayoutDebug.app */,
+				7E5402C2286708840079C579 /* JDStatusBarNotification.framework */,
+				7EDAEEA82AF6EC5E001B6ABE /* JDStatusBarNotification.framework */,
+				7EF32BB72B113A0B000E7CAE /* Tests.xctest */,
+				7E6AAB452B26117A001D82FE /* JDSBN_SwiftUI.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D264F88F1820213200DA0E53 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D264F8901820213200DA0E53 /* Foundation.framework */,
+				D264F8941820213200DA0E53 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D264F8961820213200DA0E53 /* ExampleProject */ = {
+			isa = PBXGroup;
+			children = (
+				7E6AAB922B262659001D82FE /* StatusBarPreviewView.swift */,
+				7E6AAB8C2B261F0E001D82FE /* AppEntrypoints */,
+				7E2F3BBA284F6144002B2181 /* ObservableCustomStyle.swift */,
+				7E6FBC21285EF3B100A63FEF /* ExampleStyle.swift */,
+				7E67050C284A4BE900AD58E1 /* ExamplesScreen.swift */,
+				7E670512284B177B00AD58E1 /* StyleEditorScreen.swift */,
+				7E6FBC1F285EB4C600A63FEF /* Views */,
+				7E8B9AEE283B6FD300507BC1 /* Launch Screen.storyboard */,
+				D264F8A21820213200DA0E53 /* Images.xcassets */,
+				D264F8971820213200DA0E53 /* Supporting Files */,
+			);
+			path = ExampleProject;
+			sourceTree = "<group>";
+		};
+		D264F8971820213200DA0E53 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D264F8981820213200DA0E53 /* Classic-Info.plist */,
+				7EFD77A32843462F000BFBF1 /* WindowScene-Info.plist */,
+				7E6AAB462B26117A001D82FE /* SwiftUI-Info.plist */,
+				D264F89C1820213200DA0E53 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D264F8BF1820216300DA0E53 /* JDStatusBarNotification */ = {
+			isa = PBXGroup;
+			children = (
+				7E8C519228585BE400C7C003 /* Public */,
+				7EBE340B2844CA2D0096CD55 /* Private */,
+			);
+			path = JDStatusBarNotification;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7E5402BD286708840079C579 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EDAEE892AF6EC5E001B6ABE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7E5402C1286708840079C579 /* JDStatusBarNotification */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E5402CC286708850079C579 /* Build configuration list for PBXNativeTarget "JDStatusBarNotification" */;
+			buildPhases = (
+				7E5402BD286708840079C579 /* Headers */,
+				7E5402BE286708840079C579 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JDStatusBarNotification;
+			productName = JDStatusBarNotification;
+			productReference = 7E5402C2286708840079C579 /* JDStatusBarNotification.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7E6AAB2B2B26117A001D82FE /* ExampleApp_SwiftUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E6AAB432B26117A001D82FE /* Build configuration list for PBXNativeTarget "ExampleApp_SwiftUI" */;
+			buildPhases = (
+				7E6AAB2E2B26117A001D82FE /* Sources */,
+				7E6AAB3A2B26117A001D82FE /* Frameworks */,
+				7E6AAB3E2B26117A001D82FE /* Resources */,
+				7E6AAB412B26117A001D82FE /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E6AAB2C2B26117A001D82FE /* PBXTargetDependency */,
+			);
+			name = ExampleApp_SwiftUI;
+			productName = JDStatusBarNotificationExample;
+			productReference = 7E6AAB452B26117A001D82FE /* JDSBN_SwiftUI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7EA91CA8284EF3AF00F32F09 /* ExampleApp_LayoutDebug */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EA91CC0284EF3AF00F32F09 /* Build configuration list for PBXNativeTarget "ExampleApp_LayoutDebug" */;
+			buildPhases = (
+				7EA91CA9284EF3AF00F32F09 /* Sources */,
+				7EA91CBA284EF3AF00F32F09 /* Frameworks */,
+				7EA91CBD284EF3AF00F32F09 /* Resources */,
+				7EDAEEAD2AF6ECAB001B6ABE /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7EDAEEAC2AF6ECAB001B6ABE /* PBXTargetDependency */,
+			);
+			name = ExampleApp_LayoutDebug;
+			productName = JDStatusBarNotificationExample;
+			productReference = 7EA91CC3284EF3AF00F32F09 /* JDSBN_LayoutDebug.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7EDAEE882AF6EC5E001B6ABE /* JDStatusBarNotification_LayoutDebug */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EDAEEA52AF6EC5E001B6ABE /* Build configuration list for PBXNativeTarget "JDStatusBarNotification_LayoutDebug" */;
+			buildPhases = (
+				7EDAEE892AF6EC5E001B6ABE /* Headers */,
+				7EDAEE8F2AF6EC5E001B6ABE /* Sources */,
+				7EDAEEA32AF6EC5E001B6ABE /* Frameworks */,
+				7EDAEEA42AF6EC5E001B6ABE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JDStatusBarNotification_LayoutDebug;
+			productName = JDStatusBarNotification;
+			productReference = 7EDAEEA82AF6EC5E001B6ABE /* JDStatusBarNotification.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7EF32BB62B113A0B000E7CAE /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EF32BBE2B113A0C000E7CAE /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				7EF32BB32B113A0B000E7CAE /* Sources */,
+				7EF32BB42B113A0B000E7CAE /* Frameworks */,
+				7EF32BB52B113A0B000E7CAE /* Resources */,
+				7EF32BC42B113BCE000E7CAE /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7EF32BC02B113B96000E7CAE /* PBXTargetDependency */,
+			);
+			name = Tests;
+			productName = API_tests;
+			productReference = 7EF32BB72B113A0B000E7CAE /* Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7EFD778A2843461D000BFBF1 /* ExampleApp_SceneDelegate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EFD779E2843461D000BFBF1 /* Build configuration list for PBXNativeTarget "ExampleApp_SceneDelegate" */;
+			buildPhases = (
+				7EFD778B2843461D000BFBF1 /* Sources */,
+				7EFD77952843461D000BFBF1 /* Frameworks */,
+				7EFD779A2843461D000BFBF1 /* Resources */,
+				7EDAEE612AF6E982001B6ABE /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7EDAEE602AF6E982001B6ABE /* PBXTargetDependency */,
+			);
+			name = ExampleApp_SceneDelegate;
+			productName = JDStatusBarNotificationExample;
+			productReference = 7EFD77A12843461D000BFBF1 /* JDSBN_SceneDelegate.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D264F88C1820213200DA0E53 /* ExampleApp_AppDelegate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D264F8B91820213200DA0E53 /* Build configuration list for PBXNativeTarget "ExampleApp_AppDelegate" */;
+			buildPhases = (
+				D264F8891820213200DA0E53 /* Sources */,
+				D264F88A1820213200DA0E53 /* Frameworks */,
+				D264F88B1820213200DA0E53 /* Resources */,
+				7EDAEE662AF6E985001B6ABE /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7EDAEE652AF6E985001B6ABE /* PBXTargetDependency */,
+			);
+			name = ExampleApp_AppDelegate;
+			productName = JDStatusBarNotificationExample;
+			productReference = D264F88D1820213200DA0E53 /* JDSBN_AppDelegate.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D264F8851820213200DA0E53 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				CLASSPREFIX = SB;
+				LastUpgradeCheck = 1510;
+				ORGANIZATIONNAME = Markus;
+				TargetAttributes = {
+					7E5402C1286708840079C579 = {
+						CreatedOnToolsVersion = 14.0;
+						DevelopmentTeam = 8M37KCPR2Q;
+						ProvisioningStyle = Automatic;
+					};
+					7EA91CA8284EF3AF00F32F09 = {
+						DevelopmentTeam = 8M37KCPR2Q;
+					};
+					7EF32BB62B113A0B000E7CAE = {
+						CreatedOnToolsVersion = 15.0.1;
+						LastSwiftMigration = 1500;
+						TestTargetID = D264F88C1820213200DA0E53;
+					};
+					7EFD778A2843461D000BFBF1 = {
+						DevelopmentTeam = 8M37KCPR2Q;
+						LastSwiftMigration = 1340;
+					};
+					D264F88C1820213200DA0E53 = {
+						DevelopmentTeam = 8M37KCPR2Q;
+						LastSwiftMigration = 1340;
+					};
+				};
+			};
+			buildConfigurationList = D264F8881820213200DA0E53 /* Build configuration list for PBXProject "JDStatusBarNotification" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D264F8841820213200DA0E53;
+			productRefGroup = D264F88E1820213200DA0E53 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D264F88C1820213200DA0E53 /* ExampleApp_AppDelegate */,
+				7EFD778A2843461D000BFBF1 /* ExampleApp_SceneDelegate */,
+				7E6AAB2B2B26117A001D82FE /* ExampleApp_SwiftUI */,
+				7EA91CA8284EF3AF00F32F09 /* ExampleApp_LayoutDebug */,
+				7E5402C1286708840079C579 /* JDStatusBarNotification */,
+				7EDAEE882AF6EC5E001B6ABE /* JDStatusBarNotification_LayoutDebug */,
+				7EF32BB62B113A0B000E7CAE /* Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7E6AAB3E2B26117A001D82FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E6AAB3F2B26117A001D82FE /* Launch Screen.storyboard in Resources */,
+				7E6AAB402B26117A001D82FE /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EA91CBD284EF3AF00F32F09 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EA91CBE284EF3AF00F32F09 /* Launch Screen.storyboard in Resources */,
+				7EA91CBF284EF3AF00F32F09 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EDAEEA42AF6EC5E001B6ABE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EF32BB52B113A0B000E7CAE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EFD779A2843461D000BFBF1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EFD779B2843461D000BFBF1 /* Launch Screen.storyboard in Resources */,
+				7EFD779D2843461D000BFBF1 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D264F88B1820213200DA0E53 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E8B9AEF283B6FD300507BC1 /* Launch Screen.storyboard in Resources */,
+				D264F8A31820213200DA0E53 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7E5402BE286708840079C579 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E6AAB932B262659001D82FE /* StatusBarPreviewView.swift in Sources */,
+				28D81AA42B012F7F00DE2CDF /* NotificationViewController.swift in Sources */,
+				28D81A9E2B01257A00DE2CDF /* StyleCache.swift in Sources */,
+				28D81AA12B012B0800DE2CDF /* NotificationAnimator.swift in Sources */,
+				7E008F5B2B02D38D00968AFE /* NotificationView.swift in Sources */,
+				7EF32BB22B1018A2000E7CAE /* NotificationPresenterLegacyOverlay.swift in Sources */,
+				28D81A942B010C7500DE2CDF /* DiscoveryHelper.swift in Sources */,
+				28D81A9B2B01217100DE2CDF /* NotificationWindow.swift in Sources */,
+				7E2A4E852AE70A4B001F0DB0 /* NotificationPresenter.swift in Sources */,
+				28D81AA72B0140C100DE2CDF /* NotificationStyle.swift in Sources */,
+				7E5402C6286708850079C579 /* JDStatusBarNotification.docc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E6AAB2E2B26117A001D82FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E6AAB2F2B26117A001D82FE /* FontPickerView.swift in Sources */,
+				7E6AAB302B26117A001D82FE /* ObservableCustomStyle.swift in Sources */,
+				7E6AAB312B26117A001D82FE /* FormViews.swift in Sources */,
+				7E6AAB322B26117A001D82FE /* EnumPickerOptionView.swift in Sources */,
+				7E6AAB342B26117A001D82FE /* StyleEditorScreen.swift in Sources */,
+				7E6AAB352B26117A001D82FE /* TextStyleEditorView.swift in Sources */,
+				7E6AAB482B261302001D82FE /* ExampleApp_SwiftUI.swift in Sources */,
+				7E6AAB362B26117A001D82FE /* ExamplesScreen.swift in Sources */,
+				7E6AAB372B26117A001D82FE /* ExampleStyle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EA91CA9284EF3AF00F32F09 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EA91CB6284EF3AF00F32F09 /* main.m in Sources */,
+				7E6AAB8B2B261EED001D82FE /* SBSceneDelegate.m in Sources */,
+				7EA91CB0284EF3AF00F32F09 /* SBExampleViewController.m in Sources */,
+				7E0FCB77285DAEB200E7CB78 /* FontPickerView.swift in Sources */,
+				7E2F3BBD284F6144002B2181 /* ObservableCustomStyle.swift in Sources */,
+				7E0FCB7B285DAEE800E7CB78 /* FormViews.swift in Sources */,
+				7E1C2839285226F5004315CC /* EnumPickerOptionView.swift in Sources */,
+				7EA91CB2284EF3AF00F32F09 /* StyleEditorScreen.swift in Sources */,
+				7E8C51A22858857200C7C003 /* TextStyleEditorView.swift in Sources */,
+				7EA91CB3284EF3AF00F32F09 /* ExamplesScreen.swift in Sources */,
+				7E6FBC24285EF3B100A63FEF /* ExampleStyle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EDAEE8F2AF6EC5E001B6ABE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E6AAB942B262659001D82FE /* StatusBarPreviewView.swift in Sources */,
+				28D81AA52B012F7F00DE2CDF /* NotificationViewController.swift in Sources */,
+				28D81A9F2B01257A00DE2CDF /* StyleCache.swift in Sources */,
+				28D81AA22B012B0800DE2CDF /* NotificationAnimator.swift in Sources */,
+				7E008F5C2B02D38D00968AFE /* NotificationView.swift in Sources */,
+				7EF32BB12B1018A1000E7CAE /* NotificationPresenterLegacyOverlay.swift in Sources */,
+				28D81A9C2B01217100DE2CDF /* NotificationWindow.swift in Sources */,
+				7EDAEE972AF6EC5E001B6ABE /* NotificationPresenter.swift in Sources */,
+				28D81A952B0110C700DE2CDF /* DiscoveryHelper.swift in Sources */,
+				28D81AA82B0140C100DE2CDF /* NotificationStyle.swift in Sources */,
+				7EDAEEA22AF6EC5E001B6ABE /* JDStatusBarNotification.docc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EF32BB32B113A0B000E7CAE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E1878B72B1142FF00E0FA2D /* SwiftAPI_tests.swift in Sources */,
+				7EF32BBA2B113A0B000E7CAE /* API_tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EFD778B2843461D000BFBF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EFD77A728434A03000BFBF1 /* main.m in Sources */,
+				7E6AAB8A2B261EB4001D82FE /* SBSceneDelegate.m in Sources */,
+				7EFD77902843461D000BFBF1 /* SBExampleViewController.m in Sources */,
+				7E0FCB76285DAEB200E7CB78 /* FontPickerView.swift in Sources */,
+				7E2F3BBC284F6144002B2181 /* ObservableCustomStyle.swift in Sources */,
+				7E0FCB7A285DAEE800E7CB78 /* FormViews.swift in Sources */,
+				7E1C2838285226F5004315CC /* EnumPickerOptionView.swift in Sources */,
+				7E670514284B177B00AD58E1 /* StyleEditorScreen.swift in Sources */,
+				7E8C51A12858857200C7C003 /* TextStyleEditorView.swift in Sources */,
+				7E67050E284A4BE900AD58E1 /* ExamplesScreen.swift in Sources */,
+				7E6FBC23285EF3B100A63FEF /* ExampleStyle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D264F8891820213200DA0E53 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D264F89D1820213200DA0E53 /* main.m in Sources */,
+				D264F8A11820213200DA0E53 /* SBAppDelegate.m in Sources */,
+				D264F8C61820219F00DA0E53 /* SBExampleViewController.m in Sources */,
+				7E0FCB75285DAEB200E7CB78 /* FontPickerView.swift in Sources */,
+				7E2F3BBB284F6144002B2181 /* ObservableCustomStyle.swift in Sources */,
+				7E0FCB79285DAEE800E7CB78 /* FormViews.swift in Sources */,
+				7E1C2837285226F5004315CC /* EnumPickerOptionView.swift in Sources */,
+				7E670513284B177B00AD58E1 /* StyleEditorScreen.swift in Sources */,
+				7E8C51A02858857200C7C003 /* TextStyleEditorView.swift in Sources */,
+				7E67050D284A4BE900AD58E1 /* ExamplesScreen.swift in Sources */,
+				7E6FBC22285EF3B100A63FEF /* ExampleStyle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7E6AAB2C2B26117A001D82FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E5402C1286708840079C579 /* JDStatusBarNotification */;
+			targetProxy = 7E6AAB2D2B26117A001D82FE /* PBXContainerItemProxy */;
+		};
+		7EDAEE602AF6E982001B6ABE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E5402C1286708840079C579 /* JDStatusBarNotification */;
+			targetProxy = 7EDAEE5F2AF6E982001B6ABE /* PBXContainerItemProxy */;
+		};
+		7EDAEE652AF6E985001B6ABE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E5402C1286708840079C579 /* JDStatusBarNotification */;
+			targetProxy = 7EDAEE642AF6E985001B6ABE /* PBXContainerItemProxy */;
+		};
+		7EDAEEAC2AF6ECAB001B6ABE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7EDAEE882AF6EC5E001B6ABE /* JDStatusBarNotification_LayoutDebug */;
+			targetProxy = 7EDAEEAB2AF6ECAB001B6ABE /* PBXContainerItemProxy */;
+		};
+		7EF32BC02B113B96000E7CAE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E5402C1286708840079C579 /* JDStatusBarNotification */;
+			targetProxy = 7EF32BBF2B113B96000E7CAE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7E5402CD286708850079C579 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DOCC_EXTRACT_OBJC_INFO_FOR_SWIFT_SYMBOLS = NO;
+				DOCC_EXTRACT_SWIFT_INFO_FOR_OBJC_SYMBOLS = YES;
+				DOCC_HOSTING_BASE_PATH = JDStatusBarNotification;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Markus. All rights reserved.";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++17";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = calimarkus.JDStatusBarNotification;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_PACKAGE_NAME = JDStatusBarNotification;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7E6AAB442B26117A001D82FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DISPLAY_NAME = "JDSB (SUI)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INFOPLIST_FILE = "SwiftUI-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.calimarkus.jdstatusbarnotifications.sui;
+				PRODUCT_NAME = JDSBN_SwiftUI;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = "-Wall";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7EA91CC1284EF3AF00F32F09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DISPLAY_NAME = "JDSB 🛠";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INFOPLIST_FILE = "ExampleProject/WindowScene-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.calimarkus.jdstatusbarnotifications.ld;
+				PRODUCT_NAME = JDSBN_LayoutDebug;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = JDSB_LAYOUT_DEBUGGING;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = "-Wall";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7EDAEEA62AF6EC5E001B6ABE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DOCC_EXTRACT_OBJC_INFO_FOR_SWIFT_SYMBOLS = NO;
+				DOCC_EXTRACT_SWIFT_INFO_FOR_OBJC_SYMBOLS = YES;
+				DOCC_HOSTING_BASE_PATH = JDStatusBarNotification;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"JDSB_LAYOUT_DEBUGGING=1",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Markus. All rights reserved.";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++17";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = calimarkus.JDStatusBarNotification;
+				PRODUCT_NAME = JDStatusBarNotification;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = JDSB_LAYOUT_DEBUGGING;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_PACKAGE_NAME = JDStatusBarNotification;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7EF32BBD2B113A0C000E7CAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 8M37KCPR2Q;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.calimarkus.jdsb.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7EFD779F2843461D000BFBF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DISPLAY_NAME = "JDSB (SD)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INFOPLIST_FILE = "ExampleProject/WindowScene-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.calimarkus.jdstatusbarnotifications.sd;
+				PRODUCT_NAME = JDSBN_SceneDelegate;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = "-Wall";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D264F8B71820213200DA0E53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_COMPLETION_HANDLER_MISUSE = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 8M37KCPR2Q;
+				DISPLAY_NAME = JDSB;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
+				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.calimarkus.jdstatusbarnotifications;
+				PRODUCT_NAME = "JDSBN Example";
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Swift-To-ObjC-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D264F8BA1820213200DA0E53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DISPLAY_NAME = "JDSB (AD)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "IS_APPDELEGATE_BASED_EXAMPLE=1";
+				INFOPLIST_FILE = "ExampleProject/Classic-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.calimarkus.jdstatusbarnotifications.ad;
+				PRODUCT_NAME = JDSBN_AppDelegate;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = "-Wall";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7E5402CC286708850079C579 /* Build configuration list for PBXNativeTarget "JDStatusBarNotification" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E5402CD286708850079C579 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7E6AAB432B26117A001D82FE /* Build configuration list for PBXNativeTarget "ExampleApp_SwiftUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E6AAB442B26117A001D82FE /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7EA91CC0284EF3AF00F32F09 /* Build configuration list for PBXNativeTarget "ExampleApp_LayoutDebug" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EA91CC1284EF3AF00F32F09 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7EDAEEA52AF6EC5E001B6ABE /* Build configuration list for PBXNativeTarget "JDStatusBarNotification_LayoutDebug" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EDAEEA62AF6EC5E001B6ABE /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7EF32BBE2B113A0C000E7CAE /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EF32BBD2B113A0C000E7CAE /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7EFD779E2843461D000BFBF1 /* Build configuration list for PBXNativeTarget "ExampleApp_SceneDelegate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EFD779F2843461D000BFBF1 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D264F8881820213200DA0E53 /* Build configuration list for PBXProject "JDStatusBarNotification" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D264F8B71820213200DA0E53 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D264F8B91820213200DA0E53 /* Build configuration list for PBXNativeTarget "ExampleApp_AppDelegate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D264F8BA1820213200DA0E53 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D264F8851820213200DA0E53 /* Project object */;
+}

@@ -31,7 +31,7 @@ struct ContentView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
             .background()
             .sheet(item: $selectedPlayer) { player in
-                PlayerEditView(players: $players, selectedPlayer: $selectedPlayer)
+                PlayerEditView(players: $players, selectedPlayer: $selectedPlayer,removePlayer: removePlayer)
             }
         }
     }
