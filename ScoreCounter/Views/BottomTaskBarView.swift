@@ -9,11 +9,12 @@ import Foundation
 import SwiftUI
 
 struct BottomTaskBar: View {
+    @Binding var currentPage:Page
     var body: some View {
         HStack {
             Button(action: {
                 // Handle left button action
-                print("Left button tapped")
+                currentPage = Page.counter
             }) {
                 Text("123")
             }
@@ -23,7 +24,7 @@ struct BottomTaskBar: View {
 
             Button(action: {
                 // Handle middle button action
-                print("Robot icon tapped")
+                currentPage = Page.dice
             }) {
                 Image(systemName: "dice")
                     .imageScale(.large)
@@ -34,7 +35,7 @@ struct BottomTaskBar: View {
 
             Button(action: {
                 // Handle right button action
-                print("Cog icon tapped")
+                currentPage = Page.settings
             }) {
                 Image(systemName: "gear")
                     .imageScale(.large)

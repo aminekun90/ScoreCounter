@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct Player: Identifiable, Equatable {
-    var id = UUID()
+public struct Player: Identifiable, Equatable {
+    public var id = UUID()
     var title: String
     var score: Int
     var color: Color

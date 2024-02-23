@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-struct Deck {
+public struct Deck {
     var name:String = UUID().uuidString
     var winningScore:Int = 42
     var increment:Int = 1

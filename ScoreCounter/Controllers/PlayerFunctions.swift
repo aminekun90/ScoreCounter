@@ -11,12 +11,12 @@ import JDStatusBarNotification
 struct ListData: Codable {
     var items: [String]
 }
-extension ContentView {
-    public func removeAllPlayers(){
+
+    public func removeAllPlayers(deck: inout Deck){
         deck.players = []
         vibratePhone()
     }
-    public func addPlayer() {
+    public func addPlayer(deck: inout Deck) {
         var name:String = "Player \(deck.players.count)"
         if let listData = loadListFromJSON() {
             // Access the list of strings
@@ -58,7 +58,7 @@ extension ContentView {
         }
     }
 
-    public func updateScore(_ playerId: UUID, increment: Bool, amount: Int? = 1) {
+    public func updateScore(deck: inout Deck,_ playerId: UUID, increment: Bool, amount: Int? = 1) {
         if let playerIndex = deck.players.firstIndex(where: { $0.id == playerId }) {
             if increment {
                 deck.players[playerIndex].score += amount ?? deck.increment
@@ -74,7 +74,7 @@ extension ContentView {
         return colors.randomElement() ?? .blue
     }
    
-    public func removePlayer(_ player: Player?) {
+    public func removePlayer(deck: inout Deck,_ player: Player?) {
         guard let player = player else {
             return
         }
@@ -88,4 +88,4 @@ extension ContentView {
         let feedbackGenerator = UINotificationFeedbackGenerator()
         feedbackGenerator.notificationOccurred(.success) // or use .warning, .error for different vibrations
     }
-}
+

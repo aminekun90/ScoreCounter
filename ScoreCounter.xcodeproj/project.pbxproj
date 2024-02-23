@@ -32,6 +32,7 @@
 		525C5C0F2B88F33500287B61 /* SQLiteMigrationManager in Frameworks */ = {isa = PBXBuildFile; productRef = 525C5C0E2B88F33500287B61 /* SQLiteMigrationManager */; };
 		525C5C122B89333100287B61 /* AppOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C112B89333100287B61 /* AppOptions.swift */; };
 		525C5C142B89362400287B61 /* BottomTaskBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C132B89362400287B61 /* BottomTaskBarView.swift */; };
+		525C5C162B89424C00287B61 /* PlayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C152B89424C00287B61 /* PlayersView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		525C5C0A2B88EDAA00287B61 /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = text; path = db.sqlite; sourceTree = "<group>"; };
 		525C5C112B89333100287B61 /* AppOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOptions.swift; sourceTree = "<group>"; };
 		525C5C132B89362400287B61 /* BottomTaskBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTaskBarView.swift; sourceTree = "<group>"; };
+		525C5C152B89424C00287B61 /* PlayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +217,7 @@
 				524B87742B86579000DECBF9 /* PlayerRow.swift */,
 				524B877A2B86731500DECBF9 /* LandingPageView.swift */,
 				525C5C132B89362400287B61 /* BottomTaskBarView.swift */,
+				525C5C152B89424C00287B61 /* PlayersView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				525C5C022B88BFFE00287B61 /* Deck.swift in Sources */,
 				525C5C082B88CE7E00287B61 /* sqliteService.swift in Sources */,
 				524B87712B864FA500DECBF9 /* Player.swift in Sources */,
+				525C5C162B89424C00287B61 /* PlayersView.swift in Sources */,
 				524B87772B866BC700DECBF9 /* PlayerActionsView.swift in Sources */,
 				524B87752B86579000DECBF9 /* PlayerRow.swift in Sources */,
 				524B877B2B86731600DECBF9 /* LandingPageView.swift in Sources */,

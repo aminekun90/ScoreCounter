@@ -7,9 +7,10 @@
 
 import SwiftUI
 struct PlayerRow: View {
+    @Binding var deck:Deck
     var player: Player
     var horizontalMargin: CGFloat
-    var updateScore: (UUID, Bool, Int?) -> Void
+    var updateScore: (inout Deck,UUID, Bool, Int?) -> Void
     @Binding var selectedPlayer: Player?
 
     var body: some View {
@@ -28,7 +29,7 @@ struct PlayerRow: View {
             Spacer()
 
             Button(action: {
-                updateScore(player.id, false, nil)
+                updateScore(&deck,player.id, false, nil)
             }) {
                 Image(systemName: "minus")
                     .imageScale(.large)
@@ -43,7 +44,7 @@ struct PlayerRow: View {
                 .font(.title)
 
             Button(action: {
-                updateScore(player.id, true, nil)
+                updateScore(&deck,player.id, true, nil)
             }) {
                 Image(systemName: "plus")
                     .imageScale(.large)
@@ -66,7 +67,7 @@ struct PlayerRow: View {
         return VStack {
             ForEach(increments, id: \.self) { increment in
                 Button(action: {
-                    updateScore(player.id, incrementAction, increment)
+                    updateScore(&deck,player.id, incrementAction, increment)
                 }) {
                     Text("\(increment)")
                 }

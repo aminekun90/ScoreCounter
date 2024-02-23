@@ -9,10 +9,10 @@ import SwiftUI
 
 struct PlayerActionsView: View {
     @Environment(\.colorScheme) var colorScheme
-    @Binding var players: [Player]
+    @Binding var deck:Deck
     @Binding var isShowingDialog: Bool
-    var addPlayer: () -> Void
-    var removeAllPlayers:() -> Void
+    var addPlayer: (inout Deck) -> Void
+    var removeAllPlayers:(inout Deck) -> Void
 
     var body: some View {
         HStack {
@@ -25,17 +25,19 @@ struct PlayerActionsView: View {
                     .foregroundColor(.red)
                     .clipShape(RoundedRectangle(cornerRadius: 5))
             }
-            .disabled(players.isEmpty)
+            .disabled(deck.players.isEmpty)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
             .confirmationDialog("Are you sure to delete all?", isPresented: $isShowingDialog, titleVisibility: .visible) {
                 Button("Confirm", role: .destructive) {
-                    removeAllPlayers()
+                    removeAllPlayers(&deck)
                     
                 }
                 Button("Cancel", role: .cancel) {}
             }
 
-            Button(action: addPlayer) {
+            Button(action: {
+                addPlayer(&deck)
+            }) {
                 Image(systemName: "plus")
                     .imageScale(.large)
                     .padding()

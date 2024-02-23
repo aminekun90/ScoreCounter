@@ -9,7 +9,8 @@ import SwiftUI
 
 struct LandingPageView: View {
     @Environment(\.colorScheme) var colorScheme
-    var addPlayer: () -> Void
+    @Binding var deck:Deck
+    var addPlayer: (inout Deck) -> Void
     var body: some View {
         VStack {
             Spacer() // Push the content to the top
@@ -25,7 +26,7 @@ struct LandingPageView: View {
                 .multilineTextAlignment(.center)
                 .padding()
             
-            Button("Add new Player",action:addPlayer)
+            Button("Add new Player",action:{addPlayer(&deck)})
             Spacer() // Push the content to the bottom
             
             // Any other content you want to include

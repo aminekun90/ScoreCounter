@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class SystemOptions {
+public class SystemOptions {
     private var phoneTheme:Bool = true
     private var darkTheme:Bool = false
     private var appVersion:String!
