@@ -35,12 +35,12 @@ extension ContentView {
         vibratePhone()
         // Show notification after adding a player
                showNotification(name: name)
-        }
+    }
     private func showNotification(name: String) {
         let image = UIImageView(image: UIImage(systemName: "gamecontroller.fill"))
         NotificationPresenter.shared.present(name, subtitle: "Added succesfully!",duration:1)
         NotificationPresenter.shared.displayLeftView(image)
-       }
+    }
     func loadListFromJSON() -> ListData? {
         guard let url = Bundle.main.url(forResource: "data", withExtension: "json") else {
             print("File not Found")
@@ -81,6 +81,7 @@ extension ContentView {
 
         if let index = deck.players.firstIndex(where: { $0.id == player.id }) {
             deck.players.remove(at: index)
+            vibratePhone()
         }
     }
     public func vibratePhone() {

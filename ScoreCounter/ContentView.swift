@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     @State public var deck = Deck()
     @State private var selectedPlayer: Player? = nil
     let horizontalMargin: CGFloat = 10
     @State private var isShowingDialog = false
-
+    let sqliteService = SqliteService()
     var body: some View {
         NavigationView {
             ScrollView {

@@ -26,6 +26,10 @@
 		525C5BF62B876FA800287B61 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 525C5BF52B876FA800287B61 /* LICENSE */; };
 		525C5BF82B876FFF00287B61 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 525C5BF72B876FFF00287B61 /* .gitignore */; };
 		525C5C022B88BFFE00287B61 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C012B88BFFE00287B61 /* Deck.swift */; };
+		525C5C052B88C61D00287B61 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 525C5C042B88C61D00287B61 /* SQLite */; };
+		525C5C082B88CE7E00287B61 /* sqliteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C072B88CE7E00287B61 /* sqliteService.swift */; };
+		525C5C0B2B88EDAA00287B61 /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 525C5C0A2B88EDAA00287B61 /* db.sqlite */; };
+		525C5C0F2B88F33500287B61 /* SQLiteMigrationManager in Frameworks */ = {isa = PBXBuildFile; productRef = 525C5C0E2B88F33500287B61 /* SQLiteMigrationManager */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +72,8 @@
 		525C5BF52B876FA800287B61 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		525C5BF72B876FFF00287B61 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		525C5C012B88BFFE00287B61 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		525C5C072B88CE7E00287B61 /* sqliteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sqliteService.swift; sourceTree = "<group>"; };
+		525C5C0A2B88EDAA00287B61 /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = text; path = db.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				525C5C0F2B88F33500287B61 /* SQLiteMigrationManager in Frameworks */,
+				525C5C052B88C61D00287B61 /* SQLite in Frameworks */,
 				525C5BEF2B86B32600287B61 /* JDStatusBarNotification in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -123,6 +131,8 @@
 		522307F52B861CAA007CE1A7 /* ScoreCounter */ = {
 			isa = PBXGroup;
 			children = (
+				525C5C0C2B88EE0A00287B61 /* Services */,
+				525C5C092B88ED8500287B61 /* data-sqlite */,
 				525C5C002B88BE0900287B61 /* Controllers */,
 				525C5BFF2B88BDD800287B61 /* Views */,
 				525C5BFE2B88BB7F00287B61 /* models */,
@@ -187,7 +197,6 @@
 			isa = PBXGroup;
 			children = (
 				524B87702B864FA500DECBF9 /* Player.swift */,
-				525C5BF02B86B9F700287B61 /* FileLoader.swift */,
 				525C5C012B88BFFE00287B61 /* Deck.swift */,
 			);
 			path = models;
@@ -207,9 +216,42 @@
 		525C5C002B88BE0900287B61 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				525C5BF02B86B9F700287B61 /* FileLoader.swift */,
 				524B87782B866C6900DECBF9 /* PlayerFunctions.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		525C5C062B88CE5700287B61 /* sqlite */ = {
+			isa = PBXGroup;
+			children = (
+				525C5C102B88F59B00287B61 /* migrations */,
+				525C5C072B88CE7E00287B61 /* sqliteService.swift */,
+			);
+			path = sqlite;
+			sourceTree = "<group>";
+		};
+		525C5C092B88ED8500287B61 /* data-sqlite */ = {
+			isa = PBXGroup;
+			children = (
+				525C5C0A2B88EDAA00287B61 /* db.sqlite */,
+			);
+			path = "data-sqlite";
+			sourceTree = "<group>";
+		};
+		525C5C0C2B88EE0A00287B61 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				525C5C062B88CE5700287B61 /* sqlite */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		525C5C102B88F59B00287B61 /* migrations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = migrations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +272,8 @@
 			name = ScoreCounter;
 			packageProductDependencies = (
 				525C5BEE2B86B32600287B61 /* JDStatusBarNotification */,
+				525C5C042B88C61D00287B61 /* SQLite */,
+				525C5C0E2B88F33500287B61 /* SQLiteMigrationManager */,
 			);
 			productName = ScoreCounter;
 			productReference = 522307F32B861CAA007CE1A7 /* ScoreCounter.app */;
@@ -305,6 +349,8 @@
 			mainGroup = 522307EA2B861CAA007CE1A7;
 			packageReferences = (
 				525C5BED2B86B32500287B61 /* XCLocalSwiftPackageReference "JDStatusBarNotification" */,
+				525C5C032B88C61D00287B61 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
+				525C5C0D2B88F33500287B61 /* XCRemoteSwiftPackageReference "SQLiteMigrationManager.swift" */,
 			);
 			productRefGroup = 522307F42B861CAA007CE1A7 /* Products */;
 			projectDirPath = "";
@@ -323,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				525C5BF82B876FFF00287B61 /* .gitignore in Resources */,
+				525C5C0B2B88EDAA00287B61 /* db.sqlite in Resources */,
 				522307FE2B861CAC007CE1A7 /* Preview Assets.xcassets in Resources */,
 				525C5BF32B86BA7E00287B61 /* data.json in Resources */,
 				525C5BF62B876FA800287B61 /* LICENSE in Resources */,
@@ -354,6 +401,7 @@
 				522307F92B861CAA007CE1A7 /* ContentView.swift in Sources */,
 				524B87732B864FF300DECBF9 /* PlayerEditView.swift in Sources */,
 				525C5C022B88BFFE00287B61 /* Deck.swift in Sources */,
+				525C5C082B88CE7E00287B61 /* sqliteService.swift in Sources */,
 				524B87712B864FA500DECBF9 /* Player.swift in Sources */,
 				524B87772B866BC700DECBF9 /* PlayerActionsView.swift in Sources */,
 				524B87752B86579000DECBF9 /* PlayerRow.swift in Sources */,
@@ -449,7 +497,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -506,7 +554,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -533,7 +581,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -565,7 +613,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -703,10 +751,39 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		525C5C032B88C61D00287B61 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.14.1;
+			};
+		};
+		525C5C0D2B88F33500287B61 /* XCRemoteSwiftPackageReference "SQLiteMigrationManager.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/garriguv/SQLiteMigrationManager.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		525C5BEE2B86B32600287B61 /* JDStatusBarNotification */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = JDStatusBarNotification;
+		};
+		525C5C042B88C61D00287B61 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 525C5C032B88C61D00287B61 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
+		};
+		525C5C0E2B88F33500287B61 /* SQLiteMigrationManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 525C5C0D2B88F33500287B61 /* XCRemoteSwiftPackageReference "SQLiteMigrationManager.swift" */;
+			productName = SQLiteMigrationManager;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
