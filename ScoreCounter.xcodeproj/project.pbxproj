@@ -25,6 +25,7 @@
 		525C5BF32B86BA7E00287B61 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 525C5BF22B86BA7E00287B61 /* data.json */; };
 		525C5BF62B876FA800287B61 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 525C5BF52B876FA800287B61 /* LICENSE */; };
 		525C5BF82B876FFF00287B61 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 525C5BF72B876FFF00287B61 /* .gitignore */; };
+		525C5C022B88BFFE00287B61 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C012B88BFFE00287B61 /* Deck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		525C5BF42B86C92B00287B61 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		525C5BF52B876FA800287B61 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		525C5BF72B876FFF00287B61 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		525C5C012B88BFFE00287B61 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,18 +123,14 @@
 		522307F52B861CAA007CE1A7 /* ScoreCounter */ = {
 			isa = PBXGroup;
 			children = (
+				525C5C002B88BE0900287B61 /* Controllers */,
+				525C5BFF2B88BDD800287B61 /* Views */,
+				525C5BFE2B88BB7F00287B61 /* models */,
+				525C5BFD2B87887B00287B61 /* data-json */,
 				522307F62B861CAA007CE1A7 /* ScoreCounterApp.swift */,
 				522307F82B861CAA007CE1A7 /* ContentView.swift */,
 				522307FA2B861CAC007CE1A7 /* Assets.xcassets */,
 				522307FC2B861CAC007CE1A7 /* Preview Content */,
-				524B87702B864FA500DECBF9 /* Player.swift */,
-				524B87722B864FF300DECBF9 /* PlayerEditView.swift */,
-				524B87742B86579000DECBF9 /* PlayerRow.swift */,
-				524B87762B866BC700DECBF9 /* PlayerActionsView.swift */,
-				524B87782B866C6900DECBF9 /* PlayerFunctions.swift */,
-				524B877A2B86731500DECBF9 /* LandingPageView.swift */,
-				525C5BF02B86B9F700287B61 /* FileLoader.swift */,
-				525C5BF22B86BA7E00287B61 /* data.json */,
 			);
 			path = ScoreCounter;
 			sourceTree = "<group>";
@@ -175,6 +173,43 @@
 			children = (
 			);
 			path = assets;
+			sourceTree = "<group>";
+		};
+		525C5BFD2B87887B00287B61 /* data-json */ = {
+			isa = PBXGroup;
+			children = (
+				525C5BF22B86BA7E00287B61 /* data.json */,
+			);
+			path = "data-json";
+			sourceTree = "<group>";
+		};
+		525C5BFE2B88BB7F00287B61 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				524B87702B864FA500DECBF9 /* Player.swift */,
+				525C5BF02B86B9F700287B61 /* FileLoader.swift */,
+				525C5C012B88BFFE00287B61 /* Deck.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		525C5BFF2B88BDD800287B61 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				524B87722B864FF300DECBF9 /* PlayerEditView.swift */,
+				524B87762B866BC700DECBF9 /* PlayerActionsView.swift */,
+				524B87742B86579000DECBF9 /* PlayerRow.swift */,
+				524B877A2B86731500DECBF9 /* LandingPageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		525C5C002B88BE0900287B61 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				524B87782B866C6900DECBF9 /* PlayerFunctions.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,6 +353,7 @@
 			files = (
 				522307F92B861CAA007CE1A7 /* ContentView.swift in Sources */,
 				524B87732B864FF300DECBF9 /* PlayerEditView.swift in Sources */,
+				525C5C022B88BFFE00287B61 /* Deck.swift in Sources */,
 				524B87712B864FA500DECBF9 /* Player.swift in Sources */,
 				524B87772B866BC700DECBF9 /* PlayerActionsView.swift in Sources */,
 				524B87752B86579000DECBF9 /* PlayerRow.swift in Sources */,

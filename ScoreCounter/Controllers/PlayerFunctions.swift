@@ -13,11 +13,11 @@ struct ListData: Codable {
 }
 extension ContentView {
     public func removeAllPlayers(){
-        players = []
+        deck.players = []
         vibratePhone()
     }
     public func addPlayer() {
-        var name:String = "Player \(players.count)"
+        var name:String = "Player \(deck.players.count)"
         if let listData = loadListFromJSON() {
             // Access the list of strings
             let items = listData.items
@@ -31,14 +31,14 @@ extension ContentView {
             print("Failed to load JSON data.")
         }
         let newPlayer = Player(title: name, score: 0, color: getRandomColor())
-        players.append(newPlayer)
+        deck.players.append(newPlayer)
         vibratePhone()
         // Show notification after adding a player
                showNotification(name: name)
         }
     private func showNotification(name: String) {
         let image = UIImageView(image: UIImage(systemName: "gamecontroller.fill"))
-        NotificationPresenter.shared.present(name, subtitle: "Added succesfully!",duration:15)
+        NotificationPresenter.shared.present(name, subtitle: "Added succesfully!",duration:1)
         NotificationPresenter.shared.displayLeftView(image)
        }
     func loadListFromJSON() -> ListData? {
@@ -59,11 +59,11 @@ extension ContentView {
     }
 
     public func updateScore(_ playerId: UUID, increment: Bool, amount: Int? = 1) {
-        if let playerIndex = players.firstIndex(where: { $0.id == playerId }) {
+        if let playerIndex = deck.players.firstIndex(where: { $0.id == playerId }) {
             if increment {
-                players[playerIndex].score += amount ?? 1
+                deck.players[playerIndex].score += amount ?? deck.increment
             } else {
-                players[playerIndex].score -= amount ?? 1
+                deck.players[playerIndex].score -= amount ?? deck.increment
             }
             vibratePhone()
         }
@@ -79,8 +79,8 @@ extension ContentView {
             return
         }
 
-        if let index = players.firstIndex(where: { $0.id == player.id }) {
-            players.remove(at: index)
+        if let index = deck.players.firstIndex(where: { $0.id == player.id }) {
+            deck.players.remove(at: index)
         }
     }
     public func vibratePhone() {

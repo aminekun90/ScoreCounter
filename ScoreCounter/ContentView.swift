@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State public var players: [Player] = []
+    @State public var deck = Deck()
     @State private var selectedPlayer: Player? = nil
     let horizontalMargin: CGFloat = 10
     @State private var isShowingDialog = false
@@ -17,12 +17,12 @@ struct ContentView: View {
         NavigationView {
             ScrollView {
                 VStack(spacing: 10) {
-                    PlayerActionsView(players: $players, isShowingDialog: $isShowingDialog, addPlayer: addPlayer,removeAllPlayers:removeAllPlayers)
-                    if(players.count==0)
+                    PlayerActionsView(players: $deck.players, isShowingDialog: $isShowingDialog, addPlayer: addPlayer,removeAllPlayers:removeAllPlayers)
+                    if(deck.players.count==0)
                     {
                         LandingPageView(addPlayer: addPlayer)
                     }
-                    ForEach(players) { player in
+                    ForEach(deck.players) { player in
                         PlayerRow(player: player, horizontalMargin: horizontalMargin, updateScore: updateScore, selectedPlayer: $selectedPlayer)
                     }
                 }
@@ -31,7 +31,7 @@ struct ContentView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
             .background()
             .sheet(item: $selectedPlayer) { player in
-                PlayerEditView(players: $players, selectedPlayer: $selectedPlayer,removePlayer: removePlayer)
+                PlayerEditView(players: $deck.players, selectedPlayer: $selectedPlayer,removePlayer: removePlayer)
             }
         }
     }
