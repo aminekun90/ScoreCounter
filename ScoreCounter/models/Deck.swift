@@ -12,6 +12,6 @@ struct Deck {
     var winningScore:Int = 42
     var increment:Int = 1
     var enableWinningScore:Bool = true
-    var enableWinning:Bool = true
+    var enableWinningAnimation:Bool = true
     var players:[Player] = []
 }

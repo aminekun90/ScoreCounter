@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-
 struct PlayerRow: View {
     var player: Player
     var horizontalMargin: CGFloat
@@ -33,8 +32,9 @@ struct PlayerRow: View {
             }) {
                 Image(systemName: "minus")
                     .imageScale(.large)
+                    .padding(10) // Add padding to the button
             }
-            .padding(.trailing, 10)
+            .contentShape(Rectangle()) // Make the button tappable outside the image
             .contextMenu {
                 menuItems(incrementAction: false)
             }
@@ -47,8 +47,9 @@ struct PlayerRow: View {
             }) {
                 Image(systemName: "plus")
                     .imageScale(.large)
+                    .padding(10) // Add padding to the button
             }
-            .padding(.leading, 10)
+            .contentShape(Rectangle()) // Make the button tappable outside the image
             .contextMenu {
                 menuItems(incrementAction: true)
             }
@@ -73,4 +74,3 @@ struct PlayerRow: View {
         }
     }
 }
-

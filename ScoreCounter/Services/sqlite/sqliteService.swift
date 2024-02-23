@@ -13,13 +13,21 @@ class SqliteService {
     private var migManager:SQLiteMigrationManager!
     init (){
         do{
-            print("Connection to SQLite...")
-            if let path = Bundle.main.path(forResource: "db", ofType: "sqlite") {
-                self.db = try Connection(path)
-                self.migrate()
-            } else {
-                print("Database file not found.")
+            let fileManager = FileManager.default
+
+            let dbPath = try fileManager
+                .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+                .appendingPathComponent("db.sqlite")
+                .path
+
+            if !fileManager.fileExists(atPath: dbPath) {
+                let dbResourcePath = Bundle.main.path(forResource: "db", ofType: "sqlite")!
+                try fileManager.copyItem(atPath: dbResourcePath, toPath: dbPath)
             }
+            print("Connection to SQLite...")
+            self.db = try Connection(dbPath)
+            self.migrate()
+            
             print("Connection successfull")
         }catch{
             print(error)

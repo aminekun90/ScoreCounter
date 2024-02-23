@@ -8,31 +8,34 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    @State public var deck = Deck()
+    @State var deck = Deck()
     @State private var selectedPlayer: Player? = nil
     let horizontalMargin: CGFloat = 10
     @State private var isShowingDialog = false
     let sqliteService = SqliteService()
+
     var body: some View {
         NavigationView {
-            ScrollView {
-                VStack(spacing: 10) {
-                    PlayerActionsView(players: $deck.players, isShowingDialog: $isShowingDialog, addPlayer: addPlayer,removeAllPlayers:removeAllPlayers)
-                    if(deck.players.count==0)
-                    {
-                        LandingPageView(addPlayer: addPlayer)
+            ZStack(alignment: .bottom) {
+                ScrollView {
+                    VStack(spacing: 10) {
+                        PlayerActionsView(players: $deck.players, isShowingDialog: $isShowingDialog, addPlayer: addPlayer, removeAllPlayers: removeAllPlayers)
+                        if deck.players.isEmpty {
+                            LandingPageView(addPlayer: addPlayer)
+                        }
+                        ForEach(deck.players) { player in
+                            PlayerRow(player: player, horizontalMargin: horizontalMargin, updateScore: updateScore, selectedPlayer: $selectedPlayer)
+                        }
                     }
-                    ForEach(deck.players) { player in
-                        PlayerRow(player: player, horizontalMargin: horizontalMargin, updateScore: updateScore, selectedPlayer: $selectedPlayer)
-                    }
+                    .padding(.horizontal, horizontalMargin)
                 }
-                .padding(.horizontal, horizontalMargin)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+                .background(Color.white) // Set the background color as needed
+
+                BottomTaskBar()
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-            .background()
             .sheet(item: $selectedPlayer) { player in
-                PlayerEditView(players: $deck.players, selectedPlayer: $selectedPlayer,removePlayer: removePlayer)
+                PlayerEditView(players: $deck.players, selectedPlayer: $selectedPlayer, removePlayer: removePlayer)
             }
         }
     }

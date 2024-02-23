@@ -30,6 +30,8 @@
 		525C5C082B88CE7E00287B61 /* sqliteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C072B88CE7E00287B61 /* sqliteService.swift */; };
 		525C5C0B2B88EDAA00287B61 /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 525C5C0A2B88EDAA00287B61 /* db.sqlite */; };
 		525C5C0F2B88F33500287B61 /* SQLiteMigrationManager in Frameworks */ = {isa = PBXBuildFile; productRef = 525C5C0E2B88F33500287B61 /* SQLiteMigrationManager */; };
+		525C5C122B89333100287B61 /* AppOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C112B89333100287B61 /* AppOptions.swift */; };
+		525C5C142B89362400287B61 /* BottomTaskBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C132B89362400287B61 /* BottomTaskBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		525C5C012B88BFFE00287B61 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		525C5C072B88CE7E00287B61 /* sqliteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sqliteService.swift; sourceTree = "<group>"; };
 		525C5C0A2B88EDAA00287B61 /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = text; path = db.sqlite; sourceTree = "<group>"; };
+		525C5C112B89333100287B61 /* AppOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOptions.swift; sourceTree = "<group>"; };
+		525C5C132B89362400287B61 /* BottomTaskBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTaskBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +202,7 @@
 			children = (
 				524B87702B864FA500DECBF9 /* Player.swift */,
 				525C5C012B88BFFE00287B61 /* Deck.swift */,
+				525C5C112B89333100287B61 /* AppOptions.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -209,6 +214,7 @@
 				524B87762B866BC700DECBF9 /* PlayerActionsView.swift */,
 				524B87742B86579000DECBF9 /* PlayerRow.swift */,
 				524B877A2B86731500DECBF9 /* LandingPageView.swift */,
+				525C5C132B89362400287B61 /* BottomTaskBarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -406,8 +412,10 @@
 				524B87772B866BC700DECBF9 /* PlayerActionsView.swift in Sources */,
 				524B87752B86579000DECBF9 /* PlayerRow.swift in Sources */,
 				524B877B2B86731600DECBF9 /* LandingPageView.swift in Sources */,
+				525C5C122B89333100287B61 /* AppOptions.swift in Sources */,
 				525C5BF12B86B9F800287B61 /* FileLoader.swift in Sources */,
 				522307F72B861CAA007CE1A7 /* ScoreCounterApp.swift in Sources */,
+				525C5C142B89362400287B61 /* BottomTaskBarView.swift in Sources */,
 				524B87792B866C6900DECBF9 /* PlayerFunctions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

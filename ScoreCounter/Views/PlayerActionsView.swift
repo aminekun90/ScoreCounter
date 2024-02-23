@@ -22,7 +22,7 @@ struct PlayerActionsView: View {
                 Image(systemName: "trash")
                     .imageScale(.large)
                     .padding()
-                    .foregroundColor(colorScheme == .dark ? .white : .black)
+                    .foregroundColor(.red)
                     .clipShape(RoundedRectangle(cornerRadius: 5))
             }
             .disabled(players.isEmpty)
