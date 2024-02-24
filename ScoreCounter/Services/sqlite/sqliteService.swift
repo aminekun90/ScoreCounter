@@ -33,21 +33,48 @@ class SqliteService {
             print(error)
         }
     }
-    private func migrate (){
-        do{
+    
+    private func migrate() {
+        do {
             print("Migration init...")
-            self.migManager = SQLiteMigrationManager(db: self.db,migrations: [])
-            
+            self.migManager = SQLiteMigrationManager(db: self.db, migrations: [SeedDb()])
+
             if !migManager.hasMigrationsTable() {
-              try migManager.createMigrationsTable()
+                try migManager.createMigrationsTable()
                 print("Migration table created")
-            } else {
-                print("No migration needed")
             }
+
+            // Print migration status
+            print("hasMigrationsTable() \(self.migManager.hasMigrationsTable())")
+            print("currentVersion()     \(self.migManager.currentVersion())")
+            print("originVersion()      \(self.migManager.originVersion())")
+            print("appliedVersions()    \(self.migManager.appliedVersions())")
+            print("pendingMigrations()  \(self.migManager.pendingMigrations())")
+            print("needsMigration()     \(self.migManager.needsMigration())")
+
+            // Apply pending migrations
+            try migManager.migrateDatabase()
+            print("Migrations applied")
+
+        } catch {
+            print(error)
+        }
+    }
+    public func loadAppsettings()->AppSettings{
+        let appSettings = AppSettings()
+        let settings = Table("settings")
+        do{
+            for setting in try db.prepare(settings) {
+                    print("\(setting)")
+                
+            }
+            
         }catch{
             print(error)
         }
-       
+        
+        
+        return appSettings;
     }
     
     

@@ -14,26 +14,27 @@ enum Page {
 
 struct ContentView: View {
     @State var currentPage:Page = Page.counter
+    @State private var appSettings = AppSettings()
     
-    let sqliteService = SqliteService()
-
+    
     var body: some View {
         NavigationView {
             ZStack(alignment: .bottom) {
+                
                 switch currentPage {
                 case .counter:
                     PlayersView()
                 case .dice:
+                    
                     ScrollView {
                         
-                        Text("Dice")
+                        Text("Coming soon")
                     }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
                 case .settings:
-                    ScrollView {
-                        Text("Settings")
-                    }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+                    
+                        SettingsView(settings: $appSettings)
+                    
                 }
-                
                 
                 BottomTaskBar(currentPage: $currentPage)
             }
