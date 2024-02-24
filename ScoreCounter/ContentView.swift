@@ -12,6 +12,18 @@ enum Page {
     case settings
 }
 
+struct GameViewWrapper: UIViewControllerRepresentable {
+    typealias UIViewControllerType = GameViewController
+
+    func makeUIViewController(context: Context) -> GameViewController {
+        return GameViewController()
+    }
+
+    func updateUIViewController(_ uiViewController: GameViewController, context: Context) {
+        // Update any properties or handle updates here
+    }
+}
+
 struct ContentView: View {
     @State var currentPage:Page = Page.counter
     @State private var appSettings = AppSettings()
@@ -25,17 +37,10 @@ struct ContentView: View {
                 case .counter:
                     PlayersView()
                 case .dice:
-                    
-                    ScrollView {
-                        
-                        Text("Coming soon")
-                    }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+                    GameViewWrapper()
                 case .settings:
-                    
-                        SettingsView(settings: $appSettings)
-                    
+                    SettingsView(settings: $appSettings)
                 }
-                
                 BottomTaskBar(currentPage: $currentPage)
             }
         }

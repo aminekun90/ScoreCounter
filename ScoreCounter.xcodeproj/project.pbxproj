@@ -35,6 +35,18 @@
 		525C5C162B89424C00287B61 /* PlayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C152B89424C00287B61 /* PlayersView.swift */; };
 		525C5C182B89560C00287B61 /* settingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C172B89560C00287B61 /* settingsView.swift */; };
 		525C5C1A2B8956A400287B61 /* SeedDb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C192B8956A400287B61 /* SeedDb.swift */; };
+		525C5C1C2B89F35E00287B61 /* DiceRepresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C1B2B89F35E00287B61 /* DiceRepresentationModel.swift */; };
+		525C5C1E2B89F37B00287B61 /* DiceSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C1D2B89F37B00287B61 /* DiceSide.swift */; };
+		525C5C212B89F41D00287B61 /* SceneCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C202B89F41D00287B61 /* SceneCreator.swift */; };
+		525C5C242B89F49300287B61 /* CGPoint+Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C232B89F49300287B61 /* CGPoint+Distance.swift */; };
+		525C5C262B89F4AB00287B61 /* SKScene+ClosestChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C252B89F4AB00287B61 /* SKScene+ClosestChild.swift */; };
+		525C5C282B89F4D700287B61 /* SKTexture+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C272B89F4D700287B61 /* SKTexture+Gradient.swift */; };
+		525C5C2A2B89F4F400287B61 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C292B89F4F400287B61 /* UIView.swift */; };
+		525C5C2D2B89F52B00287B61 /* ShakeDetectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C2C2B89F52B00287B61 /* ShakeDetectable.swift */; };
+		525C5C312B89F5DA00287B61 /* DiceNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C302B89F5DA00287B61 /* DiceNode.swift */; };
+		525C5C332B89F60C00287B61 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C322B89F60C00287B61 /* GameScene.swift */; };
+		525C5C352B89F63600287B61 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C342B89F63600287B61 /* GameViewController.swift */; };
+		525C5C372B89FE8C00287B61 /* dice_roll.wav in Resources */ = {isa = PBXBuildFile; fileRef = 525C5C362B89FE8C00287B61 /* dice_roll.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +96,18 @@
 		525C5C152B89424C00287B61 /* PlayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersView.swift; sourceTree = "<group>"; };
 		525C5C172B89560C00287B61 /* settingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsView.swift; sourceTree = "<group>"; };
 		525C5C192B8956A400287B61 /* SeedDb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedDb.swift; sourceTree = "<group>"; };
+		525C5C1B2B89F35E00287B61 /* DiceRepresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceRepresentationModel.swift; sourceTree = "<group>"; };
+		525C5C1D2B89F37B00287B61 /* DiceSide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceSide.swift; sourceTree = "<group>"; };
+		525C5C202B89F41D00287B61 /* SceneCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCreator.swift; sourceTree = "<group>"; };
+		525C5C232B89F49300287B61 /* CGPoint+Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Distance.swift"; sourceTree = "<group>"; };
+		525C5C252B89F4AB00287B61 /* SKScene+ClosestChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKScene+ClosestChild.swift"; sourceTree = "<group>"; };
+		525C5C272B89F4D700287B61 /* SKTexture+Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTexture+Gradient.swift"; sourceTree = "<group>"; };
+		525C5C292B89F4F400287B61 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		525C5C2C2B89F52B00287B61 /* ShakeDetectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeDetectable.swift; sourceTree = "<group>"; };
+		525C5C302B89F5DA00287B61 /* DiceNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceNode.swift; sourceTree = "<group>"; };
+		525C5C322B89F60C00287B61 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		525C5C342B89F63600287B61 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		525C5C362B89FE8C00287B61 /* dice_roll.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dice_roll.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +165,8 @@
 		522307F52B861CAA007CE1A7 /* ScoreCounter */ = {
 			isa = PBXGroup;
 			children = (
+				525C5C382B89FE9400287B61 /* Resources */,
+				525C5C2E2B89F57F00287B61 /* Dice */,
 				525C5C0C2B88EE0A00287B61 /* Services */,
 				525C5C092B88ED8500287B61 /* data-sqlite */,
 				525C5C002B88BE0900287B61 /* Controllers */,
@@ -269,6 +295,64 @@
 			path = migrations;
 			sourceTree = "<group>";
 		};
+		525C5C1F2B89F40600287B61 /* SharedKIt */ = {
+			isa = PBXGroup;
+			children = (
+				525C5C202B89F41D00287B61 /* SceneCreator.swift */,
+			);
+			path = SharedKIt;
+			sourceTree = "<group>";
+		};
+		525C5C222B89F47600287B61 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				525C5C232B89F49300287B61 /* CGPoint+Distance.swift */,
+				525C5C252B89F4AB00287B61 /* SKScene+ClosestChild.swift */,
+				525C5C272B89F4D700287B61 /* SKTexture+Gradient.swift */,
+				525C5C292B89F4F400287B61 /* UIView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		525C5C2B2B89F51100287B61 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				525C5C2C2B89F52B00287B61 /* ShakeDetectable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		525C5C2E2B89F57F00287B61 /* Dice */ = {
+			isa = PBXGroup;
+			children = (
+				525C5C1F2B89F40600287B61 /* SharedKIt */,
+				525C5C2F2B89F5A800287B61 /* Model */,
+				525C5C222B89F47600287B61 /* Extensions */,
+				525C5C2B2B89F51100287B61 /* Protocols */,
+				525C5C302B89F5DA00287B61 /* DiceNode.swift */,
+				525C5C322B89F60C00287B61 /* GameScene.swift */,
+				525C5C342B89F63600287B61 /* GameViewController.swift */,
+			);
+			path = Dice;
+			sourceTree = "<group>";
+		};
+		525C5C2F2B89F5A800287B61 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				525C5C1B2B89F35E00287B61 /* DiceRepresentationModel.swift */,
+				525C5C1D2B89F37B00287B61 /* DiceSide.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		525C5C382B89FE9400287B61 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				525C5C362B89FE8C00287B61 /* dice_roll.wav */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -384,6 +468,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				525C5BF82B876FFF00287B61 /* .gitignore in Resources */,
+				525C5C372B89FE8C00287B61 /* dice_roll.wav in Resources */,
 				525C5C0B2B88EDAA00287B61 /* db.sqlite in Resources */,
 				522307FE2B861CAC007CE1A7 /* Preview Assets.xcassets in Resources */,
 				525C5BF32B86BA7E00287B61 /* data.json in Resources */,
@@ -413,18 +498,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				525C5C312B89F5DA00287B61 /* DiceNode.swift in Sources */,
 				525C5C182B89560C00287B61 /* settingsView.swift in Sources */,
 				522307F92B861CAA007CE1A7 /* ContentView.swift in Sources */,
 				524B87732B864FF300DECBF9 /* PlayerEditView.swift in Sources */,
+				525C5C242B89F49300287B61 /* CGPoint+Distance.swift in Sources */,
 				525C5C022B88BFFE00287B61 /* Deck.swift in Sources */,
+				525C5C212B89F41D00287B61 /* SceneCreator.swift in Sources */,
 				525C5C082B88CE7E00287B61 /* sqliteService.swift in Sources */,
+				525C5C332B89F60C00287B61 /* GameScene.swift in Sources */,
+				525C5C2A2B89F4F400287B61 /* UIView.swift in Sources */,
+				525C5C282B89F4D700287B61 /* SKTexture+Gradient.swift in Sources */,
+				525C5C1E2B89F37B00287B61 /* DiceSide.swift in Sources */,
 				524B87712B864FA500DECBF9 /* Player.swift in Sources */,
+				525C5C352B89F63600287B61 /* GameViewController.swift in Sources */,
 				525C5C1A2B8956A400287B61 /* SeedDb.swift in Sources */,
 				525C5C162B89424C00287B61 /* PlayersView.swift in Sources */,
 				524B87772B866BC700DECBF9 /* PlayerActionsView.swift in Sources */,
 				524B87752B86579000DECBF9 /* PlayerRow.swift in Sources */,
+				525C5C1C2B89F35E00287B61 /* DiceRepresentationModel.swift in Sources */,
 				524B877B2B86731600DECBF9 /* LandingPageView.swift in Sources */,
+				525C5C2D2B89F52B00287B61 /* ShakeDetectable.swift in Sources */,
 				525C5C122B89333100287B61 /* AppSettings.swift in Sources */,
+				525C5C262B89F4AB00287B61 /* SKScene+ClosestChild.swift in Sources */,
 				525C5BF12B86B9F800287B61 /* FileLoader.swift in Sources */,
 				522307F72B861CAA007CE1A7 /* ScoreCounterApp.swift in Sources */,
 				525C5C142B89362400287B61 /* BottomTaskBarView.swift in Sources */,
