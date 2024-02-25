@@ -27,11 +27,13 @@ extension AppAppearance: Value {
         return rawValue
     }
 }
+
 public class AppSettings {
+    var id: Int64 = 1 // Assuming the default id = 1
     var vibrate:Bool = true
     var keepScreenOn:Bool = true
     var appearance:AppAppearance = AppAppearance.system
-    var increments:[Int]=[5,10,15,30]
+    var increments: IncrementsArray = IncrementsArray(values: [1, 5, 10])
     
     var appVersion:String!
     

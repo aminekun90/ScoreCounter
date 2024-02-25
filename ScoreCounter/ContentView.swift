@@ -25,30 +25,30 @@ struct GameViewWrapper: UIViewControllerRepresentable {
 }
 
 struct ContentView: View {
-    @State var currentPage:Page = Page.counter
-    @State private var appSettings = AppSettings()
-    
-    
+    @State var currentPage: Page = Page.counter
+    @Environment(\.colorScheme) var colorScheme
     var body: some View {
         NavigationView {
             ZStack(alignment: .bottom) {
-                
                 switch currentPage {
                 case .counter:
                     PlayersView()
                 case .dice:
                     GameViewWrapper()
                 case .settings:
-                    SettingsView(settings: $appSettings)
+                    SettingsView(settingsController: SettingsController.shared)
                 }
                 BottomTaskBar(currentPage: $currentPage)
             }
         }
     }
+   
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
+

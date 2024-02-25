@@ -47,6 +47,7 @@
 		525C5C332B89F60C00287B61 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C322B89F60C00287B61 /* GameScene.swift */; };
 		525C5C352B89F63600287B61 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C342B89F63600287B61 /* GameViewController.swift */; };
 		525C5C372B89FE8C00287B61 /* dice_roll.wav in Resources */ = {isa = PBXBuildFile; fileRef = 525C5C362B89FE8C00287B61 /* dice_roll.wav */; };
+		525C5C3A2B8A23D400287B61 /* DataController+SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C392B8A23D400287B61 /* DataController+SettingsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		525C5C322B89F60C00287B61 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		525C5C342B89F63600287B61 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		525C5C362B89FE8C00287B61 /* dice_roll.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dice_roll.wav; sourceTree = "<group>"; };
+		525C5C392B8A23D400287B61 /* DataController+SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataController+SettingsController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +260,7 @@
 			children = (
 				525C5BF02B86B9F700287B61 /* FileLoader.swift */,
 				524B87782B866C6900DECBF9 /* PlayerFunctions.swift */,
+				525C5C392B8A23D400287B61 /* DataController+SettingsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				525C5C1C2B89F35E00287B61 /* DiceRepresentationModel.swift in Sources */,
 				524B877B2B86731600DECBF9 /* LandingPageView.swift in Sources */,
 				525C5C2D2B89F52B00287B61 /* ShakeDetectable.swift in Sources */,
+				525C5C3A2B8A23D400287B61 /* DataController+SettingsController.swift in Sources */,
 				525C5C122B89333100287B61 /* AppSettings.swift in Sources */,
 				525C5C262B89F4AB00287B61 /* SKScene+ClosestChild.swift in Sources */,
 				525C5BF12B86B9F800287B61 /* FileLoader.swift in Sources */,

@@ -22,7 +22,7 @@ struct LandingPageView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             
             Text("Click on the \"+\" at the top right to add a new player ")
-                .foregroundColor(colorScheme == .dark ? .white : .black)
+                .foregroundColor( colorScheme == .dark ? .white : .black)
                 .multilineTextAlignment(.center)
                 .padding()
             

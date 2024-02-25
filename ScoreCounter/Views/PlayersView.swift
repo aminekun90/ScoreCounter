@@ -10,13 +10,14 @@ import SwiftUI
 
 struct PlayersView:View {
     @State public var deck = Deck()
+    @State private var isShowingDialog = false
     @State private var selectedPlayer: Player? = nil
     let horizontalMargin: CGFloat = 10
-    @State private var isShowingDialog = false
+   
     var body: some View{
         ScrollView {
-            VStack(spacing: 10) {
-                PlayerActionsView(deck: $deck, isShowingDialog: $isShowingDialog, addPlayer: addPlayer, removeAllPlayers: removeAllPlayers)
+            VStack() {
+                PlayerActionsView(deck: $deck, isShowingDialog: $isShowingDialog, addPlayer: addPlayer, removeAllPlayers: removeAllPlayers,changeWinningLogic:changeWinningLogic)
                 if deck.players.isEmpty {
                     LandingPageView(deck: $deck,addPlayer: addPlayer)
                 }
@@ -24,9 +25,9 @@ struct PlayersView:View {
                     PlayerRow(deck:$deck,player: player, horizontalMargin: horizontalMargin, updateScore: updateScore, selectedPlayer: $selectedPlayer)
                 }
             }
-            .padding(.horizontal, horizontalMargin)
+            
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+        
         
         .sheet(item: $selectedPlayer) { player in
             PlayerEditView(deck:$deck, selectedPlayer: $selectedPlayer, removePlayer: removePlayer)

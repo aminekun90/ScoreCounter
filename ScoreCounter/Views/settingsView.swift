@@ -7,46 +7,59 @@
 
 import Foundation
 import SwiftUI
-
 struct SettingsView: View {
-    @Binding var settings: AppSettings
-
+    @ObservedObject var settingsController: SettingsController
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("Appearance")) {
-                    Picker("Appearance", selection: $settings.appearance) {
+                    Picker("Appearance", selection: $settingsController.appSettings.appearance) {
                         Text("Dark Mode").tag(AppAppearance.dark)
                         Text("Light Mode").tag(AppAppearance.light)
                         Text("System").tag(AppAppearance.system)
                     }
                     .pickerStyle(SegmentedPickerStyle())
                 }
-
+                
                 Section(header: Text("Preferences")) {
-                    Toggle("Vibrate Phone", isOn: $settings.vibrate)
-                    Toggle("Keep Screen On", isOn: $settings.keepScreenOn)
+                    Toggle("Vibrate Phone", isOn: $settingsController.appSettings.vibrate)
+                    Toggle("Keep Screen On", isOn: $settingsController.appSettings.keepScreenOn)
                 }
-
+                
                 Section(header: Text("Score Increments")) {
-                    TextField("Increment Value 1", value: $settings.increments[0], formatter: NumberFormatter())
-                    TextField("Increment Value 2", value: $settings.increments[1], formatter: NumberFormatter())
-                    TextField("Increment Value 3", value: $settings.increments[2], formatter: NumberFormatter())
+                    TextField("Increment Value 1", value: $settingsController.appSettings.increments.values[0], formatter: NumberFormatter())
+                        .keyboardType(.numberPad)
+                    TextField("Increment Value 2", value: $settingsController.appSettings.increments.values[1], formatter: NumberFormatter())
+                        .keyboardType(.numberPad)
+                    TextField("Increment Value 3", value: $settingsController.appSettings.increments.values[2], formatter: NumberFormatter())
+                        .keyboardType(.numberPad)
                 }
+                
             }
             .navigationTitle("Settings")
+            .navigationBarItems(trailing: Button(action: {
+                saveSettings()
+                showNotification(name: "Setttings", subtitle: "Saved successfully!",icon:UIImage(systemName: "gear"))
+            }) {
+                HStack{
+                    Text("Save")
+                    Image(systemName: "square.and.arrow.down.fill")
+                        .imageScale(.large)
+                }
+                
+            })
         }
     }
-    private func loadSettings() {
-           // Use the same logic you have to load settings
-           let sqliteService = SqliteService()
-           settings = sqliteService.loadAppsettings()
-       }
+    
+    private func saveSettings() {
+        settingsController.saveSettings()
+    }
 }
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        let sqliteService = SqliteService()
-        SettingsView(settings: .constant(sqliteService.loadAppsettings()))
+         let dataController = DataController()
+         let settingsController = SettingsController(dataController: dataController)
+        SettingsView(settingsController: settingsController)
     }
 }
