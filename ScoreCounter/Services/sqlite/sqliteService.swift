@@ -9,7 +9,7 @@ import Foundation
 import SQLite
 import SQLiteMigrationManager
 class SqliteService {
-    static let sharedSqliteService = SqliteService()
+    static let shared = SqliteService()
     private var db:Connection!
     private var migManager:SQLiteMigrationManager!
     private var dbPath:String!

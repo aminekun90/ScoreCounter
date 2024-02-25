@@ -13,7 +13,6 @@ struct BottomTaskBar: View {
     var body: some View {
         HStack {
             Button(action: {
-                // Handle left button action
                 currentPage = Page.counter
             }) {
                 Text("123")
@@ -23,7 +22,6 @@ struct BottomTaskBar: View {
             Spacer()
 
             Button(action: {
-                // Handle middle button action
                 currentPage = Page.dice
             }) {
                 Image(systemName: "dice")
@@ -34,7 +32,6 @@ struct BottomTaskBar: View {
             Spacer()
 
             Button(action: {
-                // Handle right button action
                 currentPage = Page.settings
             }) {
                 Image(systemName: "gear")

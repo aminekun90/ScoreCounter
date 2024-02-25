@@ -9,14 +9,12 @@ import SwiftUI
 
 struct LandingPageView: View {
     @Environment(\.colorScheme) var colorScheme
-    @Binding var deck:Deck
-    var addPlayer: (inout Deck) -> Void
+    @ObservedObject var deckController = DeckController.shared
     var body: some View {
         VStack {
-            Spacer() // Push the content to the top
+            Spacer()
             
-            // Your logo image
-            Image("calcicon") // Replace with the actual name of your image asset
+            Image("calcicon")
                 .resizable()
                 .aspectRatio(contentMode: .fill) // Set aspectRatio to .fill
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -26,12 +24,12 @@ struct LandingPageView: View {
                 .multilineTextAlignment(.center)
                 .padding()
             
-            Button("Add new Player",action:{addPlayer(&deck)})
-            Spacer() // Push the content to the bottom
-            
-            // Any other content you want to include
+            Button("Add new Player",action:{
+                deckController.addPlayer()
+            })
+            Spacer()
         }
-        .edgesIgnoringSafeArea(.all) // Ignore safe area to cover the entire screen
+        .edgesIgnoringSafeArea(.all)
     }
 }
 

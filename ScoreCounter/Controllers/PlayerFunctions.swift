@@ -12,30 +12,8 @@ struct ListData: Codable {
     var items: [String]
 }
 
-public func removeAllPlayers(deck: inout Deck){
-    deck.players = []
-    vibratePhone()
-}
-public func addPlayer(deck: inout Deck) {
-    var name:String = "Player \(deck.players.count)"
-    if let listData = loadListFromJSON() {
-        // Access the list of strings
-        let items = listData.items
-        if let randomItem = items.randomElement() {
-            print("Randomly selected item: \(randomItem)")
-            name = String(randomItem)
-        } else {
-            print("List is empty.")
-        }
-    } else {
-        print("Failed to load JSON data.")
-    }
-    let newPlayer = Player(title: name, score: 0, color: getRandomColor())
-    deck.players.append(newPlayer)
-    vibratePhone()
-    // Show notification after adding a player
-    showNotification(name: name,subtitle: "Added succesfully!",icon:UIImage(systemName: "gamecontroller.fill")!)
-}
+
+
 public func showNotification(name: String,subtitle:String,icon:UIImage?) {
     let image = icon != nil ? UIImageView(image: icon):nil
     NotificationPresenter.shared.present(name, subtitle: subtitle,duration:1)
@@ -60,32 +38,13 @@ func loadListFromJSON() -> ListData? {
     }
 }
 
-public func updateScore(deck: inout Deck,_ playerId: UUID, increment: Bool, amount: Int? = 1) {
-    if let playerIndex = deck.players.firstIndex(where: { $0.id == playerId }) {
-        if increment {
-            deck.players[playerIndex].score += amount ?? deck.increment
-        } else {
-            deck.players[playerIndex].score -= amount ?? deck.increment
-        }
-        vibratePhone()
-    }
-}
+
 
 public func getRandomColor() -> Color {
     let colors: [Color] = [.red, .green, .blue, .orange, .purple, .yellow, .pink, .teal,.indigo,.brown]
     return colors.randomElement() ?? .blue
 }
 
-public func removePlayer(deck: inout Deck,_ player: Player?) {
-    guard let player = player else {
-        return
-    }
-    
-    if let index = deck.players.firstIndex(where: { $0.id == player.id }) {
-        deck.players.remove(at: index)
-        vibratePhone()
-    }
-}
 public func vibratePhone() {
     if(SettingsController.shared.appSettings.vibrate){
         let feedbackGenerator = UINotificationFeedbackGenerator()
@@ -93,7 +52,3 @@ public func vibratePhone() {
     }
 }
 
-public func changeWinningLogic(deck: inout Deck) {
-    deck.winingLogic = (deck.winingLogic == .normal) ? .inverted : .normal
-    showNotification(name: "Winning logic", subtitle: "changed", icon:UIImage(systemName: "medal")!)
-}

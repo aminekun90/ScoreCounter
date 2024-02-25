@@ -4,17 +4,19 @@
 //
 //  Created by Amine Bouzahar on 24/02/2024.
 //
-
 import Foundation
+import SpriteKit
+import SwiftUI
+
 class DataController: ObservableObject {
     @Published var appSettings: AppSettings
-    
+    static var shared = DataController()
     init() {
-        appSettings = SqliteService.sharedSqliteService.loadAppSettings()
+        appSettings = SqliteService.shared.loadAppSettings()
     }
     
     func saveSettings() {
-        SqliteService.sharedSqliteService.saveAppSettings(appSettings: appSettings)
+        SqliteService.shared.saveAppSettings(appSettings: appSettings)
     }
     
     // Add other data-related functions here
@@ -23,16 +25,22 @@ class DataController: ObservableObject {
 class SettingsController: ObservableObject {
     @Published var appSettings: AppSettings
     var dataController: DataController
-    static var shared = SettingsController(dataController: DataController())
+    static var shared = SettingsController(dataController: DataController.shared)
     
     init(dataController: DataController) {
         self.dataController = dataController
         self.appSettings = dataController.appSettings
     }
     
-    func saveSettings() {
+    public func saveSettings() {
         dataController.saveSettings()
     }
-    
-    // Add other settings-related functions here
+    public func getAppearenceColor(shouldBe:Color)->Color{
+        let currentTraitCollection = UIScreen.main.traitCollection
+        let isDarkMode = currentTraitCollection.userInterfaceStyle == .dark
+        if (SettingsController.shared.appSettings.appearance == AppAppearance.light || !isDarkMode){
+            return shouldBe == .white ? .black:.white
+        }
+        return shouldBe
+    }
 }

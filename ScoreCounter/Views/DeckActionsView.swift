@@ -7,19 +7,24 @@
 
 import SwiftUI
 
-struct PlayerActionsView: View {
+struct DeckActionsView: View {
     @Environment(\.colorScheme) var colorScheme
-    @Binding var deck:Deck
+    @ObservedObject var deckController = DeckController.shared
     @Binding var isShowingDialog: Bool
-    var addPlayer: (inout Deck) -> Void
-    var removeAllPlayers:(inout Deck) -> Void
-    var changeWinningLogic:(inout Deck) -> Void
-    
+    @Binding var presentSideMenu:Bool
     var body: some View {
         VStack {
             HStack {
                 Button(action: {
-                    changeWinningLogic(&deck)
+                    presentSideMenu = !presentSideMenu
+                }) {
+                    Image(systemName: "gamecontroller")
+                        .imageScale(.large)
+                        .padding()
+                        .clipShape(RoundedRectangle(cornerRadius: 5))
+                }
+                Button(action: {
+                    deckController.changeWinningLogic()
                 }) {
                     Image(systemName: "party.popper")
                         .imageScale(.large)
@@ -27,7 +32,7 @@ struct PlayerActionsView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 5))
                 }
                 // Destructure the tuple returned by getWinnerName
-                let (winnerImage, winnerText) = deck.getWinnerName()
+                let (winnerImage, winnerText) = deckController.selectedDeck.getWinnerName()
                 
                 if let image = winnerImage {
                     Image(systemName: image)
@@ -39,21 +44,29 @@ struct PlayerActionsView: View {
                 Text(winnerText)
                 Spacer()
                 Button(action: {
-                    addPlayer(&deck)
+                    deckController.addPlayer()
                 }) {
+                    
                     Image(systemName: "plus")
                         .imageScale(.large)
                         .padding()
                         .clipShape(RoundedRectangle(cornerRadius: 5))
                 }
                 Menu {
-                    Button(role: .destructive) {
-                        print("I was called... and that's it")
-                        isShowingDialog = true
+                    Button(action: {
+                        deckController.resetAllScores()
+                    }) {
+                        Text("Reset Scores")
+                        Image(systemName: "arrow.clockwise")
+                            .imageScale(.large)
+                            .padding()
+                            .clipShape(RoundedRectangle(cornerRadius: 5))
                     }
-                label: {
-                    Label("Delete All", systemImage: "trash")
-                }.disabled(deck.players.isEmpty)
+                    Button(role: .destructive) {
+                        isShowingDialog = true
+                    } label: {
+                        Label("Delete All", systemImage: "trash")
+                    }.disabled(deckController.selectedDeck.players.isEmpty)
                 } label: {
                     Image(systemName: "ellipsis.circle")
                         .imageScale(.large)
@@ -66,32 +79,28 @@ struct PlayerActionsView: View {
                 ) {
                     Button("Yes", role: .destructive) {
                         
-                        removeAllPlayers(&deck)
-                        print("Remove all players")
+                        deckController.removeAllPlayers()
+                        print("Removed all players")
                     }
                     
                     Button("Cancel", role: .cancel) {}
                 }
             }
-            .background(Color.blue) // Set your preferred background color
-            .foregroundColor(.white) // Set your preferred text color
-            Spacer()
+            .background(Color.blue)
+            .foregroundColor(.white)
+            
+            
         }
-        
     }
 }
 
-struct PlayerActionsView_Previews: PreviewProvider {
-    @State static var deck = Deck()
+struct DeckActionsView_Previews: PreviewProvider {
     @State static var isShowingDialog = false
-    
+    @State static var presentSideMenu = false
     static var previews: some View {
-        PlayerActionsView(
-            deck: $deck,
+        DeckActionsView(
             isShowingDialog: $isShowingDialog,
-            addPlayer: { _ in },
-            removeAllPlayers: { _ in },
-            changeWinningLogic: { _ in }
+            presentSideMenu: $presentSideMenu
         )
     }
 }

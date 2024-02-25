@@ -17,7 +17,7 @@
 		524B87712B864FA500DECBF9 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B87702B864FA500DECBF9 /* Player.swift */; };
 		524B87732B864FF300DECBF9 /* PlayerEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B87722B864FF300DECBF9 /* PlayerEditView.swift */; };
 		524B87752B86579000DECBF9 /* PlayerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B87742B86579000DECBF9 /* PlayerRow.swift */; };
-		524B87772B866BC700DECBF9 /* PlayerActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B87762B866BC700DECBF9 /* PlayerActionsView.swift */; };
+		524B87772B866BC700DECBF9 /* DeckActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B87762B866BC700DECBF9 /* DeckActionsView.swift */; };
 		524B87792B866C6900DECBF9 /* PlayerFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B87782B866C6900DECBF9 /* PlayerFunctions.swift */; };
 		524B877B2B86731600DECBF9 /* LandingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B877A2B86731500DECBF9 /* LandingPageView.swift */; };
 		525C5BEF2B86B32600287B61 /* JDStatusBarNotification in Frameworks */ = {isa = PBXBuildFile; productRef = 525C5BEE2B86B32600287B61 /* JDStatusBarNotification */; };
@@ -48,6 +48,9 @@
 		525C5C352B89F63600287B61 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C342B89F63600287B61 /* GameViewController.swift */; };
 		525C5C372B89FE8C00287B61 /* dice_roll.wav in Resources */ = {isa = PBXBuildFile; fileRef = 525C5C362B89FE8C00287B61 /* dice_roll.wav */; };
 		525C5C3A2B8A23D400287B61 /* DataController+SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C392B8A23D400287B61 /* DataController+SettingsController.swift */; };
+		5267E4BA2B8B5B2D00A71997 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5267E4B92B8B5B2D00A71997 /* SideMenu.swift */; };
+		5267E4BC2B8B631A00A71997 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5267E4BB2B8B631A00A71997 /* SideMenuView.swift */; };
+		5267E4BE2B8B746F00A71997 /* DeckController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5267E4BD2B8B746F00A71997 /* DeckController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,7 +84,7 @@
 		524B87702B864FA500DECBF9 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		524B87722B864FF300DECBF9 /* PlayerEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEditView.swift; sourceTree = "<group>"; };
 		524B87742B86579000DECBF9 /* PlayerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRow.swift; sourceTree = "<group>"; };
-		524B87762B866BC700DECBF9 /* PlayerActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerActionsView.swift; sourceTree = "<group>"; };
+		524B87762B866BC700DECBF9 /* DeckActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckActionsView.swift; sourceTree = "<group>"; };
 		524B87782B866C6900DECBF9 /* PlayerFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFunctions.swift; sourceTree = "<group>"; };
 		524B877A2B86731500DECBF9 /* LandingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageView.swift; sourceTree = "<group>"; };
 		525C5BF02B86B9F700287B61 /* FileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoader.swift; sourceTree = "<group>"; };
@@ -110,6 +113,9 @@
 		525C5C342B89F63600287B61 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		525C5C362B89FE8C00287B61 /* dice_roll.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dice_roll.wav; sourceTree = "<group>"; };
 		525C5C392B8A23D400287B61 /* DataController+SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataController+SettingsController.swift"; sourceTree = "<group>"; };
+		5267E4B92B8B5B2D00A71997 /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
+		5267E4BB2B8B631A00A71997 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		5267E4BD2B8B746F00A71997 /* DeckController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,12 +251,14 @@
 			isa = PBXGroup;
 			children = (
 				524B87722B864FF300DECBF9 /* PlayerEditView.swift */,
-				524B87762B866BC700DECBF9 /* PlayerActionsView.swift */,
+				524B87762B866BC700DECBF9 /* DeckActionsView.swift */,
 				524B87742B86579000DECBF9 /* PlayerRow.swift */,
 				524B877A2B86731500DECBF9 /* LandingPageView.swift */,
 				525C5C132B89362400287B61 /* BottomTaskBarView.swift */,
 				525C5C152B89424C00287B61 /* PlayersView.swift */,
 				525C5C172B89560C00287B61 /* settingsView.swift */,
+				5267E4B92B8B5B2D00A71997 /* SideMenu.swift */,
+				5267E4BB2B8B631A00A71997 /* SideMenuView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -261,6 +269,7 @@
 				525C5BF02B86B9F700287B61 /* FileLoader.swift */,
 				524B87782B866C6900DECBF9 /* PlayerFunctions.swift */,
 				525C5C392B8A23D400287B61 /* DataController+SettingsController.swift */,
+				5267E4BD2B8B746F00A71997 /* DeckController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -512,15 +521,18 @@
 				525C5C332B89F60C00287B61 /* GameScene.swift in Sources */,
 				525C5C2A2B89F4F400287B61 /* UIView.swift in Sources */,
 				525C5C282B89F4D700287B61 /* SKTexture+Gradient.swift in Sources */,
+				5267E4BA2B8B5B2D00A71997 /* SideMenu.swift in Sources */,
+				5267E4BC2B8B631A00A71997 /* SideMenuView.swift in Sources */,
 				525C5C1E2B89F37B00287B61 /* DiceSide.swift in Sources */,
 				524B87712B864FA500DECBF9 /* Player.swift in Sources */,
 				525C5C352B89F63600287B61 /* GameViewController.swift in Sources */,
 				525C5C1A2B8956A400287B61 /* SeedDb.swift in Sources */,
 				525C5C162B89424C00287B61 /* PlayersView.swift in Sources */,
-				524B87772B866BC700DECBF9 /* PlayerActionsView.swift in Sources */,
+				524B87772B866BC700DECBF9 /* DeckActionsView.swift in Sources */,
 				524B87752B86579000DECBF9 /* PlayerRow.swift in Sources */,
 				525C5C1C2B89F35E00287B61 /* DiceRepresentationModel.swift in Sources */,
 				524B877B2B86731600DECBF9 /* LandingPageView.swift in Sources */,
+				5267E4BE2B8B746F00A71997 /* DeckController.swift in Sources */,
 				525C5C2D2B89F52B00287B61 /* ShakeDetectable.swift in Sources */,
 				525C5C3A2B8A23D400287B61 /* DataController+SettingsController.swift in Sources */,
 				525C5C122B89333100287B61 /* AppSettings.swift in Sources */,

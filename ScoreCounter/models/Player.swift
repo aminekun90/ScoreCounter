@@ -12,4 +12,7 @@ public struct Player: Identifiable, Equatable {
     var title: String
     var score: Int
     var color: Color
+    mutating public func incrementScore(amount:Int){
+        score += amount
+    }
 }

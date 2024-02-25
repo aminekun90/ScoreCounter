@@ -7,13 +7,12 @@
 import SwiftUI
 
 struct PlayerEditView: View {
-    @Binding var deck:Deck
+    @ObservedObject var deckController = DeckController.shared
     @Binding var selectedPlayer: Player?
     @State private var editedTitle: String = ""
     @State private var editedScore: String = ""
     @State private var editedColor: Color = .blue
     var colors: [Color] = [.red, .green, .blue, .orange, .purple, .yellow, .pink, .teal, .indigo, .brown]
-    var removePlayer: (inout Deck, Player?) -> Void
     @State private var isShowingDeleteConfirmation = false
 
     var body: some View {
@@ -68,7 +67,7 @@ struct PlayerEditView: View {
                                             message: Text("Are you sure you want to delete this player?"),
                                             primaryButton: .default(Text("Cancel")),
                                             secondaryButton: .destructive(Text("Delete")) {
-                                                removePlayer(&deck,selectedPlayer)
+                                                deckController.removePlayer(selectedPlayer)
                                                 selectedPlayer = nil
                                             }
                                         )
@@ -76,26 +75,27 @@ struct PlayerEditView: View {
                               )
                           }
         .onAppear {
-            guard let playerIndex =  deck.players.firstIndex(of: selectedPlayer!) else {
+            guard let playerIndex =  deckController.selectedDeck.players.firstIndex(of: selectedPlayer!) else {
                 return
             }
-            editedTitle = deck.players[playerIndex].title
-            editedScore = "\( deck.players[playerIndex].score)"
-            editedColor =  deck.players[playerIndex].color
+            editedTitle = deckController.selectedDeck.players[playerIndex].title
+            editedScore = "\( deckController.selectedDeck.players[playerIndex].score)"
+            editedColor =  deckController.selectedDeck.players[playerIndex].color
         }
     }
 
     func saveChanges() {
-        guard let playerIndex =  deck.players.firstIndex(of: selectedPlayer!) else {
+        guard let playerIndex =  deckController.selectedDeck.players.firstIndex(of: selectedPlayer!) else {
             return
         }
         guard let newScore = Int(editedScore) else {
             return
         }
 
-        deck.players[playerIndex].title = editedTitle
-        deck.players[playerIndex].score = newScore
-        deck.players[playerIndex].color = editedColor
+        deckController.selectedDeck.players[playerIndex].title = editedTitle
+        deckController.selectedDeck.players[playerIndex].score = newScore
+        deckController.selectedDeck.players[playerIndex].color = editedColor
+        
         selectedPlayer = nil
     }
 }
