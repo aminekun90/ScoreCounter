@@ -27,7 +27,7 @@
 		525C5BF82B876FFF00287B61 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 525C5BF72B876FFF00287B61 /* .gitignore */; };
 		525C5C022B88BFFE00287B61 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C012B88BFFE00287B61 /* Deck.swift */; };
 		525C5C052B88C61D00287B61 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 525C5C042B88C61D00287B61 /* SQLite */; };
-		525C5C082B88CE7E00287B61 /* sqliteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C072B88CE7E00287B61 /* sqliteService.swift */; };
+		525C5C082B88CE7E00287B61 /* SqliteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C072B88CE7E00287B61 /* SqliteService.swift */; };
 		525C5C0B2B88EDAA00287B61 /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 525C5C0A2B88EDAA00287B61 /* db.sqlite */; };
 		525C5C0F2B88F33500287B61 /* SQLiteMigrationManager in Frameworks */ = {isa = PBXBuildFile; productRef = 525C5C0E2B88F33500287B61 /* SQLiteMigrationManager */; };
 		525C5C122B89333100287B61 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C112B89333100287B61 /* AppSettings.swift */; };
@@ -51,6 +51,8 @@
 		5267E4BA2B8B5B2D00A71997 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5267E4B92B8B5B2D00A71997 /* SideMenu.swift */; };
 		5267E4BC2B8B631A00A71997 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5267E4BB2B8B631A00A71997 /* SideMenuView.swift */; };
 		5267E4BE2B8B746F00A71997 /* DeckController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5267E4BD2B8B746F00A71997 /* DeckController.swift */; };
+		52B746F52B8BBBAB00F46FE0 /* DeckMigration+PlayerMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B746F42B8BBBAB00F46FE0 /* DeckMigration+PlayerMigration.swift */; };
+		52B747042B8BC68500F46FE0 /* img in Resources */ = {isa = PBXBuildFile; fileRef = 52B747032B8BC68500F46FE0 /* img */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,7 +95,7 @@
 		525C5BF52B876FA800287B61 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		525C5BF72B876FFF00287B61 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		525C5C012B88BFFE00287B61 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
-		525C5C072B88CE7E00287B61 /* sqliteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sqliteService.swift; sourceTree = "<group>"; };
+		525C5C072B88CE7E00287B61 /* SqliteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqliteService.swift; sourceTree = "<group>"; };
 		525C5C0A2B88EDAA00287B61 /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = text; path = db.sqlite; sourceTree = "<group>"; };
 		525C5C112B89333100287B61 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		525C5C132B89362400287B61 /* BottomTaskBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTaskBarView.swift; sourceTree = "<group>"; };
@@ -116,6 +118,8 @@
 		5267E4B92B8B5B2D00A71997 /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		5267E4BB2B8B631A00A71997 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		5267E4BD2B8B746F00A71997 /* DeckController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckController.swift; sourceTree = "<group>"; };
+		52B746F42B8BBBAB00F46FE0 /* DeckMigration+PlayerMigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeckMigration+PlayerMigration.swift"; sourceTree = "<group>"; };
+		52B747032B8BC68500F46FE0 /* img */ = {isa = PBXFileReference; lastKnownFileType = folder; path = img; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,7 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				525C5C102B88F59B00287B61 /* migrations */,
-				525C5C072B88CE7E00287B61 /* sqliteService.swift */,
+				525C5C072B88CE7E00287B61 /* SqliteService.swift */,
 			);
 			path = sqlite;
 			sourceTree = "<group>";
@@ -303,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				525C5C192B8956A400287B61 /* SeedDb.swift */,
+				52B746F42B8BBBAB00F46FE0 /* DeckMigration+PlayerMigration.swift */,
 			);
 			path = migrations;
 			sourceTree = "<group>";
@@ -360,6 +365,7 @@
 		525C5C382B89FE9400287B61 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				52B747032B8BC68500F46FE0 /* img */,
 				525C5C362B89FE8C00287B61 /* dice_roll.wav */,
 			);
 			path = Resources;
@@ -481,6 +487,7 @@
 			files = (
 				525C5BF82B876FFF00287B61 /* .gitignore in Resources */,
 				525C5C372B89FE8C00287B61 /* dice_roll.wav in Resources */,
+				52B747042B8BC68500F46FE0 /* img in Resources */,
 				525C5C0B2B88EDAA00287B61 /* db.sqlite in Resources */,
 				522307FE2B861CAC007CE1A7 /* Preview Assets.xcassets in Resources */,
 				525C5BF32B86BA7E00287B61 /* data.json in Resources */,
@@ -517,8 +524,9 @@
 				525C5C242B89F49300287B61 /* CGPoint+Distance.swift in Sources */,
 				525C5C022B88BFFE00287B61 /* Deck.swift in Sources */,
 				525C5C212B89F41D00287B61 /* SceneCreator.swift in Sources */,
-				525C5C082B88CE7E00287B61 /* sqliteService.swift in Sources */,
+				525C5C082B88CE7E00287B61 /* SqliteService.swift in Sources */,
 				525C5C332B89F60C00287B61 /* GameScene.swift in Sources */,
+				52B746F52B8BBBAB00F46FE0 /* DeckMigration+PlayerMigration.swift in Sources */,
 				525C5C2A2B89F4F400287B61 /* UIView.swift in Sources */,
 				525C5C282B89F4D700287B61 /* SKTexture+Gradient.swift in Sources */,
 				5267E4BA2B8B5B2D00A71997 /* SideMenu.swift in Sources */,

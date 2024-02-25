@@ -88,7 +88,7 @@ struct PlayerEditView: View {
         guard let playerIndex =  deckController.selectedDeck.players.firstIndex(of: selectedPlayer!) else {
             return
         }
-        guard let newScore = Int(editedScore) else {
+        guard let newScore = Int64(editedScore) else {
             return
         }
 

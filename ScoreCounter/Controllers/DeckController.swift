@@ -55,11 +55,21 @@ class DeckController: ObservableObject {
     }
    
     // ---------------------------selected-deck-helpers--------------------------------//
+    public func showWinAnimation(score: Int64) -> some View {
+        if score >= selectedDeck.winningScore {
+            return AnyView(HStack {
+                Image(systemName: "crown")
+                Image(systemName: "fireworks")
+            }
+            .foregroundColor(.yellow))
+        }
+        return AnyView(EmptyView())
+    }
     public func addPlayer(){
         self.selectedDeck.addPlayer()
         self.syncDeckList()
     }
-    public func updateScore(_ playerId: UUID, increment: Bool, amount: Int? = 1){
+    public func updateScore(_ playerId: UUID, increment: Bool, amount: Int64? = 1){
         self.selectedDeck.updateScore(playerId, increment: increment, amount: amount)
         self.syncDeckList()
     }

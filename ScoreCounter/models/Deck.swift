@@ -7,9 +7,26 @@
 
 import Foundation
 import SwiftUI
-public enum WinningLogic {
+import SQLite
+
+public enum WinningLogic:String {
     case normal
     case inverted
+}
+
+
+extension WinningLogic: Value {
+    public static var declaredDatatype: String {
+        return String.declaredDatatype
+    }
+
+    public static func fromDatatypeValue(_ datatypeValue: String) -> WinningLogic {
+        return WinningLogic(rawValue: datatypeValue) ?? .inverted
+    }
+
+    public var datatypeValue: String {
+        return rawValue
+    }
 }
 
 //extension UUID: Equatable {
@@ -22,7 +39,7 @@ public struct Deck:Identifiable {
     public var id = UUID()
     var name:String = UUID().uuidString
     var winningScore:Int = 42
-    var increment:Int = 1
+    var increment:Int64 = 1
     var enableWinningScore:Bool = true
     var enableWinningAnimation:Bool = true
     var players:[Player] = []
@@ -103,7 +120,7 @@ public struct Deck:Identifiable {
         // Show notification after adding a player
         showNotification(name: name,subtitle: "Added succesfully!",icon:UIImage(systemName: "gamecontroller.fill")!)
     }
-    mutating public func updateScore(_ playerId: UUID, increment: Bool, amount: Int? = 1) {
+    mutating public func updateScore(_ playerId: UUID, increment: Bool, amount: Int64? = 1) {
         if let playerIndex = self.players.firstIndex(where: { $0.id == playerId }) {
             let delta = (increment ? 1 : -1) * (amount ?? self.increment)
             self.players[playerIndex].incrementScore(amount: delta)

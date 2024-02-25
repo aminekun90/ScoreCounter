@@ -9,10 +9,11 @@ import SwiftUI
 
 public struct Player: Identifiable, Equatable {
     public var id = UUID()
+    var image:String = "asset-\(Int.random(in: 1...6))"
     var title: String
-    var score: Int
+    var score: Int64
     var color: Color
-    mutating public func incrementScore(amount:Int){
+    mutating public func incrementScore(amount:Int64){
         score += amount
     }
 }

@@ -15,9 +15,10 @@ struct LandingPageView: View {
             Spacer()
             
             Image("calcicon")
+            
                 .resizable()
                 .aspectRatio(contentMode: .fill) // Set aspectRatio to .fill
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .frame(width: 150, height: 150)
             
             Text("Click on the \"+\" at the top right to add a new player ")
                 .foregroundColor( colorScheme == .dark ? .white : .black)
@@ -28,7 +29,7 @@ struct LandingPageView: View {
                 deckController.addPlayer()
             })
             Spacer()
-        }
+        }.padding(.top,200)
         .edgesIgnoringSafeArea(.all)
     }
 }

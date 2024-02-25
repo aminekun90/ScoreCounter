@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import SwiftUI
 import SQLite
 import SQLiteMigrationManager
+
 class SqliteService {
     static let shared = SqliteService()
     private var db:Connection!
@@ -114,4 +116,110 @@ class SqliteService {
             print(error)
         }
     }
+    
+    // MARK: - Deck CRUD Operations
+
+        public func addDeck(deck: Deck) {
+            let deckTable = Table("Deck")
+            let name = Expression<String>("name")
+            let winningScore = Expression<Int>("winningScore")
+            let increment = Expression<Int64>("increment")
+            let enableWinningScore = Expression<Bool>("enableWinningScore")
+            let enableWinningAnimation = Expression<Bool>("enableWinningAnimation")
+            let winingLogic = Expression<String>("winingLogic")
+
+            do {
+                let insert = deckTable.insert(
+                    name <- deck.name,
+                    winningScore <- deck.winningScore,
+                    increment <- deck.increment,
+                    enableWinningScore <- deck.enableWinningScore,
+                    enableWinningAnimation <- deck.enableWinningAnimation,
+                    winingLogic <- deck.winingLogic.rawValue
+                )
+                try db.run(insert)
+            } catch {
+                print(error)
+            }
+        }
+
+    public func getDecks() -> [Deck] {
+        let deckTable = Table("Deck")
+        let name = Expression<String>("name")
+        let winningScore = Expression<Int>("winningScore")
+        let increment = Expression<Int64>("increment")
+        let enableWinningScore = Expression<Bool>("enableWinningScore")
+        let enableWinningAnimation = Expression<Bool>("enableWinningAnimation")
+        let winingLogic = Expression<String>("winingLogic")
+
+        do {
+            let decks = try db.prepare(deckTable)
+            return try decks.map { row in
+                try Deck(
+                    name: row.get(name),
+                    winningScore: row.get(winningScore),
+                    increment: row.get(increment),
+                    enableWinningScore: row.get(enableWinningScore),
+                    enableWinningAnimation: row.get(enableWinningAnimation),
+                    winingLogic: WinningLogic(rawValue: row.get(winingLogic)) ?? .normal
+                )
+            }
+        } catch {
+            print(error)
+            return []
+        }
+    }
+
+
+        // MARK: - Player CRUD Operations
+
+        public func addPlayer(player: Player, deckId: UUID) {
+            let playerTable = Table("Player")
+            let image = Expression<String>("image")
+            let title = Expression<String>("title")
+            let score = Expression<Int64>("score")
+            let color = Expression<String>("color")
+            let deckIdColumn = Expression<UUID>("deckId")
+
+            do {
+                let insert = playerTable.insert(
+                    image <- player.image,
+                    title <- player.title,
+                    score <- player.score,
+                    color <- player.color.description, // Store Color as a String for simplicity
+                    deckIdColumn <- deckId
+                )
+                try db.run(insert)
+            } catch {
+                print(error)
+            }
+        }
+
+        public func getPlayers(deckId: UUID) -> [Player] {
+            let playerTable = Table("Player")
+            let image = Expression<String>("image")
+            let title = Expression<String>("title")
+            let score = Expression<Int64>("score")
+            let color = Expression<String>("color")
+            let id = Expression<UUID>("id")
+            let deckIdColumn = Expression<UUID>("deckId")
+
+            do {
+                let players = try db.prepare(playerTable.filter(deckIdColumn == deckId))
+                return try players.map { row in
+                    Player(
+                        id: try row.get(id),
+                        image: try row.get(image),
+                        title: try row.get(title),
+                        score: try row.get(score),
+                        color: Color(try row.get(color))// Convert String to Color if needed
+                        
+                    )
+                }
+            } catch {
+                print(error)
+                return []
+            }
+        }
+
 }

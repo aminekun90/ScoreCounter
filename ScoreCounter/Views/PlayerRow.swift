@@ -13,22 +13,39 @@ struct PlayerRow: View {
     var horizontalMargin: CGFloat
     @Binding var selectedPlayer: Player?
     var totalPlayers: Int
-
+    
     var body: some View {
         HStack {
+            Image(player.image)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 60, height: 60)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 50)
+                        .stroke(.purple.opacity(0.5), lineWidth: 10)
+                )
+                .cornerRadius(50)
+                .padding(.trailing, 10) // Add padding on the trailing side
+            deckController.showWinAnimation(score: player.score)
             Button(action: {
                 selectedPlayer = player
             }) {
-                Text(player.title)
-                    .font(.title)
-                    .padding()
-                    .frame(maxWidth: .infinity, maxHeight: heightForPlayerRow())
-                    .cornerRadius(10)
-                    .padding(.horizontal, horizontalMargin)
+                VStack(alignment: .leading) { // Adjusted alignment
+                    Text(player.title)
+                        .font(.title)
+                        .padding()
+                        .frame(maxWidth: .infinity, maxHeight: heightForPlayerRow())
+                        .cornerRadius(10)
+                        .padding(.horizontal, horizontalMargin)
+
+                    
+                }
             }
 
+            Spacer()
+
             Button(action: {
-                deckController.updateScore(player.id, increment:false, amount:nil)
+                deckController.updateScore(player.id, increment: false, amount: nil)
             }) {
                 Image(systemName: "minus")
                     .imageScale(.large)
@@ -43,7 +60,7 @@ struct PlayerRow: View {
                 .font(.title)
 
             Button(action: {
-                deckController.updateScore( player.id, increment:true, amount:nil)
+                deckController.updateScore(player.id, increment: true, amount: nil)
             }) {
                 Image(systemName: "plus")
                     .imageScale(.large)
@@ -59,16 +76,17 @@ struct PlayerRow: View {
         .frame(height: heightForPlayerRow())
     }
 
+    
     private func heightForPlayerRow() -> CGFloat {
         let screenHeight = UIScreen.main.bounds.height
         return totalPlayers > 3 ? 70 : screenHeight / 3
     }
-
+    
     private func menuItems(incrementAction: Bool) -> some View {
-        let increments: [Int] = [5, 10, 15, 30]
-
+        
+        
         return VStack {
-            ForEach(increments, id: \.self) { amount in
+            ForEach(SettingsController.shared.appSettings.increments.values, id: \.self) { amount in
                 Button(action: {
                     deckController.updateScore( player.id, increment:incrementAction, amount:amount)
                 }) {

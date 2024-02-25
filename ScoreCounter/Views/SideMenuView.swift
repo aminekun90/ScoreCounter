@@ -36,7 +36,7 @@ struct SideMenuView: View {
                     }
                     .padding(.top, 60)
                     .frame(width: 270)
-                    .background(SettingsController.shared.getAppearenceColor(shouldBe: .black))
+                    .background(.white)
                 }
                 Spacer()
             }
@@ -48,7 +48,7 @@ struct SideMenuView: View {
                     Spacer()
                     Text("Score Counter")
                         .font(.system(size: 30, weight: .bold))
-                        .foregroundColor(SettingsController.shared.getAppearenceColor(shouldBe: .white))
+                        .foregroundColor(.black)
                         .frame(maxWidth: .infinity)
                 }
                 .padding(.bottom, 5) // Adjusted bottom padding
@@ -60,8 +60,8 @@ struct SideMenuView: View {
                         .imageScale(.large)
                         .padding(7)
                         .clipShape(RoundedRectangle(cornerRadius: 5))
-                        .background(SettingsController.shared.getAppearenceColor(shouldBe: .white))
-                        .foregroundColor(SettingsController.shared.getAppearenceColor(shouldBe: .black))
+                        .background(SettingsController.shared.getAppearenceColor(shouldBe: .black))
+                        .foregroundColor(SettingsController.shared.getAppearenceColor(shouldBe: .white))
                 }
                 .cornerRadius(10)
                 
@@ -87,7 +87,7 @@ struct SideMenuView: View {
         }
         .frame(height: 50)
         .background(
-            LinearGradient(colors: [isSelected ? .purple.opacity(0.5) : .white, .white], startPoint: .leading, endPoint: .trailing)
+            LinearGradient(colors: [isSelected ? Color.purple.opacity(0.5) : Color.white.opacity(0), .white], startPoint: .leading, endPoint: .trailing)
         )
     }
 }

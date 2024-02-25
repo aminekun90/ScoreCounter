@@ -54,6 +54,15 @@ struct DeckActionsView: View {
                 }
                 Menu {
                     Button(action: {
+                        print("Edit deck clicked")
+                    }) {
+                        Text("Edit deck")
+                        Image(systemName: "folder.fill.badge.gearshape")
+                            .imageScale(.large)
+                            .padding()
+                            .clipShape(RoundedRectangle(cornerRadius: 5))
+                    }
+                    Button(action: {
                         deckController.resetAllScores()
                     }) {
                         Text("Reset Scores")
@@ -62,6 +71,7 @@ struct DeckActionsView: View {
                             .padding()
                             .clipShape(RoundedRectangle(cornerRadius: 5))
                     }
+                    
                     Button(role: .destructive) {
                         isShowingDialog = true
                     } label: {
@@ -78,7 +88,6 @@ struct DeckActionsView: View {
                     titleVisibility: .visible
                 ) {
                     Button("Yes", role: .destructive) {
-                        
                         deckController.removeAllPlayers()
                         print("Removed all players")
                     }
