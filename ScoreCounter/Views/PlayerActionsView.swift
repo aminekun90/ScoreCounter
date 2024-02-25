@@ -6,30 +6,7 @@
 //
 
 import SwiftUI
-struct DeleteAllButton: View {
-    @Binding var isShowingDialog: Bool
-    var action: () -> Void
-    
-    var body: some View {
-        Button(action: {
-            isShowingDialog = true
-        }) {
-            Text("Delete All").foregroundColor(.red)
-            Image(systemName: "trash.fill")
-                .imageScale(.large)
-                .padding()
-                .foregroundColor(.red)
-                .clipShape(RoundedRectangle(cornerRadius: 5))
-        }
-        .disabled(false) // You can dynamically set this based on your condition
-        .confirmationDialog("Are you sure to delete all?", isPresented: $isShowingDialog, titleVisibility: .visible) {
-            Button("Confirm", role: .destructive) {
-                action()
-            }
-            Button("Cancel", role: .cancel) {}
-        }
-    }
-}
+
 struct PlayerActionsView: View {
     @Environment(\.colorScheme) var colorScheme
     @Binding var deck:Deck

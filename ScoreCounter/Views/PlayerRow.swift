@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+
 struct PlayerRow: View {
-    @Binding var deck:Deck
+    @Binding var deck: Deck
     var player: Player
     var horizontalMargin: CGFloat
-    var updateScore: (inout Deck,UUID, Bool, Int?) -> Void
+    var updateScore: (inout Deck, UUID, Bool, Int?) -> Void
     @Binding var selectedPlayer: Player?
+    var totalPlayers: Int
 
     var body: some View {
         HStack {
@@ -21,21 +23,19 @@ struct PlayerRow: View {
                 Text(player.title)
                     .font(.title)
                     .padding()
-                    .frame(maxWidth: .infinity)
+                    .frame(maxWidth: .infinity, maxHeight: heightForPlayerRow())
                     .cornerRadius(10)
                     .padding(.horizontal, horizontalMargin)
             }
 
-            Spacer()
-
             Button(action: {
-                updateScore(&deck,player.id, false, nil)
+                updateScore(&deck, player.id, false, nil)
             }) {
                 Image(systemName: "minus")
                     .imageScale(.large)
-                    .padding(10) // Add padding to the button
+                    .padding(10)
             }
-            .contentShape(Rectangle()) // Make the button tappable outside the image
+            .contentShape(Rectangle())
             .contextMenu {
                 menuItems(incrementAction: false)
             }
@@ -44,21 +44,25 @@ struct PlayerRow: View {
                 .font(.title)
 
             Button(action: {
-                updateScore(&deck,player.id, true, nil)
+                updateScore(&deck, player.id, true, nil)
             }) {
                 Image(systemName: "plus")
                     .imageScale(.large)
-                    .padding(10) // Add padding to the button
+                    .padding(10)
             }
-            .contentShape(Rectangle()) // Make the button tappable outside the image
+            .contentShape(Rectangle())
             .contextMenu {
                 menuItems(incrementAction: true)
             }
         }
-        .padding(.horizontal, 15)
         .background(player.color)
         .foregroundColor(.white)
-        .cornerRadius(10)
+        .frame(height: heightForPlayerRow())
+    }
+
+    private func heightForPlayerRow() -> CGFloat {
+        let screenHeight = UIScreen.main.bounds.height
+        return totalPlayers > 3 ? 70 : screenHeight / 3
     }
 
     private func menuItems(incrementAction: Bool) -> some View {
@@ -67,7 +71,7 @@ struct PlayerRow: View {
         return VStack {
             ForEach(increments, id: \.self) { increment in
                 Button(action: {
-                    updateScore(&deck,player.id, incrementAction, increment)
+                    updateScore(&deck, player.id, incrementAction, increment)
                 }) {
                     Text("\(increment)")
                 }
