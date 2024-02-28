@@ -11,16 +11,19 @@ import SwiftUI
 
 
 class DeckController: ObservableObject {
-    @Published var deckList: [Deck]
+    @Published var deckList: [Deck] = []
     @Published var selectedDeck: Deck!
     private var dataController: DataController
+    
     static var shared = DeckController(dataController: DataController.shared)
     
     init(dataController: DataController) {
         self.dataController = dataController
-        self.deckList = [Deck()]
-        self.selectedDeck = self.deckList.first ?? Deck() // Initialize selectedDeck
-        initSelectedDeck()
+        dataController.sqliteService.getDecks { decks in
+            self.deckList = decks
+            self.selectedDeck = self.deckList.first ?? Deck() // Initialize selectedDeck
+            self.initSelectedDeck()
+        }
     }
     
     private func initSelectedDeck() {
@@ -41,6 +44,7 @@ class DeckController: ObservableObject {
     public func addNewDeck(){
         self.deckList.append(Deck())
         showNotification(name: "Counter", subtitle: "Just been added", icon: UIImage(systemName:"gamecontroller.fill"))
+        syncDeckList()
     }
     public func syncDeckList() {
         guard let selectedDeckIndex = deckList.firstIndex(where: { $0.id == selectedDeck.id }) else {
@@ -48,14 +52,14 @@ class DeckController: ObservableObject {
         }
         
         deckList[selectedDeckIndex] = selectedDeck
-        saveDeckList()
+        dataController.sqliteService.updateDeck(deck: selectedDeck)
     }
-    public func saveDeckList() {
-        // TO BE IMPLEMENTED: Save deckList, to SQLite
-    }
+  
+
    
     // ---------------------------selected-deck-helpers--------------------------------//
     public func showWinAnimation(score: Int64) -> some View {
+        
         if score >= selectedDeck.winningScore {
             return AnyView(HStack {
                 Image(systemName: "crown")

@@ -70,8 +70,9 @@ struct PlayerRow: View {
             .contextMenu {
                 menuItems(incrementAction: true)
             }
+            
         }
-        .background(player.color)
+        .background(Color(player.color))
         .foregroundColor(.white)
         .frame(height: heightForPlayerRow())
     }

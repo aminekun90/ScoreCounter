@@ -11,12 +11,13 @@ import SwiftUI
 class DataController: ObservableObject {
     @Published var appSettings: AppSettings
     static var shared = DataController()
+    public var sqliteService = SqliteService.shared
     init() {
         appSettings = SqliteService.shared.loadAppSettings()
     }
     
     func saveSettings() {
-        SqliteService.shared.saveAppSettings(appSettings: appSettings)
+        sqliteService.saveAppSettings(appSettings: appSettings)
     }
     
     // Add other data-related functions here

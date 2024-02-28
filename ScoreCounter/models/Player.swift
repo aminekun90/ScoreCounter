@@ -12,7 +12,7 @@ public struct Player: Identifiable, Equatable {
     var image:String = "asset-\(Int.random(in: 1...6))"
     var title: String
     var score: Int64
-    var color: Color
+    var color: String
     mutating public func incrementScore(amount:Int64){
         score += amount
     }
