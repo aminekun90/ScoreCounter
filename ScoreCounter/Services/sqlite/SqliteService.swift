@@ -12,31 +12,50 @@ import SQLiteMigrationManager
 
 class SqliteService {
     static let shared = SqliteService()
-    private var db:Connection!
-    private var migManager:SQLiteMigrationManager!
-    private var dbPath:String!
-    init (){
-        do{
+    private var db: Connection!
+    private var migManager: SQLiteMigrationManager!
+    private var dbPath: String!
+    
+    init() {
             let fileManager = FileManager.default
             
-            self.dbPath = try fileManager
-                .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-                .appendingPathComponent("db.sqlite")
-                .path
-            
-            if !fileManager.fileExists(atPath: dbPath) {
-                let dbResourcePath = Bundle.main.path(forResource: "db", ofType: "sqlite")!
-                try fileManager.copyItem(atPath: dbResourcePath, toPath: dbPath)
+            // Get the documents directory
+            if let documentsDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first {
+                let scoreCounterDirectory = documentsDirectory.appendingPathComponent("ScoreCounter")
+                
+                do {
+                    // Ensure ScoreCounter directory exists
+                    try fileManager.createDirectory(at: scoreCounterDirectory, withIntermediateDirectories: true, attributes: nil)
+                    
+                    // Set the new dbPath
+                    self.dbPath = scoreCounterDirectory.appendingPathComponent("db.sqlite").path
+                    
+                    if !fileManager.fileExists(atPath: dbPath) {
+                        // Copy SQLite file to the new path
+                        let dbResourcePath = Bundle.main.path(forResource: "db", ofType: "sqlite")!
+                        
+                        do {
+                            try fileManager.copyItem(atPath: dbResourcePath, toPath: dbPath)
+                            print("SQLite file copied to \(String(describing: dbPath))")
+                        } catch {
+                            print("Failed to copy SQLite file: \(error)")
+                        }
+                    }
+                    
+                    print("Connection to SQLite...")
+                    self.db = try Connection(dbPath)
+                    self.migrate()
+                    
+                    print("Connection successful")
+                } catch {
+                    print("Failed to create ScoreCounter directory: \(error)")
+                }
+            } else {
+                print("Documents directory not found.")
             }
-            print("Connection to SQLite...")
-            self.db = try Connection(dbPath)
-            self.migrate()
-            
-            print("Connection successfull")
-        }catch{
-            print(error)
-        }
+        
     }
+    
     
     private func migrate() {
         do {
@@ -152,23 +171,16 @@ class SqliteService {
         let enableWinningScore = Expression<Bool>("enableWinningScore")
         let enableWinningAnimation = Expression<Bool>("enableWinningAnimation")
         let winingLogic = Expression<String>("winingLogic")
-
-        // Define player expressions
-        let playerTable = Table("Player")
-        let playerId = Expression<UUID>("id")
-        let playerTitle = Expression<String>("title")
-        let playerScore = Expression<Int64>("score")
-        let playerColor = Expression<String>("color")
-        let playerImage = Expression<String>("image")
-        let deckIdColumn = Expression<UUID>("deckId")
-
+        
+       
         do {
             var decks = [Deck]()
-
+            
             try db.transaction {
                 let deckRows = try db.prepare(deckTable)
                 for deckRow in deckRows {
                     var deck = try Deck(
+                        id:deckRow.get(id),
                         name: deckRow.get(name),
                         winningScore: deckRow.get(winningScore),
                         increment: deckRow.get(increment),
@@ -178,18 +190,10 @@ class SqliteService {
                     )
                     
                     // Fetch players for the current deck
-                    let playerRows = try db.prepare(playerTable.filter(deckIdColumn == deckRow.get(id)))
                     
-                    deck.players = try playerRows.map { playerRow in
-                        Player(
-                            id: try playerRow.get(playerId),
-                            image: try playerRow.get(playerImage),
-                            title: try playerRow.get(playerTitle),
-                            score: try playerRow.get(playerScore),
-                            color: try playerRow.get(playerColor)
-                        )
-                    }
-
+                    
+                    deck.players = getPlayers(deckId: deck.id)
+                    print("Players : \(deck.players.count)")
                     decks.append(deck)
                 }
             }
@@ -200,9 +204,6 @@ class SqliteService {
             completion([])
         }
     }
-
-    
-    
     
     public func updateDeck(deck: Deck) {
         let deckTable = Table("Deck")
@@ -219,7 +220,7 @@ class SqliteService {
         let playerId = Expression<UUID>("id")
         let playerTitle = Expression<String>("title")
         let playerScore = Expression<Int64>("score")
-        let playerColor = Expression<String>("color")
+        let playerColor = Expression<String?>("color")
         let playerImage = Expression<String>("image")
         let deckId = Expression<UUID>("deckId")
         
@@ -235,6 +236,7 @@ class SqliteService {
                 winingLogic <- deck.winingLogic.rawValue, onConflictOf: id
             ))
             print("deck upserted \(deck.name)")
+            print("upserting players \(deck.players.count)")
             for player in deck.players {
                 do {
                     print("COLOR: \(player.color)")
@@ -243,7 +245,7 @@ class SqliteService {
                         playerId <- player.id,
                         playerTitle <- player.title,
                         playerScore <- player.score,
-                        playerColor <- player.color,
+                        playerColor <- player.color.toHex(),
                         playerImage <- player.image,
                         deckId <- deck.id,
                         onConflictOf: playerId
@@ -266,16 +268,16 @@ class SqliteService {
         let image = Expression<String>("image")
         let title = Expression<String>("title")
         let score = Expression<Int64>("score")
-        let color = Expression<String>("color")
+        let color = Expression<String?>("color")
         let deckIdColumn = Expression<UUID>("deckId")
         
         do {
-            print("COLOR: \(player.color)")
+            print("COLOR: \(player.color), DECKID: \(deckId)")
             let insert = playerTable.insert(
                 image <- player.image,
                 title <- player.title,
                 score <- player.score,
-                color <- player.color,
+                color <- player.color.toHex(),
                 deckIdColumn <- deckId
             )
             try db.run(insert)
@@ -290,26 +292,49 @@ class SqliteService {
         let image = Expression<String>("image")
         let title = Expression<String>("title")
         let score = Expression<Int64>("score")
-        let color = Expression<String>("color")
+        let color = Expression<String?>("color")
         let id = Expression<UUID>("id")
         let deckIdColumn = Expression<UUID>("deckId")
         
         do {
             let players = try db.prepare(playerTable.filter(deckIdColumn == deckId))
+            print("Player in db : \( players)")
             return try players.map { row in
-                Player(
+                let playerColor: Color
+                if let colorString = try row.get(color), let color = Color(hex: colorString) {
+                    playerColor = color
+                } else {
+                    // Use a default color or handle the case where color is nil
+                    playerColor = Color.gray
+                }
+                
+                return Player(
                     id: try row.get(id),
                     image: try row.get(image),
                     title: try row.get(title),
                     score: try row.get(score),
-                    color: try row.get(color)// Convert String to Color if needed
-                    
+                    color: playerColor
                 )
             }
+            
         } catch {
             print(error)
             return []
         }
     }
-    
+    public func removePlayers(playerIDs: [UUID]) {
+        let playerTable = Table("Player")
+        let id = Expression<UUID>("id")
+        
+        do {
+            for playerID in playerIDs {
+                let playerToDelete = playerTable.filter(id == playerID)
+                try db.run(playerToDelete.delete())
+                print("Player with ID \(playerID) deleted")
+            }
+        } catch {
+            print(error)
+        }
+    }
+
 }

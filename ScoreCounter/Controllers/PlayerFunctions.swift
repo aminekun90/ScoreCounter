@@ -38,8 +38,12 @@ func loadListFromJSON() -> ListData? {
     }
 }
 
-public func getRandomColor() -> String {
-    return AppAppearance.colors.randomElement() ?? "blue"
+public func getRandomColor() -> Color {
+    let randomRed = Double.random(in: 0.0...1.0)
+    let randomGreen = Double.random(in: 0.0...1.0)
+    let randomBlue = Double.random(in: 0.0...1.0)
+
+    return Color(red: randomRed, green: randomGreen, blue: randomBlue)
 }
 
 public func vibratePhone() {

@@ -14,18 +14,9 @@ public enum AppAppearance:String {
     case light
     case system
 }
+
 extension AppAppearance: Value {
-    public static var colors :[String] = [
-        "blue",
-        "cyan",
-        "green",
-        "magenta",
-        "orange",
-        "purple",
-        "red",
-        "yellow",
-        "brown"
-    ]
+   
     public static var declaredDatatype: String {
         return String.declaredDatatype
     }

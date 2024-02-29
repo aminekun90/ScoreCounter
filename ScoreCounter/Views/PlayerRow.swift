@@ -72,7 +72,7 @@ struct PlayerRow: View {
             }
             
         }
-        .background(Color(player.color))
+        .background(player.color)
         .foregroundColor(.white)
         .frame(height: heightForPlayerRow())
     }

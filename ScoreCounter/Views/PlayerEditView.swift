@@ -11,7 +11,7 @@ struct PlayerEditView: View {
     @Binding var selectedPlayer: Player?
     @State private var editedTitle: String = ""
     @State private var editedScore: String = ""
-    @State private var editedColor: Color = .blue
+    @State private var editedColor: Color = Color.blue
     
     @State private var isShowingDeleteConfirmation = false
     
@@ -21,19 +21,12 @@ struct PlayerEditView: View {
                 Section(header: Text("Player Details")) {
                     HStack {
                         TextField("Title", text: $editedTitle)
-                        
-                        
                     }
                     
                     TextField("Score", text: $editedScore)
                         .keyboardType(.numberPad)
                     
-                    Picker("Color", selection: $editedColor) {
-                        ForEach(AppAppearance.colors, id: \.self) { color in
-                            Text(color.capitalized)
-                                .foregroundColor(Color(color))
-                        }
-                    }
+                    ColorPicker("Pick color", selection: $editedColor)
                 }
                 
                 Section {
@@ -80,7 +73,7 @@ struct PlayerEditView: View {
             }
             editedTitle = deckController.selectedDeck.players[playerIndex].title
             editedScore = "\( deckController.selectedDeck.players[playerIndex].score)"
-            editedColor =  Color(deckController.selectedDeck.players[playerIndex].color)
+            editedColor = deckController.selectedDeck.players[playerIndex].color
         }
     }
     
@@ -94,8 +87,8 @@ struct PlayerEditView: View {
         
         deckController.selectedDeck.players[playerIndex].title = editedTitle
         deckController.selectedDeck.players[playerIndex].score = newScore
-        deckController.selectedDeck.players[playerIndex].color = editedColor.description
-        
+        deckController.selectedDeck.players[playerIndex].color = editedColor
+        deckController.syncDeckList()
         selectedPlayer = nil
     }
 }

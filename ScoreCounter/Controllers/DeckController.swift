@@ -19,11 +19,30 @@ class DeckController: ObservableObject {
     
     init(dataController: DataController) {
         self.dataController = dataController
+        // Use a DispatchGroup to wait for the asynchronous call to complete
+        let dispatchGroup = DispatchGroup()
+        
+        dispatchGroup.enter()
         dataController.sqliteService.getDecks { decks in
             self.deckList = decks
-            self.selectedDeck = self.deckList.first ?? Deck() // Initialize selectedDeck
+            
+            if let firstDeck = decks.first {
+                self.selectedDeck = firstDeck
+            } else {
+                print("No deck loaded !!")
+                let defaultDeck = Deck()
+                self.selectedDeck = defaultDeck
+                //                    self.deckList.append(defaultDeck)
+            }
+            
             self.initSelectedDeck()
+            
+            // Notify that the task is complete
+            dispatchGroup.leave()
         }
+        
+        // Wait for the completion of the asynchronous call
+        dispatchGroup.wait()
     }
     
     private func initSelectedDeck() {
@@ -54,9 +73,7 @@ class DeckController: ObservableObject {
         deckList[selectedDeckIndex] = selectedDeck
         dataController.sqliteService.updateDeck(deck: selectedDeck)
     }
-  
-
-   
+    
     // ---------------------------selected-deck-helpers--------------------------------//
     public func showWinAnimation(score: Int64) -> some View {
         
@@ -65,27 +82,33 @@ class DeckController: ObservableObject {
                 Image(systemName: "crown")
                 Image(systemName: "fireworks")
             }
-            .foregroundColor(.yellow))
+                .foregroundColor(.yellow))
         }
         return AnyView(EmptyView())
     }
+    
     public func addPlayer(){
         self.selectedDeck.addPlayer()
         self.syncDeckList()
     }
+    
     public func updateScore(_ playerId: UUID, increment: Bool, amount: Int64? = 1){
         self.selectedDeck.updateScore(playerId, increment: increment, amount: amount)
         self.syncDeckList()
     }
+
     public func changeWinningLogic() {
         selectedDeck.changeWinningLogic()
         self.syncDeckList()
     }
     
-    public func removeAllPlayers(){
+    public func removeAllPlayers() {
+        let playerIDsToRemove = self.selectedDeck.players.map { $0.id }
+        self.dataController.sqliteService.removePlayers(playerIDs: playerIDsToRemove)
         self.selectedDeck.removeAllPlayers()
         self.syncDeckList()
     }
+    
     public func removePlayer(_ player: Player?){
         self.selectedDeck.removePlayer(player)
         self.syncDeckList()
