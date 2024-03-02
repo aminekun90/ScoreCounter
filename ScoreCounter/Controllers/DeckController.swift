@@ -44,7 +44,10 @@ class DeckController: ObservableObject {
         // Wait for the completion of the asynchronous call
         dispatchGroup.wait()
     }
-    
+    public func savePlayersOrder(){
+        selectedDeck.syncPlayersOrderToIndex()
+        selectedDeck.sortPlayersByOrder()
+    }
     private func initSelectedDeck() {
         if let firstDeck = deckList.first {
             selectedDeck = firstDeck
@@ -66,16 +69,17 @@ class DeckController: ObservableObject {
         showNotification(name: "Counter", subtitle: "Just been added", icon: UIImage(systemName:"gamecontroller.fill"))
         syncDeckList()
     }
+    
     public func syncDeckList() {
         guard let selectedDeckIndex = deckList.firstIndex(where: { $0.id == selectedDeck.id }) else {
+            print("Deck index not found :(")
             return
         }
-        
+        savePlayersOrder()
         deckList[selectedDeckIndex] = selectedDeck
         dataController.sqliteService.updateDeck(deck: selectedDeck)
     }
     
-    // ---------------------------selected-deck-helpers--------------------------------//
     public func showWinAnimation(score: Int64) -> some View {
         
         if score >= selectedDeck.winningScore {

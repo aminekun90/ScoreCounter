@@ -63,13 +63,33 @@ extension Color {
             }
         }
 }
-public struct Player: Identifiable, Equatable {
+public class Player: Identifiable, Equatable {
+    public static func == (lhs: Player, rhs: Player) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
     public var id = UUID()
-    var image:String = "asset-\(Int.random(in: 1...6))"
-    var title: String
-    var score: Int64
-    var color: Color
-    mutating public func incrementScore(amount:Int64){
+       var image: String = "asset-\(Int.random(in: 1...6))"
+       var title: String
+       var score: Int64
+       var color: Color
+       var order: Int
+
+    init(
+        id:UUID=UUID(),
+        image:String="asset-\(Int.random(in: 1...6))",
+        title: String,
+        score: Int64,
+        color: Color,
+        order: Int) {
+           self.id=id
+           self.title = title
+           self.score = score
+           self.color = color
+           self.order = order
+       }
+    
+     public func incrementScore(amount:Int64){
         score += amount
     }
 }

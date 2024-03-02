@@ -15,6 +15,7 @@ struct PlayersView: View {
     @State var selectedSideMenuTab = DeckController.shared.selectedDeck.id
     @State var presentSideMenu = false
     @State private var draggedPlayer: Player?
+    @State private var dropOccurred = false
     let horizontalMargin: CGFloat = 10
 
     var body: some View {
@@ -43,11 +44,14 @@ struct PlayersView: View {
                             self.draggedPlayer = player
                             return NSItemProvider()
                         }
-                        .onDrop(of: ["player"], delegate: DropViewDelegate(destinationItem: player, draggedPlayer: $draggedPlayer, players: $deckController.selectedDeck.players))
-
+                        .onDrop(of: ["player"], delegate: DropViewDelegate(destinationItem: player, draggedPlayer: $draggedPlayer, players: $deckController.selectedDeck.players,dropOccurred: $dropOccurred))
                     }
                 }
             }
+            .onChange(of:dropOccurred) {
+                        DeckController.shared.syncDeckList()
+                        dropOccurred = false
+                    }
             .padding(.top, 59)
             .padding(.bottom, 60)
            
@@ -71,11 +75,12 @@ class DropViewDelegate: DropDelegate {
    let destinationItem: Player
     @Binding var draggedPlayer: Player?
     @Binding var players: [Player]
-
-    init(destinationItem:Player,draggedPlayer: Binding<Player?>, players: Binding<[Player]>) {
+    @Binding var dropOccurred: Bool
+    init(destinationItem:Player,draggedPlayer: Binding<Player?>, players: Binding<[Player]>,dropOccurred: Binding<Bool>) {
         _draggedPlayer = draggedPlayer
         _players = players
         self.destinationItem = destinationItem
+        _dropOccurred = dropOccurred
     }
 
     func dropEntered(info: DropInfo) {
@@ -95,7 +100,7 @@ class DropViewDelegate: DropDelegate {
         }
 
     func dropExited(info: DropInfo) {
-        
+        DeckController.shared.syncDeckList()
     }
 
     func performDrop(info: DropInfo) -> Bool {
@@ -111,17 +116,11 @@ class DropViewDelegate: DropDelegate {
 
         // Reset any highlighting or cleanup
         self.draggedPlayer = nil
-        DeckController.shared.syncDeckList()
+        dropOccurred = true
         return true
     }
 
     private func droppedIndex(for info: DropInfo) -> Int? {
-        // Calculate the dropped index based on your logic
-        // You may need to consider the position of the drop relative to the existing items
-        // For example, you can use the location of the drop to determine the target index
-        // in your list.
-
-        // Return the calculated index or nil if it couldn't be determined.
         return nil
     }
 }

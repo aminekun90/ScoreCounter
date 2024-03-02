@@ -31,16 +31,17 @@ struct PlayerMigration: Migration {
     var version: Int64 = 2024_02_25_12_05_00
 
     func migrateDatabase(_ db: Connection) throws {
-            try db.run("""
-                CREATE TABLE IF NOT EXISTS Player (
-                    id TEXT PRIMARY KEY,
-                    image TEXT,
-                    title TEXT,
-                    score INTEGER,
-                    color TEXT,
-                    deckId TEXT,
-                    FOREIGN KEY(deckId) REFERENCES Deck(id) ON DELETE CASCADE
-                )
-            """)
-        }
+        try db.run("""
+            CREATE TABLE IF NOT EXISTS Player (
+                id TEXT PRIMARY KEY,
+                image TEXT,
+                title TEXT,
+                score INTEGER,
+                color TEXT,
+                deckId TEXT,
+                playerOrder INTEGER,
+                FOREIGN KEY(deckId) REFERENCES Deck(id) ON DELETE CASCADE
+            )
+        """)
+    }
 }

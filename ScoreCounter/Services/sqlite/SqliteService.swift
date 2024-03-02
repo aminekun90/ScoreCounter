@@ -179,7 +179,7 @@ class SqliteService {
             try db.transaction {
                 let deckRows = try db.prepare(deckTable)
                 for deckRow in deckRows {
-                    var deck = try Deck(
+                    let deck = try Deck(
                         id:deckRow.get(id),
                         name: deckRow.get(name),
                         winningScore: deckRow.get(winningScore),
@@ -193,6 +193,7 @@ class SqliteService {
                     
                     
                     deck.players = getPlayers(deckId: deck.id)
+                    deck.sortPlayersByOrder()
                     print("Players : \(deck.players.count)")
                     decks.append(deck)
                 }
@@ -223,9 +224,10 @@ class SqliteService {
         let playerColor = Expression<String?>("color")
         let playerImage = Expression<String>("image")
         let deckId = Expression<UUID>("deckId")
-        
+        let playerOrder = Expression<Int>("playerOrder")
         do {
             
+                   
             try db.run(deckTable.upsert(
                 id <- deck.id,
                 name <- deck.name,
@@ -239,6 +241,7 @@ class SqliteService {
             print("upserting players \(deck.players.count)")
             for player in deck.players {
                 do {
+                    let playerCount = deck.players.firstIndex(of: player) ?? 0 + 1
                     print("COLOR: \(player.color)")
                     // Use upsert for player
                     try db.run(playerTable.upsert(
@@ -248,6 +251,7 @@ class SqliteService {
                         playerColor <- player.color.toHex(),
                         playerImage <- player.image,
                         deckId <- deck.id,
+                        playerOrder <- playerCount,
                         onConflictOf: playerId
                     ))
                     print("player upserted \(player.title)")
@@ -259,6 +263,7 @@ class SqliteService {
             print(error)
         }
     }
+    
     public func removeDeck(deckID: UUID) {
         let deckTable = Table("Deck")
         let playerTable = Table("Player")
@@ -289,15 +294,19 @@ class SqliteService {
         let score = Expression<Int64>("score")
         let color = Expression<String?>("color")
         let deckIdColumn = Expression<UUID>("deckId")
+        let playerOrder = Expression<Int>("playerOrder")
         
         do {
             print("COLOR: \(player.color), DECKID: \(deckId)")
+            let playerCount = try db.scalar(playerTable.filter(deckIdColumn == deckId).count) + 1
+                    
             let insert = playerTable.insert(
                 image <- player.image,
                 title <- player.title,
                 score <- player.score,
                 color <- player.color.toHex(),
-                deckIdColumn <- deckId
+                deckIdColumn <- deckId,
+                playerOrder <- playerCount
             )
             try db.run(insert)
         } catch {
@@ -314,6 +323,7 @@ class SqliteService {
         let color = Expression<String?>("color")
         let id = Expression<UUID>("id")
         let deckIdColumn = Expression<UUID>("deckId")
+        let playerOrder = Expression<Int>("playerOrder")
         
         do {
             let players = try db.prepare(playerTable.filter(deckIdColumn == deckId))
@@ -332,7 +342,8 @@ class SqliteService {
                     image: try row.get(image),
                     title: try row.get(title),
                     score: try row.get(score),
-                    color: playerColor
+                    color: playerColor,
+                    order: try row.get(playerOrder)
                 )
             }
             

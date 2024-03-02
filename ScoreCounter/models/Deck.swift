@@ -19,23 +19,19 @@ extension WinningLogic: Value {
     public static var declaredDatatype: String {
         return String.declaredDatatype
     }
-
+    
     public static func fromDatatypeValue(_ datatypeValue: String) -> WinningLogic {
         return WinningLogic(rawValue: datatypeValue) ?? .inverted
     }
-
+    
     public var datatypeValue: String {
         return rawValue
     }
 }
 
-//extension UUID: Equatable {
-//    public static func == (lhs: UUID, rhs: UUID) -> Bool {
-//        return lhs.uuidString == rhs.uuidString
-//    }
-//}
 
-public struct Deck:Identifiable {
+
+public class Deck:Identifiable {
     public var id = UUID()
     var name:String = UUID().uuidString
     var winningScore:Int = 42
@@ -45,7 +41,23 @@ public struct Deck:Identifiable {
     var players:[Player] = []
     var winingLogic:WinningLogic = WinningLogic.normal
     
-    mutating public func resetAllScores() {
+    init(
+        id:UUID = UUID(),
+        name: String = UUID().uuidString,
+        winningScore: Int = 42,
+        increment: Int64 = 1,
+        enableWinningScore: Bool = true,
+        enableWinningAnimation: Bool = true,
+        winingLogic: WinningLogic = WinningLogic.normal){
+            self.id=id
+            self.name=name
+            self.winningScore = winningScore
+            self.increment=increment
+            self.enableWinningScore = enableWinningScore
+            self.enableWinningAnimation = enableWinningAnimation
+    }
+    
+    public func resetAllScores() {
         for index in self.players.indices {
             self.players[index].score = 0
         }
@@ -82,11 +94,11 @@ public struct Deck:Identifiable {
         }
     }
     
-    mutating public func changeWinningLogic() {
+    public func changeWinningLogic() {
         self.winingLogic = (self.winingLogic == .normal) ? .inverted : .normal
         showNotification(name: "Winning logic", subtitle: "changed", icon:UIImage(systemName: "medal")!)
     }
-    mutating public func removePlayer(_ player: Player?) {
+    public func removePlayer(_ player: Player?) {
         guard let player = player else {
             return
         }
@@ -96,11 +108,11 @@ public struct Deck:Identifiable {
             vibratePhone()
         }
     }
-    mutating public func removeAllPlayers(){
+    public func removeAllPlayers(){
         self.players = []
         vibratePhone()
     }
-    mutating public func addPlayer() {
+    public func addPlayer() {
         var name:String = "Player \(self.players.count)"
         if let listData = loadListFromJSON() {
             // Access the list of strings
@@ -114,13 +126,27 @@ public struct Deck:Identifiable {
         } else {
             print("Failed to load JSON data.")
         }
-        let newPlayer = Player(title: name, score: 0, color: getRandomColor())
+        let newPlayer = Player(title: name, score: 0, color: getRandomColor(),order:self.players.last?.order ?? 0)
         self.players.append(newPlayer)
         vibratePhone()
         // Show notification after adding a player
         showNotification(name: name,subtitle: "Added succesfully!",icon:UIImage(systemName: "gamecontroller.fill")!)
     }
-    mutating public func updateScore(_ playerId: UUID, increment: Bool, amount: Int64? = 1) {
+
+    public func sortPlayersByOrder() {
+        print("Sorting players by order")
+        players.sort { (player1:Player, player2:Player) -> Bool in
+            return player1.order < player2.order
+        }
+    }
+
+    public func syncPlayersOrderToIndex(){
+        print("Sync players order to position...")
+        for (index, player) in players.enumerated() {
+            player.order = index + 1
+        }
+    }
+    public func updateScore(_ playerId: UUID, increment: Bool, amount: Int64? = 1) {
         if let playerIndex = self.players.firstIndex(where: { $0.id == playerId }) {
             let delta = (increment ? 1 : -1) * (amount ?? self.increment)
             self.players[playerIndex].incrementScore(amount: delta)
