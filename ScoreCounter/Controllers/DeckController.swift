@@ -32,7 +32,7 @@ class DeckController: ObservableObject {
                 print("No deck loaded !!")
                 let defaultDeck = Deck()
                 self.selectedDeck = defaultDeck
-                //                    self.deckList.append(defaultDeck)
+                self.deckList.append(defaultDeck)
             }
             
             self.initSelectedDeck()
@@ -61,7 +61,8 @@ class DeckController: ObservableObject {
         }
     }
     public func addNewDeck(){
-        self.deckList.append(Deck())
+        selectedDeck = Deck()
+        self.deckList.append(selectedDeck)
         showNotification(name: "Counter", subtitle: "Just been added", icon: UIImage(systemName:"gamecontroller.fill"))
         syncDeckList()
     }
@@ -96,7 +97,7 @@ class DeckController: ObservableObject {
         self.selectedDeck.updateScore(playerId, increment: increment, amount: amount)
         self.syncDeckList()
     }
-
+    
     public func changeWinningLogic() {
         selectedDeck.changeWinningLogic()
         self.syncDeckList()
@@ -113,6 +114,18 @@ class DeckController: ObservableObject {
         self.selectedDeck.removePlayer(player)
         self.syncDeckList()
     }
+    
+    public func removeDeck(deckId:UUID){
+        dataController.sqliteService.removeDeck(deckID: deckId)
+        if let indexToRemove = deckList.firstIndex(where: { $0.id == deckId }) {
+            // Remove the deck at the found index
+            deckList.remove(at: indexToRemove)
+        }
+        selectedDeck = Deck()
+        syncDeckList()
+        
+    }
+    
     public func resetAllScores(){
         self.selectedDeck.resetAllScores()
         self.syncDeckList()

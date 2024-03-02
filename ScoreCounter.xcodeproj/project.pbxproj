@@ -53,6 +53,7 @@
 		5267E4BE2B8B746F00A71997 /* DeckController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5267E4BD2B8B746F00A71997 /* DeckController.swift */; };
 		52B746F52B8BBBAB00F46FE0 /* DeckMigration+PlayerMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B746F42B8BBBAB00F46FE0 /* DeckMigration+PlayerMigration.swift */; };
 		52B747042B8BC68500F46FE0 /* img in Resources */ = {isa = PBXBuildFile; fileRef = 52B747032B8BC68500F46FE0 /* img */; };
+		52F3D59F2B912FAF00BC359C /* DeckRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3D59E2B912FAF00BC359C /* DeckRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		5267E4BD2B8B746F00A71997 /* DeckController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckController.swift; sourceTree = "<group>"; };
 		52B746F42B8BBBAB00F46FE0 /* DeckMigration+PlayerMigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeckMigration+PlayerMigration.swift"; sourceTree = "<group>"; };
 		52B747032B8BC68500F46FE0 /* img */ = {isa = PBXFileReference; lastKnownFileType = folder; path = img; sourceTree = "<group>"; };
+		52F3D59E2B912FAF00BC359C /* DeckRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +265,7 @@
 				5267E4B92B8B5B2D00A71997 /* SideMenu.swift */,
 				5267E4BB2B8B631A00A71997 /* SideMenuView.swift */,
 				524B877A2B86731500DECBF9 /* LandingPageView.swift */,
+				52F3D59E2B912FAF00BC359C /* DeckRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				525C5C312B89F5DA00287B61 /* DiceNode.swift in Sources */,
 				525C5C182B89560C00287B61 /* settingsView.swift in Sources */,
 				522307F92B861CAA007CE1A7 /* ContentView.swift in Sources */,
+				52F3D59F2B912FAF00BC359C /* DeckRowView.swift in Sources */,
 				524B87732B864FF300DECBF9 /* PlayerEditView.swift in Sources */,
 				525C5C242B89F49300287B61 /* CGPoint+Distance.swift in Sources */,
 				525C5C022B88BFFE00287B61 /* Deck.swift in Sources */,

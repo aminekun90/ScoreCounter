@@ -259,6 +259,25 @@ class SqliteService {
             print(error)
         }
     }
+    public func removeDeck(deckID: UUID) {
+        let deckTable = Table("Deck")
+        let playerTable = Table("Player")
+        let id = Expression<UUID>("id")
+        let deckIdColumn = Expression<UUID>("deckId")
+
+        do {
+            // Delete players associated with the deck
+            try db.run(playerTable.filter(deckIdColumn == deckID).delete())
+            print("Players for Deck with ID \(deckID) deleted")
+
+            // Delete the deck itself
+            let deckToDelete = deckTable.filter(id == deckID)
+            try db.run(deckToDelete.delete())
+            print("Deck with ID \(deckID) deleted")
+        } catch {
+            print(error)
+        }
+    }
     
     
     // MARK: - Player CRUD Operations
