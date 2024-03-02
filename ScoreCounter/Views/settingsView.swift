@@ -34,6 +34,10 @@ struct SettingsView: View {
                     TextField("Increment Value 3", value: $settingsController.appSettings.increments.values[2], formatter: NumberFormatter())
                         .keyboardType(.numberPad)
                 }
+                Image("assinat")
+                               .resizable()
+                               .aspectRatio(contentMode: .fit)
+                               .frame(height: 180)
                 
             }
             .navigationTitle("Settings")
@@ -48,6 +52,7 @@ struct SettingsView: View {
                 }
                 
             })
+            
         }
     }
     
