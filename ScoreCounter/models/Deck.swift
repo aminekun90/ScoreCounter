@@ -63,10 +63,10 @@ public class Deck:Identifiable {
         }
     }
     
-    public func getWinnerName() -> (String?, String) {
+    public func getWinnerName() -> (Bool, String) {
         guard players.count > 1 else {
             // Not enough players to determine a winner
-            return (nil, "")
+            return (false, "")
         }
         
         let sortedPlayers: [Player]
@@ -81,16 +81,15 @@ public class Deck:Identifiable {
         
         if winners.count > 1 {
             // Multiple players with the same highest (or lowest) score
-            return (nil, "\(winners.count)")
+            return (false, "\(winners.count)")
         } else {
             // Only one player with the highest (or lowest) score
             if players.count > 1 {
-                let winnerImage = winners.isEmpty ? nil : "medal"
                 let winnerText = winners.isEmpty ? "" : winners.first!.title
-                return (winnerImage, winnerText)
+                return (true, winnerText)
             }
             
-            return (nil, "")
+            return (false, "")
         }
     }
     

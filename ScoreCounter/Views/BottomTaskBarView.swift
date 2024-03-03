@@ -34,7 +34,7 @@ struct BottomTaskBar: View {
             Button(action: {
                 currentPage = Page.settings
             }) {
-                Image(systemName: "gear")
+                Image(systemName: "gearshape")
                     .imageScale(.large)
             }
             .padding()

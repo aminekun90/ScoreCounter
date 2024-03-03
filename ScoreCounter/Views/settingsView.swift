@@ -34,10 +34,14 @@ struct SettingsView: View {
                     TextField("Increment Value 3", value: $settingsController.appSettings.increments.values[2], formatter: NumberFormatter())
                         .keyboardType(.numberPad)
                 }
-                Image("assinat")
-                               .resizable()
-                               .aspectRatio(contentMode: .fit)
-                               .frame(height: 180)
+                Section{
+                    Image("assinat")
+                                   .resizable()
+                                   .aspectRatio(contentMode: .fit)
+                                   .frame(height: 140)
+                    Text("Score counter Version \(settingsController.appSettings.appVersion)").fontWeight(.light).frame(alignment: /*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/)
+                }
+                
                 
             }
             .navigationTitle("Settings")

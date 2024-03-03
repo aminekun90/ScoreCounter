@@ -26,22 +26,22 @@ struct DeckActionsView: View {
                 Button(action: {
                     deckController.changeWinningLogic()
                 }) {
-                    Image(systemName: "party.popper")
-                        .imageScale(.large)
-                        .padding()
-                        .clipShape(RoundedRectangle(cornerRadius: 5))
+                    let (winnerImage, winnerText) = deckController.selectedDeck.getWinnerName()
+                    if winnerImage {
+                        Image( "medal")
+                            .resizable().aspectRatio(contentMode: .fit)
+                            .frame(maxHeight: 25)
+                            .clipShape(RoundedRectangle(cornerRadius: 5))
+                    }else{
+                        Image( systemName: "equal")
+                            .imageScale(.large)
+                            .clipShape(RoundedRectangle(cornerRadius: 5))
+                    }
+                    Text(winnerText)
                 }
-                // Destructure the tuple returned by getWinnerName
-                let (winnerImage, winnerText) = deckController.selectedDeck.getWinnerName()
                 
-                if let image = winnerImage {
-                    Image(systemName: image)
-                        .imageScale(.large)
-                        .padding()
-                        .clipShape(RoundedRectangle(cornerRadius: 5))
-                }
                 
-                Text(winnerText)
+                
                 Spacer()
                 Button(action: {
                     deckController.addPlayer()
