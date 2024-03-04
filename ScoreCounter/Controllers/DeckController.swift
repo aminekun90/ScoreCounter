@@ -81,8 +81,10 @@ class DeckController: ObservableObject {
     }
     
     public func showWinAnimation(score: Int64) -> some View {
+        let condition = selectedDeck.winningScore >= 0 ? score >= selectedDeck.winningScore : score <= selectedDeck.winningScore
         
-        if score >= selectedDeck.winningScore {
+        
+        if condition {
             return AnyView(HStack {
                 Image(systemName: "crown")
                 Image(systemName: "fireworks")

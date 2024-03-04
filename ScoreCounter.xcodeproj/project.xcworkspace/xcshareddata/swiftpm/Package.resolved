@@ -1,12 +1,21 @@
 {
   "pins" : [
     {
+      "identity" : "jdstatusbarnotification",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/calimarkus/JDStatusBarNotification.git",
+      "state" : {
+        "revision" : "a999165a910750968093e2eb113900ae9eda5159",
+        "version" : "2.2.1"
+      }
+    },
+    {
       "identity" : "sqlite.swift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/stephencelis/SQLite.swift.git",
       "state" : {
-        "revision" : "7a2e3cd27de56f6d396e84f63beefd0267b55ccb",
-        "version" : "0.14.1"
+        "revision" : "e78ae0220e17525a15ac68c697a155eb7a672a8e",
+        "version" : "0.15.0"
       }
     },
     {

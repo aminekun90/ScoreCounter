@@ -29,7 +29,7 @@ struct LandingPageView: View {
                 deckController.addPlayer()
             })
             Spacer()
-        }.padding(.top,200)
+        }.padding(.top,60)
         .edgesIgnoringSafeArea(.all)
     }
 }

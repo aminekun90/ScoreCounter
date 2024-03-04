@@ -54,6 +54,9 @@
 		52B746F52B8BBBAB00F46FE0 /* DeckMigration+PlayerMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B746F42B8BBBAB00F46FE0 /* DeckMigration+PlayerMigration.swift */; };
 		52B747042B8BC68500F46FE0 /* img in Resources */ = {isa = PBXBuildFile; fileRef = 52B747032B8BC68500F46FE0 /* img */; };
 		52F3D59F2B912FAF00BC359C /* DeckRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3D59E2B912FAF00BC359C /* DeckRowView.swift */; };
+		52F3D5A52B94E53E00BC359C /* JDStatusBarNotification in Frameworks */ = {isa = PBXBuildFile; productRef = 52F3D5A42B94E53E00BC359C /* JDStatusBarNotification */; };
+		52F3D5A72B95EA6D00BC359C /* EditWinningScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3D5A62B95EA6D00BC359C /* EditWinningScoreView.swift */; };
+		52F3D5A92B96090100BC359C /* CustomStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F3D5A82B96090100BC359C /* CustomStepper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +125,8 @@
 		52B746F42B8BBBAB00F46FE0 /* DeckMigration+PlayerMigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeckMigration+PlayerMigration.swift"; sourceTree = "<group>"; };
 		52B747032B8BC68500F46FE0 /* img */ = {isa = PBXFileReference; lastKnownFileType = folder; path = img; sourceTree = "<group>"; };
 		52F3D59E2B912FAF00BC359C /* DeckRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckRowView.swift; sourceTree = "<group>"; };
+		52F3D5A62B95EA6D00BC359C /* EditWinningScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWinningScoreView.swift; sourceTree = "<group>"; };
+		52F3D5A82B96090100BC359C /* CustomStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStepper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				525C5C0F2B88F33500287B61 /* SQLiteMigrationManager in Frameworks */,
+				52F3D5A52B94E53E00BC359C /* JDStatusBarNotification in Frameworks */,
 				525C5C052B88C61D00287B61 /* SQLite in Frameworks */,
 				525C5BEF2B86B32600287B61 /* JDStatusBarNotification in Frameworks */,
 			);
@@ -250,6 +256,8 @@
 				5267E4BB2B8B631A00A71997 /* SideMenuView.swift */,
 				524B877A2B86731500DECBF9 /* LandingPageView.swift */,
 				52F3D59E2B912FAF00BC359C /* DeckRowView.swift */,
+				52F3D5A62B95EA6D00BC359C /* EditWinningScoreView.swift */,
+				52F3D5A82B96090100BC359C /* CustomStepper.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -378,6 +386,7 @@
 				525C5BEE2B86B32600287B61 /* JDStatusBarNotification */,
 				525C5C042B88C61D00287B61 /* SQLite */,
 				525C5C0E2B88F33500287B61 /* SQLiteMigrationManager */,
+				52F3D5A42B94E53E00BC359C /* JDStatusBarNotification */,
 			);
 			productName = ScoreCounter;
 			productReference = 522307F32B861CAA007CE1A7 /* ScoreCounter.app */;
@@ -452,9 +461,9 @@
 			);
 			mainGroup = 522307EA2B861CAA007CE1A7;
 			packageReferences = (
-				525C5BED2B86B32500287B61 /* XCLocalSwiftPackageReference "JDStatusBarNotification" */,
 				525C5C032B88C61D00287B61 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
 				525C5C0D2B88F33500287B61 /* XCRemoteSwiftPackageReference "SQLiteMigrationManager.swift" */,
+				52F3D5A32B94E53E00BC359C /* XCRemoteSwiftPackageReference "JDStatusBarNotification" */,
 			);
 			productRefGroup = 522307F42B861CAA007CE1A7 /* Products */;
 			projectDirPath = "";
@@ -514,6 +523,7 @@
 				525C5C212B89F41D00287B61 /* SceneCreator.swift in Sources */,
 				525C5C082B88CE7E00287B61 /* SqliteService.swift in Sources */,
 				525C5C332B89F60C00287B61 /* GameScene.swift in Sources */,
+				52F3D5A92B96090100BC359C /* CustomStepper.swift in Sources */,
 				52B746F52B8BBBAB00F46FE0 /* DeckMigration+PlayerMigration.swift in Sources */,
 				525C5C2A2B89F4F400287B61 /* UIView.swift in Sources */,
 				525C5C282B89F4D700287B61 /* SKTexture+Gradient.swift in Sources */,
@@ -526,6 +536,7 @@
 				525C5C162B89424C00287B61 /* PlayersView.swift in Sources */,
 				524B87772B866BC700DECBF9 /* DeckActionsView.swift in Sources */,
 				524B87752B86579000DECBF9 /* PlayerRow.swift in Sources */,
+				52F3D5A72B95EA6D00BC359C /* EditWinningScoreView.swift in Sources */,
 				525C5C1C2B89F35E00287B61 /* DiceRepresentationModel.swift in Sources */,
 				524B877B2B86731600DECBF9 /* LandingPageView.swift in Sources */,
 				5267E4BE2B8B746F00A71997 /* DeckController.swift in Sources */,
@@ -874,13 +885,6 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		525C5BED2B86B32500287B61 /* XCLocalSwiftPackageReference "JDStatusBarNotification" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = JDStatusBarNotification;
-		};
-/* End XCLocalSwiftPackageReference section */
-
 /* Begin XCRemoteSwiftPackageReference section */
 		525C5C032B88C61D00287B61 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -896,6 +900,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 0.8.1;
+			};
+		};
+		52F3D5A32B94E53E00BC359C /* XCRemoteSwiftPackageReference "JDStatusBarNotification" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/calimarkus/JDStatusBarNotification.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -914,6 +926,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 525C5C0D2B88F33500287B61 /* XCRemoteSwiftPackageReference "SQLiteMigrationManager.swift" */;
 			productName = SQLiteMigrationManager;
+		};
+		52F3D5A42B94E53E00BC359C /* JDStatusBarNotification */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52F3D5A32B94E53E00BC359C /* XCRemoteSwiftPackageReference "JDStatusBarNotification" */;
+			productName = JDStatusBarNotification;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

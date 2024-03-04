@@ -46,6 +46,9 @@ struct PlayerEditView: View {
             }
             .navigationTitle("Edit Player")
             .navigationBarItems(
+                leading: Button("Cancel") {
+                    selectedPlayer = nil
+                },
                 trailing:
                     // Trash icon for delete action
                 Button(action: {

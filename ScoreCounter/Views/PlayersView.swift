@@ -16,48 +16,64 @@ struct PlayersView: View {
     @State var presentSideMenu = false
     @State private var draggedPlayer: Player?
     @State private var dropOccurred = false
+    @State private var isEditingWinningScore = false
     let horizontalMargin: CGFloat = 10
     
     var body: some View {
-        ZStack {
-            // ScrollView content
-            ScrollView(showsIndicators: false) {
-                LazyVStack(spacing: 0) {
-                    if deckController.selectedDeck?.players.isEmpty ?? true {
-                        LandingPageView()
-                    }else{
-                        HStack {
+        ZStack{
+            VStack {
+                if deckController.selectedDeck?.players.isEmpty ?? true {
+                    LandingPageView()
+                }else {
+                    HStack {
+                        Button(action: {
+                            isEditingWinningScore.toggle()
+                        }) {
                             Spacer()
                             Image(systemName: "crown.fill").foregroundColor(.yellow)
                             Text("Reach \(deckController.selectedDeck.winningScore) points to win")
                             Spacer()
                         }
-                        .padding(.bottom, 10)
-                        .padding(.top, 10)
+                        .sheet(isPresented: $isEditingWinningScore) {
+                            EditWinningScoreView(
+                                isPresented: $isEditingWinningScore,
+                                winningScore: $deckController.selectedDeck.winningScore
+                            )
+                        }
+                        .padding(.bottom, 15)
+                        .padding(.top, 60)
                         .background(Color.blue)
                         .foregroundColor(.white)
-                        
                     }
                     
-                    ForEach(deckController.selectedDeck?.players ?? []) { player in
-                        PlayerRow(player: player, horizontalMargin: horizontalMargin, selectedPlayer: $selectedPlayer, totalPlayers: deckController.selectedDeck?.players.count ?? 0).onDrag {
-                            self.draggedPlayer = player
-                            return NSItemProvider()
+                    // ScrollView content
+                    ScrollView(showsIndicators: false) {
+                        LazyVStack(spacing: 0) {
+                            
+                            
+                            ForEach(deckController.selectedDeck?.players ?? []) { player in
+                                PlayerRow(player: player, horizontalMargin: horizontalMargin, selectedPlayer: $selectedPlayer, totalPlayers: deckController.selectedDeck?.players.count ?? 0)
+                                    .onDrag {
+                                        self.draggedPlayer = player
+                                        return NSItemProvider()
+                                    }
+                                    .onDrop(of: ["player"], delegate: DropViewDelegate(destinationItem: player, draggedPlayer: $draggedPlayer, players: $deckController.selectedDeck.players, dropOccurred: $dropOccurred))
+                            }
                         }
-                        .onDrop(of: ["player"], delegate: DropViewDelegate(destinationItem: player, draggedPlayer: $draggedPlayer, players: $deckController.selectedDeck.players,dropOccurred: $dropOccurred))
+                    }.padding(.bottom,60)
+                    .onChange(of: dropOccurred) {
+                        DeckController.shared.syncDeckList()
+                        dropOccurred = false
                     }
                 }
+                
+                
             }
-            .onChange(of:dropOccurred) {
-                DeckController.shared.syncDeckList()
-                dropOccurred = false
-            }
-            .padding(.top, 59)
-            .padding(.bottom, 60)
             
             SideMenu(isShowing: $presentSideMenu, content: AnyView(SideMenuView(selectedSideMenuTab: $selectedSideMenuTab, presentSideMenu: $presentSideMenu)))
             
-        }.overlay(VStack {
+        }
+        .overlay(VStack {
             DeckActionsView(isShowingDialog: $isShowingDialog, presentSideMenu: $presentSideMenu)
                 .frame(maxWidth: .infinity, alignment: .top)
                 .background(SettingsController.shared.getAppearenceColor(shouldBe: .black)) // Set your preferred background color
@@ -70,6 +86,7 @@ struct PlayersView: View {
         }
     }
 }
+
 
 class DropViewDelegate: DropDelegate {
     let destinationItem: Player
