@@ -24,7 +24,11 @@ class DataController: ObservableObject {
 }
 
 class SettingsController: ObservableObject {
-    @Published var appSettings: AppSettings
+    @Published var appSettings: AppSettings{
+        willSet {
+            objectWillChange.send()
+        }
+    }
     var dataController: DataController
     static var shared = SettingsController(dataController: DataController.shared)
     
@@ -32,7 +36,16 @@ class SettingsController: ObservableObject {
         self.dataController = dataController
         self.appSettings = dataController.appSettings
     }
-    
+    func removeIncrement(at index: Int) {
+        appSettings.increments.values.remove(at: index)
+        self.saveSettings()
+        objectWillChange.send()
+    }
+    func appendIncrement(value: Int64) {
+        appSettings.increments.values.append(value)
+        self.saveSettings()
+        objectWillChange.send()
+    }
     public func saveSettings() {
         dataController.saveSettings()
     }

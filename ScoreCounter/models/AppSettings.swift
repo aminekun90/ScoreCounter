@@ -30,12 +30,12 @@ extension AppAppearance: Value {
     }
 }
 
-public class AppSettings {
+public class AppSettings:ObservableObject {
     var id: Int64 = 1 // Assuming the default id = 1
     var vibrate:Bool = true
     var keepScreenOn:Bool = true
     var appearance:AppAppearance = AppAppearance.system
-    var increments: IncrementsArray = IncrementsArray(values: [1, 5, 10])
+    @Published var increments: IncrementsArray = IncrementsArray(values: [1, 5, 10])
     
     var appVersion:String!
     

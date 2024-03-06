@@ -8,9 +8,10 @@
 import Foundation
 import SQLiteMigrationManager
 import SQLite
+import SwiftUI
 
-public struct IncrementsArray: Codable, Value,MutableCollection {
-    var values: [Int64]
+public class IncrementsArray: Codable,MutableCollection,ObservableObject,Value {
+    @Published public var values: [Int64] = []
     // Conform to MutableCollection
     public var startIndex: Int { values.startIndex }
     public var endIndex: Int { values.endIndex }
@@ -41,7 +42,23 @@ public struct IncrementsArray: Codable, Value,MutableCollection {
     public func index(after i: Int) -> Int {
         return values.index(after: i)
     }
+    
+    init(values: [Int64] = []) {
+            self.values = values
+        }
+    required public init(from decoder: Decoder) throws {
+          let container = try decoder.container(keyedBy: CodingKeys.self)
+          self.values = try container.decode([Int64].self, forKey: .values)
+      }
+    public func encode(to encoder: Encoder) throws {
+            var container = encoder.container(keyedBy: CodingKeys.self)
+            try container.encode(values, forKey: .values)
+        }
+    private enum CodingKeys: String, CodingKey {
+           case values
+       }
 }
+
 struct SeedDb: Migration {
     var version: Int64 = 2024_02_24_12_00_00
     

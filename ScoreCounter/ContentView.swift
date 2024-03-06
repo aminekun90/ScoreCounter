@@ -36,7 +36,7 @@ struct ContentView: View {
                 case .dice:
                     GameViewWrapper()
                 case .settings:
-                    SettingsView(settingsController: SettingsController.shared)
+                    SettingsView()
                 }
                 BottomTaskBar(currentPage: $currentPage)
             }
