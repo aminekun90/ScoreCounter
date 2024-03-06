@@ -6,6 +6,19 @@
 //
 
 import SwiftUI
+extension Color {
+    var isBright: Bool {
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+        var alpha: CGFloat = 0
+        UIColor(self).getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        
+        // Adjust the threshold as needed
+        let brightness = (red * 299 + green * 587 + blue * 114) / 1000
+        return brightness > 0.7
+    }
+}
 class IncrementState: ObservableObject {
     @Published var incrementAction: Bool = false
 }
@@ -41,6 +54,7 @@ struct PlayerRow: View {
                         .frame(maxWidth: .infinity, maxHeight: heightForPlayerRow())
                         .cornerRadius(10)
                         .padding(.horizontal, horizontalMargin)
+                        
                 }
             }
             
@@ -83,7 +97,7 @@ struct PlayerRow: View {
                     }
             )
         }.background(player.color)
-            .foregroundColor(.white)
+            .foregroundColor(player.color.isBright ? .black : .white)
             .frame(height: heightForPlayerRow())
             .sheet(isPresented: $incrementPresented) {
                 VStack{
@@ -91,6 +105,7 @@ struct PlayerRow: View {
                         .font(.title)
                         .frame(maxWidth: .infinity, maxHeight: heightForPlayerRow())
                         .cornerRadius(10).background(player.color)
+                        .foregroundColor(player.color.isBright ? .black : .white)
                     
                     HStack(spacing: 10) {
                       
@@ -154,7 +169,7 @@ struct PlayerRow: View {
                     .frame(maxWidth: .infinity, alignment: .center)
                     .padding(.horizontal,10)
                     .presentationDetents([.fraction(0.7)])
-                }
+                }.frame(maxHeight: .infinity, alignment: .top)
             }
     }
     

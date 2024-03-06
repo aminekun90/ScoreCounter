@@ -33,7 +33,7 @@
 		525C5C122B89333100287B61 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C112B89333100287B61 /* AppSettings.swift */; };
 		525C5C142B89362400287B61 /* BottomTaskBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C132B89362400287B61 /* BottomTaskBarView.swift */; };
 		525C5C162B89424C00287B61 /* PlayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C152B89424C00287B61 /* PlayersView.swift */; };
-		525C5C182B89560C00287B61 /* settingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C172B89560C00287B61 /* settingsView.swift */; };
+		525C5C182B89560C00287B61 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C172B89560C00287B61 /* SettingsView.swift */; };
 		525C5C1A2B8956A400287B61 /* SeedDb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C192B8956A400287B61 /* SeedDb.swift */; };
 		525C5C1C2B89F35E00287B61 /* DiceRepresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C1B2B89F35E00287B61 /* DiceRepresentationModel.swift */; };
 		525C5C1E2B89F37B00287B61 /* DiceSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C1D2B89F37B00287B61 /* DiceSide.swift */; };
@@ -106,7 +106,7 @@
 		525C5C112B89333100287B61 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		525C5C132B89362400287B61 /* BottomTaskBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTaskBarView.swift; sourceTree = "<group>"; };
 		525C5C152B89424C00287B61 /* PlayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersView.swift; sourceTree = "<group>"; };
-		525C5C172B89560C00287B61 /* settingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsView.swift; sourceTree = "<group>"; };
+		525C5C172B89560C00287B61 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		525C5C192B8956A400287B61 /* SeedDb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedDb.swift; sourceTree = "<group>"; };
 		525C5C1B2B89F35E00287B61 /* DiceRepresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceRepresentationModel.swift; sourceTree = "<group>"; };
 		525C5C1D2B89F37B00287B61 /* DiceSide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceSide.swift; sourceTree = "<group>"; };
@@ -240,6 +240,15 @@
 			path = PlayerView;
 			sourceTree = "<group>";
 		};
+		5252D96E2B98FC5600F049AE /* SideMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				5267E4B92B8B5B2D00A71997 /* SideMenu.swift */,
+				5267E4BB2B8B631A00A71997 /* SideMenuView.swift */,
+			);
+			path = SideMenuView;
+			sourceTree = "<group>";
+		};
 		525C5BFD2B87887B00287B61 /* data-json */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,12 +270,11 @@
 		525C5BFF2B88BDD800287B61 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5252D96E2B98FC5600F049AE /* SideMenuView */,
 				5252D96D2B97DE2400F049AE /* PlayerView */,
 				528D63A22B9798B600417E66 /* SettingsView */,
 				524B87762B866BC700DECBF9 /* DeckActionsView.swift */,
 				525C5C132B89362400287B61 /* BottomTaskBarView.swift */,
-				5267E4B92B8B5B2D00A71997 /* SideMenu.swift */,
-				5267E4BB2B8B631A00A71997 /* SideMenuView.swift */,
 				524B877A2B86731500DECBF9 /* LandingPageView.swift */,
 				52F3D59E2B912FAF00BC359C /* DeckRowView.swift */,
 				52F3D5A82B96090100BC359C /* CustomStepper.swift */,
@@ -381,7 +389,7 @@
 		528D63A22B9798B600417E66 /* SettingsView */ = {
 			isa = PBXGroup;
 			children = (
-				525C5C172B89560C00287B61 /* settingsView.swift */,
+				525C5C172B89560C00287B61 /* SettingsView.swift */,
 				528D63A02B97211C00417E66 /* StoreView.swift */,
 				528D63A32B9798F100417E66 /* ScoreIncrementsSection.swift */,
 			);
@@ -536,7 +544,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				525C5C312B89F5DA00287B61 /* DiceNode.swift in Sources */,
-				525C5C182B89560C00287B61 /* settingsView.swift in Sources */,
+				525C5C182B89560C00287B61 /* SettingsView.swift in Sources */,
 				522307F92B861CAA007CE1A7 /* ContentView.swift in Sources */,
 				52F3D59F2B912FAF00BC359C /* DeckRowView.swift in Sources */,
 				524B87732B864FF300DECBF9 /* PlayerEditView.swift in Sources */,
