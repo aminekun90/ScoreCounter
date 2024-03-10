@@ -24,6 +24,8 @@ class DataController: ObservableObject {
 }
 
 class SettingsController: ObservableObject {
+    @Published var textColor:Color = .black
+    @Published var backgroundColor:Color = .white
     @Published var appSettings: AppSettings{
         willSet {
             objectWillChange.send()
@@ -35,26 +37,49 @@ class SettingsController: ObservableObject {
     init(dataController: DataController) {
         self.dataController = dataController
         self.appSettings = dataController.appSettings
+        self.textColor = getAppearenceColor(lightTheme: .black)
+        self.backgroundColor = getAppearenceColor(lightTheme: .white)
     }
+    
+    public func getAppAppearance() -> ColorScheme {
+        switch appSettings.appearance {
+        case .dark:00
+            return .dark
+        case .light:
+            return .light
+        case .system:
+            let currentTraitCollection = UIScreen.main.traitCollection
+            let isDarkMode = currentTraitCollection.userInterfaceStyle == .dark
+//            let isDarkMode = colorScheme == .dark
+            print("System isDarkMode \(isDarkMode)")
+            
+            if(isDarkMode){
+                return .dark
+            }
+            return .light
+        }
+    }
+    
     func removeIncrement(at index: Int) {
         appSettings.increments.values.remove(at: index)
         self.saveSettings()
-        objectWillChange.send()
     }
     func appendIncrement(value: Int64) {
         appSettings.increments.values.append(value)
         self.saveSettings()
-        objectWillChange.send()
     }
     public func saveSettings() {
         dataController.saveSettings()
+        
+        self.textColor = getAppearenceColor(lightTheme: .black)
+        self.backgroundColor = getAppearenceColor(lightTheme: .white)
     }
-    public func getAppearenceColor(shouldBe:Color)->Color{
-        let currentTraitCollection = UIScreen.main.traitCollection
-        let isDarkMode = currentTraitCollection.userInterfaceStyle == .dark
-        if (SettingsController.shared.appSettings.appearance == AppAppearance.light || !isDarkMode){
-            return shouldBe == .white ? .black:.white
+    
+    public func getAppearenceColor(lightTheme:Color)->Color{
+        print("lightTheme: \(lightTheme)")
+        if (getAppAppearance() == .light){
+            return lightTheme == .white ? .black:.white
         }
-        return shouldBe
+        return lightTheme
     }
 }

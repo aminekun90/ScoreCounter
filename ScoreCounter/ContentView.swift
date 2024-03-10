@@ -39,7 +39,7 @@ struct ContentView: View {
                     SettingsView()
                 }
                 BottomTaskBar(currentPage: $currentPage)
-            }
+            }.frame(maxWidth: .infinity,maxHeight: .infinity)
         }
     }
    

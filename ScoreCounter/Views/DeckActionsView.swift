@@ -14,7 +14,7 @@ struct DeckActionsView: View {
     @Binding var presentSideMenu:Bool
     var body: some View {
         VStack {
-            HStack {
+            HStack(alignment: .center) {
                 Button(action: {
                     presentSideMenu = !presentSideMenu
                 }) {
@@ -95,7 +95,8 @@ struct DeckActionsView: View {
                     Button("Cancel", role: .cancel) {}
                 }
             }
-            .background(Color.blue)
+            .padding(0.0)
+            .background(.black)
             .foregroundColor(.white)
             
             

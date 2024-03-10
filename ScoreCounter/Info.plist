@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Oswald-Bold.ttf</string>
+		<string>Oswald-ExtraLight.ttf</string>
+		<string>Oswald-Light.ttf</string>
+		<string>Oswald-Medium.ttf</string>
+		<string>Oswald-Regular.ttf</string>
+		<string>Oswald-SemiBold.ttf</string>
+		<string>Micro5-Regular.ttf</string>
+		<string>RobotoMono-Light.ttf</string>
+		<string>RobotoMono-Medium.ttf</string>
+		<string>RobotoMono-Bold.ttf</string>
+	</array>
+</dict>
+</plist>

@@ -9,37 +9,57 @@ import Foundation
 import SwiftUI
 
 struct BottomTaskBar: View {
-    @Binding var currentPage:Page
+    @Binding var currentPage: Page
+
     var body: some View {
         HStack {
-            Button(action: {
-                currentPage = Page.counter
-            }) {
-                Text("123")
-            }
-            .padding()
-
+            NavigationButton("123", page: .counter)
             Spacer()
-
-            Button(action: {
-                currentPage = Page.dice
-            }) {
-                Image(systemName: "dice")
-                    .imageScale(.large)
-            }
-            .padding()
-
+            ImageButton(systemName: "dice", page: .dice)
             Spacer()
-
-            Button(action: {
-                currentPage = Page.settings
-            }) {
-                Image(systemName: "gearshape")
-                    .imageScale(.large)
-            }
-            .padding()
+            ImageButton(systemName: "gearshape", page: .settings)
         }
-        .background(Color.green) // Set the background color as needed
-        .foregroundColor(.white)
+        .background(SettingsController.shared.backgroundColor)
+    }
+
+    @ViewBuilder
+    private func NavigationButton(_ text: String, page: Page) -> some View {
+        Button(action: {
+            currentPage = page
+        }) {
+            Text(text)
+                .font(.custom("Micro5-Regular", size: 30))
+        }
+        .padding()
+        .foregroundColor(foregroundColor(for: page))
+    }
+
+    @ViewBuilder
+    private func ImageButton(systemName: String, page: Page) -> some View {
+        Button(action: {
+            currentPage = page
+        }) {
+            Image(systemName: systemName)
+                .imageScale(.large)
+        }
+        .padding()
+        .foregroundColor(foregroundColor(for: page))
+    }
+
+    private func foregroundColor(for page: Page) -> Color {
+        return currentPage == page ? .selectedColor : SettingsController.shared.textColor
+    }
+}
+
+extension Color {
+    static var selectedColor: Color {
+        return Color.blue
+    }
+}
+
+struct BottomTaskBar_Previews: PreviewProvider {
+    @State static var currentPage: Page = Page.counter
+    static var previews: some View {
+        BottomTaskBar(currentPage: $currentPage)
     }
 }

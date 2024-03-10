@@ -40,17 +40,15 @@ struct PlayersView: View {
                                 winningScore: $deckController.selectedDeck.winningScore
                             )
                         }
-                        .padding(.bottom, 15)
+                        .padding(.bottom, 5)
                         .padding(.top, 60)
-                        .background(Color.blue)
+                        .background(Color.black)
                         .foregroundColor(.white)
-                    }
+                    }.frame(maxHeight: 80, alignment: .top)
                     
                     // ScrollView content
                     ScrollView(showsIndicators: false) {
                         LazyVStack(spacing: 0) {
-                            
-                            
                             ForEach(deckController.selectedDeck?.players ?? []) { player in
                                 PlayerRow(player: player, horizontalMargin: horizontalMargin, selectedPlayer: $selectedPlayer, totalPlayers: deckController.selectedDeck?.players.count ?? 0)
                                     .onDrag {
@@ -61,6 +59,7 @@ struct PlayersView: View {
                             }
                         }
                     }.padding(.bottom,60)
+                        .frame(maxHeight: .infinity, alignment: .top)
                     .onChange(of: dropOccurred) {
                         DeckController.shared.syncDeckList()
                         dropOccurred = false
@@ -75,12 +74,8 @@ struct PlayersView: View {
         }
         .overlay(VStack {
             DeckActionsView(isShowingDialog: $isShowingDialog, presentSideMenu: $presentSideMenu)
-                .frame(maxWidth: .infinity, alignment: .top)
-                .background(SettingsController.shared.getAppearenceColor(shouldBe: .black)) // Set your preferred background color
-                .foregroundColor(.white) // Set your preferred text color
-            Spacer()
-        }
-            .ignoresSafeArea(.all, edges: .bottom))
+                .frame(maxHeight: .infinity, alignment: .top)
+        }.ignoresSafeArea(.all, edges: .bottom))
         .sheet(item: $selectedPlayer) { player in
             PlayerEditView(selectedPlayer: $selectedPlayer)
         }
@@ -145,3 +140,8 @@ class DropViewDelegate: DropDelegate {
 
 
 
+struct PlayersView_Previews: PreviewProvider {
+    static var previews: some View {
+        PlayersView()
+    }
+}

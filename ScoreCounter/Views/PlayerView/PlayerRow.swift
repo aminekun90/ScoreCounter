@@ -49,7 +49,7 @@ struct PlayerRow: View {
             }) {
                 VStack(alignment: .leading) { // Adjusted alignment
                     Text(player.title)
-                        .font(.title)
+                        .font(.custom("Oswald-Regular", size: 20))
                         .padding()
                         .frame(maxWidth: .infinity, maxHeight: heightForPlayerRow())
                         .cornerRadius(10)
@@ -66,6 +66,7 @@ struct PlayerRow: View {
                 Image(systemName: "minus")
                     .imageScale(.large)
                     .padding(10)
+                    .frame(width: 40, height: 40)
             }
             .contentShape(Rectangle())
             .simultaneousGesture(
@@ -78,7 +79,7 @@ struct PlayerRow: View {
             )
             
             Text("\(player.score)")
-                .font(.title)
+                .font(.custom("Oswald-Bold", size: 20))
             
             Button(action: {
                 deckController.updateScore(player.id, increment: true, amount: nil)
@@ -86,6 +87,7 @@ struct PlayerRow: View {
                 Image(systemName: "plus")
                     .imageScale(.large)
                     .padding(10)
+                    .frame(width: 40, height: 40)
             }
             .contentShape(Rectangle())
             .simultaneousGesture(
@@ -102,8 +104,8 @@ struct PlayerRow: View {
             .sheet(isPresented: $incrementPresented) {
                 VStack{
                     Text(player.title)
-                        .font(.title)
-                        .frame(maxWidth: .infinity, maxHeight: heightForPlayerRow())
+                        .font(.custom("Oswald-Regular", size: 20))
+                        .frame(maxWidth: .infinity, maxHeight: 60)
                         .cornerRadius(10).background(player.color)
                         .foregroundColor(player.color.isBright ? .black : .white)
                     
@@ -116,6 +118,7 @@ struct PlayerRow: View {
                             }) {
                                 Text("\(incrementState.incrementAction ? "+" : "-") \(amount)")
                                     .padding()
+                                    .font(.custom("Oswald-Bold", size: 20))
                                     .frame(maxWidth: .infinity)
                                     .background(Color.accentColor) // Adjust the background color as needed
                                     .foregroundColor(.white)

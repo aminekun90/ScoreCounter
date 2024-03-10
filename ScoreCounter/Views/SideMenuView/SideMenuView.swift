@@ -68,8 +68,8 @@ struct SideMenuView: View {
                     .imageScale(.large)
                     .padding(7)
                     .clipShape(RoundedRectangle(cornerRadius: 5))
-                    .background(SettingsController.shared.getAppearenceColor(shouldBe: .black))
-                    .foregroundColor(SettingsController.shared.getAppearenceColor(shouldBe: .white))
+                    .background(SettingsController.shared.backgroundColor)
+                    .foregroundColor(SettingsController.shared.textColor)
             }
             .cornerRadius(10)
             

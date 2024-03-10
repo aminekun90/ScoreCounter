@@ -51,6 +51,16 @@
 		5267E4BA2B8B5B2D00A71997 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5267E4B92B8B5B2D00A71997 /* SideMenu.swift */; };
 		5267E4BC2B8B631A00A71997 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5267E4BB2B8B631A00A71997 /* SideMenuView.swift */; };
 		5267E4BE2B8B746F00A71997 /* DeckController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5267E4BD2B8B746F00A71997 /* DeckController.swift */; };
+		5287D2382B9938A8009E4809 /* Oswald-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5287D2322B9938A8009E4809 /* Oswald-SemiBold.ttf */; };
+		5287D2392B9938A8009E4809 /* Oswald-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5287D2332B9938A8009E4809 /* Oswald-Bold.ttf */; };
+		5287D23A2B9938A8009E4809 /* Oswald-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5287D2342B9938A8009E4809 /* Oswald-Regular.ttf */; };
+		5287D23B2B9938A8009E4809 /* Oswald-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5287D2352B9938A8009E4809 /* Oswald-Medium.ttf */; };
+		5287D23C2B9938A8009E4809 /* Oswald-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5287D2362B9938A8009E4809 /* Oswald-ExtraLight.ttf */; };
+		5287D23D2B9938A8009E4809 /* Oswald-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5287D2372B9938A8009E4809 /* Oswald-Light.ttf */; };
+		5287D2422B993B9F009E4809 /* RobotoMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5287D23F2B993B9F009E4809 /* RobotoMono-Bold.ttf */; };
+		5287D2432B993B9F009E4809 /* RobotoMono-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5287D2402B993B9F009E4809 /* RobotoMono-Light.ttf */; };
+		5287D2442B993B9F009E4809 /* RobotoMono-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5287D2412B993B9F009E4809 /* RobotoMono-Medium.ttf */; };
+		5287D2482B9945AD009E4809 /* Micro5-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5287D2472B9945AD009E4809 /* Micro5-Regular.ttf */; };
 		528D63A12B97211C00417E66 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D63A02B97211C00417E66 /* StoreView.swift */; };
 		528D63A42B9798F100417E66 /* ScoreIncrementsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D63A32B9798F100417E66 /* ScoreIncrementsSection.swift */; };
 		52B746F52B8BBBAB00F46FE0 /* DeckMigration+PlayerMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B746F42B8BBBAB00F46FE0 /* DeckMigration+PlayerMigration.swift */; };
@@ -124,6 +134,17 @@
 		5267E4B92B8B5B2D00A71997 /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		5267E4BB2B8B631A00A71997 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		5267E4BD2B8B746F00A71997 /* DeckController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckController.swift; sourceTree = "<group>"; };
+		5287D2312B993829009E4809 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5287D2322B9938A8009E4809 /* Oswald-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-SemiBold.ttf"; sourceTree = "<group>"; };
+		5287D2332B9938A8009E4809 /* Oswald-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Bold.ttf"; sourceTree = "<group>"; };
+		5287D2342B9938A8009E4809 /* Oswald-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Regular.ttf"; sourceTree = "<group>"; };
+		5287D2352B9938A8009E4809 /* Oswald-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Medium.ttf"; sourceTree = "<group>"; };
+		5287D2362B9938A8009E4809 /* Oswald-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-ExtraLight.ttf"; sourceTree = "<group>"; };
+		5287D2372B9938A8009E4809 /* Oswald-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Light.ttf"; sourceTree = "<group>"; };
+		5287D23F2B993B9F009E4809 /* RobotoMono-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Bold.ttf"; sourceTree = "<group>"; };
+		5287D2402B993B9F009E4809 /* RobotoMono-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Light.ttf"; sourceTree = "<group>"; };
+		5287D2412B993B9F009E4809 /* RobotoMono-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Medium.ttf"; sourceTree = "<group>"; };
+		5287D2472B9945AD009E4809 /* Micro5-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Micro5-Regular.ttf"; sourceTree = "<group>"; };
 		528D63A02B97211C00417E66 /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
 		528D63A32B9798F100417E66 /* ScoreIncrementsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreIncrementsSection.swift; sourceTree = "<group>"; };
 		52B746F42B8BBBAB00F46FE0 /* DeckMigration+PlayerMigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeckMigration+PlayerMigration.swift"; sourceTree = "<group>"; };
@@ -165,6 +186,7 @@
 		522307EA2B861CAA007CE1A7 = {
 			isa = PBXGroup;
 			children = (
+				5287D23E2B9938B2009E4809 /* fonts */,
 				525C5BF72B876FFF00287B61 /* .gitignore */,
 				525C5BF52B876FA800287B61 /* LICENSE */,
 				525C5BF42B86C92B00287B61 /* README.md */,
@@ -188,6 +210,7 @@
 		522307F52B861CAA007CE1A7 /* ScoreCounter */ = {
 			isa = PBXGroup;
 			children = (
+				5287D2312B993829009E4809 /* Info.plist */,
 				525C5C382B89FE9400287B61 /* Resources */,
 				525C5C2E2B89F57F00287B61 /* Dice */,
 				525C5C0C2B88EE0A00287B61 /* Services */,
@@ -386,6 +409,47 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		5287D23E2B9938B2009E4809 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5287D2492B9945B2009E4809 /* Micro */,
+				5287D2462B993BCA009E4809 /* Roboto */,
+				5287D2452B993BB4009E4809 /* Oswald */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		5287D2452B993BB4009E4809 /* Oswald */ = {
+			isa = PBXGroup;
+			children = (
+				5287D2332B9938A8009E4809 /* Oswald-Bold.ttf */,
+				5287D2362B9938A8009E4809 /* Oswald-ExtraLight.ttf */,
+				5287D2352B9938A8009E4809 /* Oswald-Medium.ttf */,
+				5287D2342B9938A8009E4809 /* Oswald-Regular.ttf */,
+				5287D2322B9938A8009E4809 /* Oswald-SemiBold.ttf */,
+				5287D2372B9938A8009E4809 /* Oswald-Light.ttf */,
+			);
+			path = Oswald;
+			sourceTree = "<group>";
+		};
+		5287D2462B993BCA009E4809 /* Roboto */ = {
+			isa = PBXGroup;
+			children = (
+				5287D23F2B993B9F009E4809 /* RobotoMono-Bold.ttf */,
+				5287D2402B993B9F009E4809 /* RobotoMono-Light.ttf */,
+				5287D2412B993B9F009E4809 /* RobotoMono-Medium.ttf */,
+			);
+			path = Roboto;
+			sourceTree = "<group>";
+		};
+		5287D2492B9945B2009E4809 /* Micro */ = {
+			isa = PBXGroup;
+			children = (
+				5287D2472B9945AD009E4809 /* Micro5-Regular.ttf */,
+			);
+			path = Micro;
+			sourceTree = "<group>";
+		};
 		528D63A22B9798B600417E66 /* SettingsView */ = {
 			isa = PBXGroup;
 			children = (
@@ -511,12 +575,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5287D23A2B9938A8009E4809 /* Oswald-Regular.ttf in Resources */,
 				525C5BF82B876FFF00287B61 /* .gitignore in Resources */,
+				5287D2392B9938A8009E4809 /* Oswald-Bold.ttf in Resources */,
+				5287D2432B993B9F009E4809 /* RobotoMono-Light.ttf in Resources */,
+				5287D23D2B9938A8009E4809 /* Oswald-Light.ttf in Resources */,
 				525C5C372B89FE8C00287B61 /* dice_roll.wav in Resources */,
+				5287D23C2B9938A8009E4809 /* Oswald-ExtraLight.ttf in Resources */,
+				5287D2422B993B9F009E4809 /* RobotoMono-Bold.ttf in Resources */,
+				5287D2482B9945AD009E4809 /* Micro5-Regular.ttf in Resources */,
+				5287D2442B993B9F009E4809 /* RobotoMono-Medium.ttf in Resources */,
 				52B747042B8BC68500F46FE0 /* img in Resources */,
 				525C5C0B2B88EDAA00287B61 /* db.sqlite in Resources */,
+				5287D2382B9938A8009E4809 /* Oswald-SemiBold.ttf in Resources */,
 				522307FE2B861CAC007CE1A7 /* Preview Assets.xcassets in Resources */,
 				525C5BF32B86BA7E00287B61 /* data.json in Resources */,
+				5287D23B2B9938A8009E4809 /* Oswald-Medium.ttf in Resources */,
 				525C5BF62B876FA800287B61 /* LICENSE in Resources */,
 				522307FB2B861CAC007CE1A7 /* Assets.xcassets in Resources */,
 			);
@@ -754,6 +828,8 @@
 				DEVELOPMENT_TEAM = WGF76DKK38;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ScoreCounter/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Score Counter";
 				"INFOPLIST_KEY_CFBundleDisplayName[sdk=*]" = "Score Counter";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -786,6 +862,7 @@
 				DEVELOPMENT_TEAM = WGF76DKK38;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ScoreCounter/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Score Counter";
 				"INFOPLIST_KEY_CFBundleDisplayName[sdk=*]" = "Score Counter";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
