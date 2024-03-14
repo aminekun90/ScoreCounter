@@ -37,13 +37,13 @@ class SettingsController: ObservableObject {
     init(dataController: DataController) {
         self.dataController = dataController
         self.appSettings = dataController.appSettings
-        self.textColor = getAppearenceColor(lightTheme: .black)
-        self.backgroundColor = getAppearenceColor(lightTheme: .white)
+        self.textColor = getAppearenceColor(lightTheme: .white)
+        self.backgroundColor = getAppearenceColor(lightTheme: .black)
     }
     
     public func getAppAppearance() -> ColorScheme {
         switch appSettings.appearance {
-        case .dark:00
+        case .dark:
             return .dark
         case .light:
             return .light
@@ -71,8 +71,8 @@ class SettingsController: ObservableObject {
     public func saveSettings() {
         dataController.saveSettings()
         
-        self.textColor = getAppearenceColor(lightTheme: .black)
-        self.backgroundColor = getAppearenceColor(lightTheme: .white)
+        self.textColor = getAppearenceColor(lightTheme: .white)
+        self.backgroundColor = getAppearenceColor(lightTheme: .black)
     }
     
     public func getAppearenceColor(lightTheme:Color)->Color{

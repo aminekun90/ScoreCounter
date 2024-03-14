@@ -746,6 +746,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				"INFOPLIST_KEY_UIRequiredDeviceCapabilities[sdk=iphoneos*]" = "";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "\"Portrait(bottom home button)\"";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "\"Portrait(bottom home button)\"";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "\"Portrait(bottom home button)\"";
@@ -807,6 +809,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				"INFOPLIST_KEY_UIRequiredDeviceCapabilities[sdk=iphoneos*]" = "";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "\"Portrait(bottom home button)\"";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "\"Portrait(bottom home button)\"";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "\"Portrait(bottom home button)\"";
@@ -835,12 +839,15 @@
 				INFOPLIST_FILE = ScoreCounter/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Score Counter";
 				"INFOPLIST_KEY_CFBundleDisplayName[sdk=*]" = "Score Counter";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "\"Portrait(bottom home button)\"";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "\"Portrait(bottom home button)\"";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "\"Portrait(bottom home button)\"";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "Portrait(bottom\\ home\\ button)";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "Portrait(bottom\\ home\\ button) UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "Portrait(bottom\\ home\\ button)";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -869,12 +876,15 @@
 				INFOPLIST_FILE = ScoreCounter/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Score Counter";
 				"INFOPLIST_KEY_CFBundleDisplayName[sdk=*]" = "Score Counter";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "\"Portrait(bottom home button)\"";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "\"Portrait(bottom home button)\"";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "\"Portrait(bottom home button)\"";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "Portrait(bottom\\ home\\ button)";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "Portrait(bottom\\ home\\ button) UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "Portrait(bottom\\ home\\ button)";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

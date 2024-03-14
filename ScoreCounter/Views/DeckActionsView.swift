@@ -96,8 +96,8 @@ struct DeckActionsView: View {
                 }
             }
             .padding(0.0)
-            .background(.black)
-            .foregroundColor(.white)
+            .background(SettingsController.shared.backgroundColor)
+            .foregroundColor(SettingsController.shared.textColor)
             
             
         }

@@ -42,8 +42,8 @@ struct PlayersView: View {
                         }
                         .padding(.bottom, 5)
                         .padding(.top, 60)
-                        .background(Color.black)
-                        .foregroundColor(.white)
+                        .background(SettingsController.shared.backgroundColor)
+                        .foregroundColor(SettingsController.shared.textColor)
                     }.frame(maxHeight: 80, alignment: .top)
                     
                     // ScrollView content
