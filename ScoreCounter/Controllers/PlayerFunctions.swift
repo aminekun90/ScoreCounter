@@ -22,7 +22,7 @@ public func showNotification(name: String,subtitle:String,icon:UIImage?) {
     }
 }
 func loadListFromJSON() -> ListData? {
-    guard let url = Bundle.main.url(forResource: "data", withExtension: "json") else {
+    guard let url = Bundle.main.url(forResource: "names", withExtension: "json") else {
         print("File not Found")
         return nil // File not found
     }

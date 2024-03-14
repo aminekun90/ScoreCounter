@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		521DE8FA2B9E67E70045C9F0 /* names-fr.json in Resources */ = {isa = PBXBuildFile; fileRef = 521DE8F92B9E67E70045C9F0 /* names-fr.json */; };
 		522307F72B861CAA007CE1A7 /* ScoreCounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522307F62B861CAA007CE1A7 /* ScoreCounterApp.swift */; };
 		522307F92B861CAA007CE1A7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522307F82B861CAA007CE1A7 /* ContentView.swift */; };
 		522307FB2B861CAC007CE1A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 522307FA2B861CAC007CE1A7 /* Assets.xcassets */; };
@@ -22,7 +23,7 @@
 		524B877B2B86731600DECBF9 /* LandingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B877A2B86731500DECBF9 /* LandingPageView.swift */; };
 		525C5BEF2B86B32600287B61 /* JDStatusBarNotification in Frameworks */ = {isa = PBXBuildFile; productRef = 525C5BEE2B86B32600287B61 /* JDStatusBarNotification */; };
 		525C5BF12B86B9F800287B61 /* FileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5BF02B86B9F700287B61 /* FileLoader.swift */; };
-		525C5BF32B86BA7E00287B61 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 525C5BF22B86BA7E00287B61 /* data.json */; };
+		525C5BF32B86BA7E00287B61 /* names.json in Resources */ = {isa = PBXBuildFile; fileRef = 525C5BF22B86BA7E00287B61 /* names.json */; };
 		525C5BF62B876FA800287B61 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 525C5BF52B876FA800287B61 /* LICENSE */; };
 		525C5BF82B876FFF00287B61 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 525C5BF72B876FFF00287B61 /* .gitignore */; };
 		525C5C022B88BFFE00287B61 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525C5C012B88BFFE00287B61 /* Deck.swift */; };
@@ -89,6 +90,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		521DE8F92B9E67E70045C9F0 /* names-fr.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "names-fr.json"; sourceTree = "<group>"; };
 		522307F32B861CAA007CE1A7 /* ScoreCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoreCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		522307F62B861CAA007CE1A7 /* ScoreCounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCounterApp.swift; sourceTree = "<group>"; };
 		522307F82B861CAA007CE1A7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -106,7 +108,7 @@
 		524B87782B866C6900DECBF9 /* PlayerFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFunctions.swift; sourceTree = "<group>"; };
 		524B877A2B86731500DECBF9 /* LandingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageView.swift; sourceTree = "<group>"; };
 		525C5BF02B86B9F700287B61 /* FileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoader.swift; sourceTree = "<group>"; };
-		525C5BF22B86BA7E00287B61 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		525C5BF22B86BA7E00287B61 /* names.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = names.json; sourceTree = "<group>"; };
 		525C5BF42B86C92B00287B61 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		525C5BF52B876FA800287B61 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		525C5BF72B876FFF00287B61 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -275,7 +277,8 @@
 		525C5BFD2B87887B00287B61 /* data-json */ = {
 			isa = PBXGroup;
 			children = (
-				525C5BF22B86BA7E00287B61 /* data.json */,
+				525C5BF22B86BA7E00287B61 /* names.json */,
+				521DE8F92B9E67E70045C9F0 /* names-fr.json */,
 			);
 			path = "data-json";
 			sourceTree = "<group>";
@@ -589,8 +592,9 @@
 				525C5C0B2B88EDAA00287B61 /* db.sqlite in Resources */,
 				5287D2382B9938A8009E4809 /* Oswald-SemiBold.ttf in Resources */,
 				522307FE2B861CAC007CE1A7 /* Preview Assets.xcassets in Resources */,
-				525C5BF32B86BA7E00287B61 /* data.json in Resources */,
+				525C5BF32B86BA7E00287B61 /* names.json in Resources */,
 				5287D23B2B9938A8009E4809 /* Oswald-Medium.ttf in Resources */,
+				521DE8FA2B9E67E70045C9F0 /* names-fr.json in Resources */,
 				525C5BF62B876FA800287B61 /* LICENSE in Resources */,
 				522307FB2B861CAC007CE1A7 /* Assets.xcassets in Resources */,
 			);
