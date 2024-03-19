@@ -138,6 +138,13 @@ public class Deck:Identifiable {
             return player1.order < player2.order
         }
     }
+    
+    public func sortPlayersByScore(){
+        print("Sorting players by order")
+        players.sort { (player1:Player, player2:Player) -> Bool in
+            return player1.score > player2.score
+        }
+    }
 
     public func syncPlayersOrderToIndex(){
         print("Sync players order to position...")

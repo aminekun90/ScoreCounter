@@ -54,6 +54,16 @@ struct DeckActionsView: View {
                 }
                 Menu {
                     Button(action: {
+                        print("Sort deck clicked")
+                        deckController.sortPlayersByScore()
+                    }) {
+                        Text("Sorting by score")
+                        Image(systemName: "list.bullet.clipboard")
+                            .imageScale(.large)
+                            .padding()
+                            .clipShape(RoundedRectangle(cornerRadius: 5))
+                    }
+                    Button(action: {
                         print("Edit deck clicked")
                     }) {
                         Text("Edit deck")

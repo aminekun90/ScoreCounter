@@ -44,6 +44,10 @@ class DeckController: ObservableObject {
         // Wait for the completion of the asynchronous call
         dispatchGroup.wait()
     }
+    public func sortPlayersByScore(){
+        selectedDeck.sortPlayersByScore()
+        objectWillChange.send()
+    }
     public func savePlayersOrder(){
         selectedDeck.syncPlayersOrderToIndex()
         selectedDeck.sortPlayersByOrder()
