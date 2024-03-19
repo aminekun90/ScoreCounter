@@ -26,6 +26,7 @@ struct BottomTaskBar: View {
     private func NavigationButton(_ text: String, page: Page) -> some View {
         Button(action: {
             currentPage = page
+            vibratePhone()
         }) {
             Text(text)
                 .font(.custom("Micro5-Regular", size: 30))
