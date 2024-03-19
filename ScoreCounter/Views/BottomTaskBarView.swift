@@ -38,6 +38,7 @@ struct BottomTaskBar: View {
     private func ImageButton(systemName: String, page: Page) -> some View {
         Button(action: {
             currentPage = page
+            vibratePhone()
         }) {
             Image(systemName: systemName)
                 .imageScale(.large)

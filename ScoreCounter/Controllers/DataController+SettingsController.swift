@@ -37,10 +37,13 @@ class SettingsController: ObservableObject {
     init(dataController: DataController) {
         self.dataController = dataController
         self.appSettings = dataController.appSettings
+        updateScreenOn()
         self.textColor = getAppearenceColor(lightTheme: .white)
         self.backgroundColor = getAppearenceColor(lightTheme: .black)
     }
-    
+    private func updateScreenOn() {
+        UIApplication.shared.isIdleTimerDisabled = appSettings.keepScreenOn
+        }
     public func getAppAppearance() -> ColorScheme {
         switch appSettings.appearance {
         case .dark:
@@ -62,6 +65,7 @@ class SettingsController: ObservableObject {
     
     func removeIncrement(at index: Int) {
         appSettings.increments.values.remove(at: index)
+        
         self.saveSettings()
     }
     func appendIncrement(value: Int64) {
@@ -69,6 +73,7 @@ class SettingsController: ObservableObject {
         self.saveSettings()
     }
     public func saveSettings() {
+        updateScreenOn()
         dataController.saveSettings()
         
         self.textColor = getAppearenceColor(lightTheme: .white)
