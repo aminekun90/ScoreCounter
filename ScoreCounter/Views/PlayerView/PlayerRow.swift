@@ -116,7 +116,8 @@ struct PlayerRow: View {
                                 deckController.updateScore(player.id, increment: incrementState.incrementAction, amount: amount)
                                 incrementPresented.toggle()
                             }) {
-                                Text("\(incrementState.incrementAction ? "+" : "-") \(amount)")
+                                Text("\(incrementState.incrementAction ? "+" : "-") \(amount)").lineLimit(2)
+                                    .truncationMode(.tail)
                                     .padding()
                                     .font(.custom("Oswald-Bold", size: 20))
                                     .frame(maxWidth: .infinity)
@@ -126,7 +127,7 @@ struct PlayerRow: View {
                             }
                         }
                     }
-                    .padding()
+                    .padding(15)
                     Text("You can edit these values in settings ").font(.system(size: 10))
                     
                     HStack {
