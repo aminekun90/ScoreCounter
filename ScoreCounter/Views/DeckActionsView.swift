@@ -17,6 +17,7 @@ struct DeckActionsView: View {
             HStack(alignment: .center) {
                 Button(action: {
                     presentSideMenu = !presentSideMenu
+                    vibratePhone()
                 }) {
                     Image(systemName: "gamecontroller")
                         .imageScale(.large)
@@ -25,6 +26,7 @@ struct DeckActionsView: View {
                 }
                 Button(action: {
                     deckController.changeWinningLogic()
+                    vibratePhone()
                 }) {
                     let (winnerImage, winnerText) = deckController.selectedDeck.getWinnerName()
                     if winnerImage {

@@ -23,6 +23,7 @@ struct EditWinningScoreView: View {
                             .keyboardType(.numberPad)
                             .multilineTextAlignment(.center)
                             .onAppear {
+                                vibratePhone()
                                 winningScoreText = "\(winningScore)"
                             }
                             .onChange(of: winningScoreText) {
@@ -36,10 +37,12 @@ struct EditWinningScoreView: View {
                             value: $winningScore,
                             hideLabel:true,
                             onIncrement: {
+                                vibratePhone()
                                 winningScore += 1
                                 winningScoreText = String(winningScore)
                             },
                             onDecrement: {
+                                vibratePhone()
                                 winningScore -= 1
                                 winningScoreText = String(winningScore)
                             })
