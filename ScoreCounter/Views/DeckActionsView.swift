@@ -1,22 +1,17 @@
-//
-//  PlayerActionsView.swift
-//  ScoreCounter
-//
-//  Created by Amine Bouzahar on 21/02/2024.
-//
-
 import SwiftUI
 
 struct DeckActionsView: View {
     @Environment(\.colorScheme) var colorScheme
     @ObservedObject var deckController = DeckController.shared
     @Binding var isShowingDialog: Bool
-    @Binding var presentSideMenu:Bool
+    @Binding var presentSideMenu: Bool
+    @State private var presentEditDeck = false // Added state for presenting edit deck view
+    
     var body: some View {
         VStack {
             HStack(alignment: .center) {
                 Button(action: {
-                    presentSideMenu = !presentSideMenu
+                    presentSideMenu.toggle()
                     vibratePhone()
                 }) {
                     Image(systemName: "gamecontroller")
@@ -30,25 +25,22 @@ struct DeckActionsView: View {
                 }) {
                     let (winnerImage, winnerText) = deckController.selectedDeck.getWinnerName()
                     if winnerImage {
-                        Image( "medal")
-                            .resizable().aspectRatio(contentMode: .fit)
+                        Image("medal")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
                             .frame(maxHeight: 25)
                             .clipShape(RoundedRectangle(cornerRadius: 5))
-                    }else{
-                        Image( systemName: "equal")
+                    } else {
+                        Image(systemName: "equal")
                             .imageScale(.large)
                             .clipShape(RoundedRectangle(cornerRadius: 5))
                     }
                     Text(winnerText)
                 }
-                
-                
-                
                 Spacer()
                 Button(action: {
                     deckController.addPlayer()
                 }) {
-                    
                     Image(systemName: "plus")
                         .imageScale(.large)
                         .padding()
@@ -59,34 +51,21 @@ struct DeckActionsView: View {
                         print("Sort deck clicked")
                         deckController.sortPlayersByScore()
                     }) {
-                        Text("Sorting by score")
-                        Image(systemName: "list.bullet.clipboard")
-                            .imageScale(.large)
-                            .padding()
-                            .clipShape(RoundedRectangle(cornerRadius: 5))
+                        Label("Sorting by score", systemImage: "list.bullet.clipboard")
                     }
                     Button(action: {
-                        print("Edit deck clicked")
+                        presentEditDeck.toggle() // Toggle edit deck sheet
                     }) {
-                        Text("Edit deck")
-                        Image(systemName: "folder.fill.badge.gearshape")
-                            .imageScale(.large)
-                            .padding()
-                            .clipShape(RoundedRectangle(cornerRadius: 5))
+                        Label("Edit deck", systemImage: "folder.fill.badge.gearshape")
                     }
                     Button(action: {
                         deckController.resetAllScores()
                     }) {
-                        Text("Reset Scores")
-                        Image(systemName: "arrow.clockwise")
-                            .imageScale(.large)
-                            .padding()
-                            .clipShape(RoundedRectangle(cornerRadius: 5))
+                        Label("Reset Scores", systemImage: "arrow.clockwise")
                     }
-                    
-                    Button(role: .destructive) {
+                    Button(action: {
                         isShowingDialog = true
-                    } label: {
+                    }) {
                         Label("Delete All", systemImage: "trash")
                     }.disabled(deckController.selectedDeck.players.isEmpty)
                 } label: {
@@ -94,7 +73,8 @@ struct DeckActionsView: View {
                         .imageScale(.large)
                         .padding()
                         .clipShape(RoundedRectangle(cornerRadius: 5))
-                }.confirmationDialog(
+                }
+                .confirmationDialog(
                     "Are you sure?",
                     isPresented: $isShowingDialog,
                     titleVisibility: .visible
@@ -103,15 +83,15 @@ struct DeckActionsView: View {
                         deckController.removeAllPlayers()
                         print("Removed all players")
                     }
-                    
                     Button("Cancel", role: .cancel) {}
                 }
             }
             .padding(0.0)
             .background(SettingsController.shared.backgroundColor)
             .foregroundColor(SettingsController.shared.textColor)
-            
-            
+        }
+        .sheet(isPresented: $presentEditDeck) { // Present edit deck sheet
+            EditDeckView(isPresented: $presentEditDeck, deck: $deckController.selectedDeck)
         }
     }
 }

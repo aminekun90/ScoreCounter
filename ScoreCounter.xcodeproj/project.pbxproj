@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		521DE8FA2B9E67E70045C9F0 /* names-fr.json in Resources */ = {isa = PBXBuildFile; fileRef = 521DE8F92B9E67E70045C9F0 /* names-fr.json */; };
+		521DE8FD2BA9CB070045C9F0 /* EditDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DE8FC2BA9CB070045C9F0 /* EditDeckView.swift */; };
 		522307F72B861CAA007CE1A7 /* ScoreCounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522307F62B861CAA007CE1A7 /* ScoreCounterApp.swift */; };
 		522307F92B861CAA007CE1A7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522307F82B861CAA007CE1A7 /* ContentView.swift */; };
 		522307FB2B861CAC007CE1A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 522307FA2B861CAC007CE1A7 /* Assets.xcassets */; };
@@ -91,6 +92,7 @@
 
 /* Begin PBXFileReference section */
 		521DE8F92B9E67E70045C9F0 /* names-fr.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "names-fr.json"; sourceTree = "<group>"; };
+		521DE8FC2BA9CB070045C9F0 /* EditDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDeckView.swift; sourceTree = "<group>"; };
 		522307F32B861CAA007CE1A7 /* ScoreCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoreCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		522307F62B861CAA007CE1A7 /* ScoreCounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCounterApp.swift; sourceTree = "<group>"; };
 		522307F82B861CAA007CE1A7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -185,6 +187,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		521DE8FB2BA9CAEB0045C9F0 /* DeckView */ = {
+			isa = PBXGroup;
+			children = (
+				521DE8FC2BA9CB070045C9F0 /* EditDeckView.swift */,
+			);
+			path = DeckView;
+			sourceTree = "<group>";
+		};
 		522307EA2B861CAA007CE1A7 = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +306,7 @@
 		525C5BFF2B88BDD800287B61 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				521DE8FB2BA9CAEB0045C9F0 /* DeckView */,
 				5252D96E2B98FC5600F049AE /* SideMenuView */,
 				5252D96D2B97DE2400F049AE /* PlayerView */,
 				528D63A22B9798B600417E66 /* SettingsView */,
@@ -634,6 +645,7 @@
 				525C5C332B89F60C00287B61 /* GameScene.swift in Sources */,
 				52F3D5A92B96090100BC359C /* CustomStepper.swift in Sources */,
 				52B746F52B8BBBAB00F46FE0 /* DeckMigration+PlayerMigration.swift in Sources */,
+				521DE8FD2BA9CB070045C9F0 /* EditDeckView.swift in Sources */,
 				525C5C2A2B89F4F400287B61 /* UIView.swift in Sources */,
 				525C5C282B89F4D700287B61 /* SKTexture+Gradient.swift in Sources */,
 				5267E4BA2B8B5B2D00A71997 /* SideMenu.swift in Sources */,
