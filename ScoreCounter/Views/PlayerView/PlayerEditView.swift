@@ -63,7 +63,10 @@ struct PlayerEditView: View {
                             message: Text("Are you sure you want to delete this player?"),
                             primaryButton: .default(Text("Cancel")),
                             secondaryButton: .destructive(Text("Delete")) {
-                                deckController.removePlayer(selectedPlayer)
+                                if(selectedPlayer != nil){
+                                    deckController.removePlayer(selectedPlayer!)
+                                }
+                               
                                 selectedPlayer = nil
                             }
                         )

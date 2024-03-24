@@ -120,8 +120,9 @@ class DeckController: ObservableObject {
         self.syncDeckList()
     }
     
-    public func removePlayer(_ player: Player?){
+    public func removePlayer(_ player: Player){
         self.selectedDeck.removePlayer(player)
+        self.dataController.sqliteService.removePlayers(playerIDs: [player.id])
         self.syncDeckList()
     }
     
