@@ -231,8 +231,6 @@ class SqliteService {
         let deckId = Expression<UUID>("deckId")
         let playerOrder = Expression<Int>("playerOrder")
         do {
-            
-                   
             try db.run(deckTable.upsert(
                 id <- deck.id,
                 name <- deck.name,
