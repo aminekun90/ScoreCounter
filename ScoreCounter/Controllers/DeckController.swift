@@ -105,6 +105,10 @@ class DeckController: ObservableObject {
     
     public func updateScore(_ playerId: UUID, increment: Bool, amount: Int64? = 1){
         self.selectedDeck.updateScore(playerId, increment: increment, amount: amount)
+        if(self.selectedDeck.enableScoreAutoSort)
+        {
+            self.sortPlayersByScore()
+        }
         self.syncDeckList()
     }
     

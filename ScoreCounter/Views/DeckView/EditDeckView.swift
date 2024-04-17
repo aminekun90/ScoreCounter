@@ -21,6 +21,7 @@ struct EditDeckView: View {
                     Stepper("Winning Score: \(deck.winningScore)", value: $deck.winningScore)
                     Toggle("Enable Winning Score", isOn: $deck.enableWinningScore)
                     Toggle("Enable Winning Animation", isOn: $deck.enableWinningAnimation)
+                    Toggle("Enable Auto Sort", isOn: $deck.enableScoreAutoSort)
                 }
             }
             .navigationTitle("Edit Deck")

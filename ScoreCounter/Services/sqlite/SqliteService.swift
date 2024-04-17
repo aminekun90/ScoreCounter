@@ -145,6 +145,7 @@ class SqliteService {
         let increment = Expression<Int64>("increment")
         let enableWinningScore = Expression<Bool>("enableWinningScore")
         let enableWinningAnimation = Expression<Bool>("enableWinningAnimation")
+        let enableScoreAutoSort = Expression<Bool>("enableScoreAutoSort")
         let winingLogic = Expression<String>("winingLogic")
         
         do {
@@ -154,6 +155,7 @@ class SqliteService {
                 increment <- deck.increment,
                 enableWinningScore <- deck.enableWinningScore,
                 enableWinningAnimation <- deck.enableWinningAnimation,
+                enableScoreAutoSort <- deck.enableScoreAutoSort,
                 winingLogic <- deck.winingLogic.rawValue
             )
             try db.run(insert)
@@ -170,6 +172,7 @@ class SqliteService {
         let increment = Expression<Int64>("increment")
         let enableWinningScore = Expression<Bool>("enableWinningScore")
         let enableWinningAnimation = Expression<Bool>("enableWinningAnimation")
+        let enableScoreAutoSort = Expression<Bool>("enableScoreAutoSort")
         let winingLogic = Expression<String>("winingLogic")
         
        
@@ -186,6 +189,7 @@ class SqliteService {
                         increment: deckRow.get(increment),
                         enableWinningScore: deckRow.get(enableWinningScore),
                         enableWinningAnimation: deckRow.get(enableWinningAnimation),
+                        enableScoreAutoSort: deckRow.get(enableScoreAutoSort),
                         winingLogic: WinningLogic(rawValue: deckRow.get(winingLogic)) ?? .normal
                     )
                     

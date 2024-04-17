@@ -11,7 +11,7 @@ import SQLiteMigrationManager
 import SQLite
 
 struct DeckMigration: Migration {
-    var version: Int64 = 2024_02_25_12_00_00
+    var version: Int64 = 2024_04_17_12_00_00
 
     func migrateDatabase(_ db: Connection) throws {
         let deckTable = Table("Deck")
@@ -22,6 +22,7 @@ struct DeckMigration: Migration {
             t.column(Expression<Int64>("increment"))
             t.column(Expression<Bool>("enableWinningScore"))
             t.column(Expression<Bool>("enableWinningAnimation"))
+            t.column(Expression<Bool>("enableScoreAutoSort"))
             t.column(Expression<String>("winingLogic"))
         })
     }

@@ -38,6 +38,7 @@ public class Deck:Identifiable {
     var increment:Int64 = 1
     var enableWinningScore:Bool = true
     var enableWinningAnimation:Bool = true
+    var enableScoreAutoSort:Bool = true
     var players:[Player] = []
     var winingLogic:WinningLogic = WinningLogic.normal
     
@@ -48,6 +49,7 @@ public class Deck:Identifiable {
         increment: Int64 = 1,
         enableWinningScore: Bool = true,
         enableWinningAnimation: Bool = true,
+        enableScoreAutoSort: Bool = true,
         winingLogic: WinningLogic = WinningLogic.normal){
             self.id=id
             self.name=name
