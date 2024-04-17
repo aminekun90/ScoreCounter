@@ -1,3 +1,11 @@
+//
+//  EditDeckView.swift
+//  ScoreCounter
+//
+//  Created by Amine Bouzahar on 19/03/2024.
+//
+
+import Foundation
 import SwiftUI
 
 struct EditDeckView: View {
