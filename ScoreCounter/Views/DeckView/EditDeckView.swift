@@ -11,7 +11,6 @@ import SwiftUI
 struct EditDeckView: View {
     @Binding var isPresented: Bool
     @Binding var deck: Deck
-    @State private var winningScoreText: String = ""
     
     var body: some View {
         NavigationView {

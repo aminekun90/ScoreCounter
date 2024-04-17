@@ -56,6 +56,7 @@ public class Deck:Identifiable {
             self.winningScore = winningScore
             self.increment=increment
             self.enableWinningScore = enableWinningScore
+            self.enableScoreAutoSort = enableScoreAutoSort
             self.enableWinningAnimation = enableWinningAnimation
     }
     

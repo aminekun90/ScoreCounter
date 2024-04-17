@@ -218,6 +218,7 @@ class SqliteService {
         let increment = Expression<Int64>("increment")
         let enableWinningScore = Expression<Bool>("enableWinningScore")
         let enableWinningAnimation = Expression<Bool>("enableWinningAnimation")
+        let enableScoreAutoSort = Expression<Bool>("enableScoreAutoSort")
         let winingLogic = Expression<String>("winingLogic")
         
         // Define player expressions
@@ -239,6 +240,7 @@ class SqliteService {
                 increment <- deck.increment,
                 enableWinningScore <- deck.enableWinningScore,
                 enableWinningAnimation <- deck.enableWinningAnimation,
+                enableScoreAutoSort <- deck.enableScoreAutoSort,
                 winingLogic <- deck.winingLogic.rawValue, onConflictOf: id
             ))
             print("deck upserted \(deck.name)")
