@@ -44,6 +44,7 @@ struct PlayerRow: View {
                 )
                 .cornerRadius(50)
                 .padding(.trailing, 10) // Add padding on the trailing side
+            deckController.showWinIcon(player: player)
             Button(action: {
                 selectedPlayer = player
             }) {
