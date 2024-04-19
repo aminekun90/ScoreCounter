@@ -83,19 +83,18 @@ class DeckController: ObservableObject {
         deckList[selectedDeckIndex] = selectedDeck
         dataController.sqliteService.updateDeck(deck: selectedDeck)
     }
-    
-    public func showWinAnimation(score: Int64) -> some View {
-        let condition = selectedDeck.winningScore >= 0 ? score >= selectedDeck.winningScore : score <= selectedDeck.winningScore
-        
-        
-        if condition {
-            return AnyView(HStack {
-                Image(systemName: "crown")
-                Image(systemName: "fireworks")
-            }
-                .foregroundColor(.yellow))
+    public func shouldWin(player:Player)->Bool{
+        let condition =  selectedDeck.enableWinningAnimation && player.score == selectedDeck.winningScore
+        if(condition){
+            print("Player win \(player.title)")
         }
-        return AnyView(EmptyView())
+        return condition
+    }
+    public func showWinAnimation(player:Player) -> some View {
+            return AnyView(ZStack {
+                GifImage("winningAnimation")
+            }.zIndex(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
+            )
     }
     
     public func addPlayer(){

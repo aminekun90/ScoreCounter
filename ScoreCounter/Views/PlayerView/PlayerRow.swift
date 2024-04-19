@@ -29,6 +29,7 @@ struct PlayerRow: View {
     @Binding var selectedPlayer: Player?
     var totalPlayers: Int
     @State private var incrementPresented = false
+    @State private var isPresentedWin = false
     @StateObject private var incrementState = IncrementState()
     @State private var incrementBy:String = ""
     var body: some View {
@@ -43,7 +44,6 @@ struct PlayerRow: View {
                 )
                 .cornerRadius(50)
                 .padding(.trailing, 10) // Add padding on the trailing side
-            deckController.showWinAnimation(score: player.score)
             Button(action: {
                 selectedPlayer = player
             }) {
@@ -62,6 +62,7 @@ struct PlayerRow: View {
             
             Button(action: {
                 deckController.updateScore(player.id, increment: false, amount: nil)
+                isPresentedWin = deckController.shouldWin(player: player)
             }) {
                 Image(systemName: "minus")
                     .imageScale(.large)
@@ -83,6 +84,7 @@ struct PlayerRow: View {
             
             Button(action: {
                 deckController.updateScore(player.id, increment: true, amount: nil)
+                isPresentedWin = deckController.shouldWin(player: player)
             }) {
                 Image(systemName: "plus")
                     .imageScale(.large)
@@ -133,6 +135,8 @@ struct PlayerRow: View {
                     HStack {
                         Button(action: {
                             incrementState.incrementAction = false
+                            
+                        
                         }) {
                             Image(systemName: "minus")
                                 .imageScale(.large)
@@ -144,6 +148,7 @@ struct PlayerRow: View {
                         
                         Button(action: {
                             incrementState.incrementAction = true
+                            
                         }) {
                             Image(systemName: "plus")
                                 .imageScale(.large)
@@ -161,6 +166,7 @@ struct PlayerRow: View {
                             .keyboardType(.numberPad)
                         Button(action:{
                             deckController.updateScore(player.id, increment: incrementState.incrementAction, amount: Int64(incrementBy))
+                            isPresentedWin = deckController.shouldWin(player: player)
                             incrementPresented.toggle()
                         }){
                             Image(systemName: "checkmark.circle.fill")
@@ -175,6 +181,22 @@ struct PlayerRow: View {
                     .presentationDetents([.fraction(0.7)])
                 }.frame(maxHeight: .infinity, alignment: .top)
             }
+            .popover(isPresented: $isPresentedWin, content: {
+                HStack(){
+                    Text("\(player.title) wins ")
+                    Image(systemName: "crown.fill").foregroundColor(.yellow)
+                }
+                    .font(.custom("Oswald-Regular", size: 20))
+                    .frame(maxWidth: .infinity, maxHeight: 60)
+                    .cornerRadius(10).background(player.color)
+                    .foregroundColor(player.color.isBright ? .black : .white)
+                deckController.showWinAnimation(player: player)
+               .onAppear {
+                   DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                       isPresentedWin = false
+                   }
+               }
+            }).background(.clear)
     }
     
     
@@ -182,6 +204,4 @@ struct PlayerRow: View {
         let screenHeight = UIScreen.main.bounds.height
         return totalPlayers > 3 ? 70 : screenHeight / 3
     }
-    
-    
 }
