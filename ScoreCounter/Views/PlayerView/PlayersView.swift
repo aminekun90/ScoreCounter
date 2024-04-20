@@ -17,6 +17,7 @@ struct PlayersView: View {
     @State private var draggedPlayer: Player?
     @State private var dropOccurred = false
     @State private var isEditingWinningScore = false
+    @State private var round = DeckController.shared.selectedDeck.round
     let horizontalMargin: CGFloat = 10
     
     var body: some View {
@@ -45,7 +46,34 @@ struct PlayersView: View {
                         .background(SettingsController.shared.backgroundColor)
                         .foregroundColor(SettingsController.shared.textColor)
                     }.frame(maxHeight: 80, alignment: .top)
-                    
+                    HStack{
+                        Text("Round")
+                        Button(action: {
+                            if(deckController.selectedDeck.round>0){
+                                deckController.selectedDeck.round -= 1
+                                round = deckController.selectedDeck.round
+                            }
+                        }) {
+                            Image(systemName: "minus.circle")
+                                .imageScale(.large)
+                                .padding(10)
+                                .frame(width: 40, height: 40)
+                        }
+                        .contentShape(Rectangle())
+                        Text("\(round)")
+                        Button(action: {
+                            
+                                deckController.selectedDeck.round += 1
+                            round = deckController.selectedDeck.round
+                            
+                        }) {
+                            Image(systemName: "plus.circle")
+                                .imageScale(.large)
+                                .padding(10)
+                                .frame(width: 40, height: 40)
+                        }
+                        .contentShape(Rectangle())
+                    }.frame(maxHeight: 40, alignment: .top)
                     // ScrollView content
                     ScrollView(showsIndicators: false) {
                         LazyVStack(spacing: 0) {

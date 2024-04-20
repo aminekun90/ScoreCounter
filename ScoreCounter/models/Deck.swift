@@ -38,6 +38,7 @@ public class Deck:Identifiable {
     var increment:Int64 = 1
     var enableWinningScore:Bool = true
     var enableWinningAnimation:Bool = true
+    var round:Int64 = 1
     var enableScoreAutoSort:Bool = true
     var players:[Player] = []
     var winingLogic:WinningLogic = WinningLogic.normal
@@ -50,6 +51,7 @@ public class Deck:Identifiable {
         enableWinningScore: Bool = true,
         enableWinningAnimation: Bool = true,
         enableScoreAutoSort: Bool = true,
+        round: Int64 = 1,
         winingLogic: WinningLogic = WinningLogic.normal){
             self.id=id
             self.name=name
@@ -58,6 +60,7 @@ public class Deck:Identifiable {
             self.enableWinningScore = enableWinningScore
             self.enableScoreAutoSort = enableScoreAutoSort
             self.enableWinningAnimation = enableWinningAnimation
+            self.round = round
     }
     
     public func resetAllScores() {

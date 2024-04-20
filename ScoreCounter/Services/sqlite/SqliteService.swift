@@ -145,6 +145,7 @@ class SqliteService {
         let increment = Expression<Int64>("increment")
         let enableWinningScore = Expression<Bool>("enableWinningScore")
         let enableWinningAnimation = Expression<Bool>("enableWinningAnimation")
+        let round = Expression<Int64>("round")
         let enableScoreAutoSort = Expression<Bool>("enableScoreAutoSort")
         let winingLogic = Expression<String>("winingLogic")
         
@@ -155,6 +156,7 @@ class SqliteService {
                 increment <- deck.increment,
                 enableWinningScore <- deck.enableWinningScore,
                 enableWinningAnimation <- deck.enableWinningAnimation,
+                round <- deck.round,
                 enableScoreAutoSort <- deck.enableScoreAutoSort,
                 winingLogic <- deck.winingLogic.rawValue
             )
@@ -172,6 +174,7 @@ class SqliteService {
         let increment = Expression<Int64>("increment")
         let enableWinningScore = Expression<Bool>("enableWinningScore")
         let enableWinningAnimation = Expression<Bool>("enableWinningAnimation")
+        let round = Expression<Int64>("round")
         let enableScoreAutoSort = Expression<Bool>("enableScoreAutoSort")
         let winingLogic = Expression<String>("winingLogic")
         
@@ -189,7 +192,8 @@ class SqliteService {
                         increment: deckRow.get(increment),
                         enableWinningScore: deckRow.get(enableWinningScore),
                         enableWinningAnimation: deckRow.get(enableWinningAnimation),
-                        enableScoreAutoSort: deckRow.get(enableScoreAutoSort),
+                        enableScoreAutoSort: deckRow.get(enableScoreAutoSort), 
+                        round: deckRow.get(round),
                         winingLogic: WinningLogic(rawValue: deckRow.get(winingLogic)) ?? .normal
                     )
                     
@@ -218,6 +222,7 @@ class SqliteService {
         let increment = Expression<Int64>("increment")
         let enableWinningScore = Expression<Bool>("enableWinningScore")
         let enableWinningAnimation = Expression<Bool>("enableWinningAnimation")
+        let round = Expression<Int64>("round")
         let enableScoreAutoSort = Expression<Bool>("enableScoreAutoSort")
         let winingLogic = Expression<String>("winingLogic")
         
@@ -239,6 +244,7 @@ class SqliteService {
                 enableWinningScore <- deck.enableWinningScore,
                 enableWinningAnimation <- deck.enableWinningAnimation,
                 enableScoreAutoSort <- deck.enableScoreAutoSort,
+                round <- deck.round,
                 winingLogic <- deck.winingLogic.rawValue, onConflictOf: id
             ))
             print("deck upserted \(deck.name)")
