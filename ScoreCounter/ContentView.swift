@@ -25,6 +25,7 @@ struct GameViewWrapper: UIViewControllerRepresentable {
 }
 
 struct ContentView: View {
+    
     @State var currentPage: Page = Page.counter
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
@@ -34,7 +35,10 @@ struct ContentView: View {
                 case .counter:
                     PlayersView()
                 case .dice:
-                    GameViewWrapper()
+                    GameViewWrapper().overlay(VStack {
+                        DiceActionBarView()
+                            .frame(maxHeight: .infinity, alignment: .top)
+                    }.ignoresSafeArea(.all, edges: .bottom))
                 case .settings:
                     SettingsView()
                 }

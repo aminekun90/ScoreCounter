@@ -25,9 +25,10 @@ final class GameScene: SKScene {
         let node = atPoint(position)
         if shuffleIfTouched(node: node) == false {
             if closestChild(point: position, maxDistance: 120) == nil {
-                createDice(at: position)
+//                createDice(at: position)// commented
             }
         }
+        vibratePhone()
     }
 
     override func didChangeSize(_ oldSize: CGSize) {
@@ -45,9 +46,10 @@ final class GameScene: SKScene {
 
     private func shuffleIfTouched(node: SKNode) -> Bool {
         let nodeCanBeShuffled = [NodeType.dimple.rawValue, NodeType.dot.rawValue, NodeType.dice.rawValue].contains(node.name)
-
-        guard nodeCanBeShuffled else { return false }
-        dices.first { $0 === node.parent }?.shuffle()
+        dices.first?.shuffle()//first is shuffled
+        // uncomment if you want to shuffle the touced dice
+//        guard nodeCanBeShuffled else { return false }
+//        dices.first { $0 === node.parent }?.shuffle()
         return true
     }
 
@@ -59,6 +61,7 @@ extension GameScene: ShakeDetectable {
 
     func shake() {
         dices.forEach { $0.shuffle() }
+        vibratePhone()
     }
 
 }

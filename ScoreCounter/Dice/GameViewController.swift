@@ -24,6 +24,7 @@ final class GameViewController: UIViewController {
         skView.contentMode = .center
         scene = SceneCreator.create(scene: GameScene(), size: view.frameSize)
         skView.presentScene(scene)
+        
         view = skView
     }
 
@@ -47,7 +48,7 @@ final class GameViewController: UIViewController {
 
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         super.motionEnded(motion, with: event)
-
+        
         (scene as? ShakeDetectable)?.shake()
     }
 

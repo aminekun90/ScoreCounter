@@ -101,7 +101,7 @@ struct PlayersView: View {
             
         }
         .overlay(VStack {
-            DeckActionsView(isShowingDialog: $isShowingDialog, presentSideMenu: $presentSideMenu)
+            DeckActionBarView(isShowingDialog: $isShowingDialog, presentSideMenu: $presentSideMenu)
                 .frame(maxHeight: .infinity, alignment: .top)
         }.ignoresSafeArea(.all, edges: .bottom))
         .sheet(item: $selectedPlayer) { player in

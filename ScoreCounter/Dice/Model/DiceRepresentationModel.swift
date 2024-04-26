@@ -10,8 +10,9 @@ import Foundation
 struct DiceRepresentationModel {
 
     let rows: [[Int]]
-
+    let side :DiceSide
     init(diceSide side: DiceSide) {
+        self.side = side
         switch side {
         case .one:
             rows = [[0, 0, 0], [0, 1, 0], [0, 0, 0]]

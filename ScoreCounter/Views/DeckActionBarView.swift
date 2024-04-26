@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct DeckActionsView: View {
+struct DeckActionBarView: View {
     @Environment(\.colorScheme) var colorScheme
     @ObservedObject var deckController = DeckController.shared
     @Binding var isShowingDialog: Bool
@@ -100,7 +100,7 @@ struct DeckActionsView_Previews: PreviewProvider {
     @State static var isShowingDialog = false
     @State static var presentSideMenu = false
     static var previews: some View {
-        DeckActionsView(
+        DeckActionBarView(
             isShowingDialog: $isShowingDialog,
             presentSideMenu: $presentSideMenu
         )

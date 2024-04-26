@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		520527DB2BD2F58600C36EC3 /* winningAnimation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 520527DA2BD2F58600C36EC3 /* winningAnimation.gif */; };
+		520527DD2BDC1A3300C36EC3 /* DiceActionBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520527DC2BDC1A3300C36EC3 /* DiceActionBarView.swift */; };
+		520527DF2BDC2BD500C36EC3 /* EventBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520527DE2BDC2BD500C36EC3 /* EventBus.swift */; };
 		521DE8FA2B9E67E70045C9F0 /* names-fr.json in Resources */ = {isa = PBXBuildFile; fileRef = 521DE8F92B9E67E70045C9F0 /* names-fr.json */; };
 		521DE8FD2BA9CB070045C9F0 /* EditDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DE8FC2BA9CB070045C9F0 /* EditDeckView.swift */; };
 		522307F72B861CAA007CE1A7 /* ScoreCounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522307F62B861CAA007CE1A7 /* ScoreCounterApp.swift */; };
@@ -20,7 +22,7 @@
 		524B87712B864FA500DECBF9 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B87702B864FA500DECBF9 /* Player.swift */; };
 		524B87732B864FF300DECBF9 /* PlayerEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B87722B864FF300DECBF9 /* PlayerEditView.swift */; };
 		524B87752B86579000DECBF9 /* PlayerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B87742B86579000DECBF9 /* PlayerRow.swift */; };
-		524B87772B866BC700DECBF9 /* DeckActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B87762B866BC700DECBF9 /* DeckActionsView.swift */; };
+		524B87772B866BC700DECBF9 /* DeckActionBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B87762B866BC700DECBF9 /* DeckActionBarView.swift */; };
 		524B87792B866C6900DECBF9 /* PlayerFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B87782B866C6900DECBF9 /* PlayerFunctions.swift */; };
 		524B877B2B86731600DECBF9 /* LandingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B877A2B86731500DECBF9 /* LandingPageView.swift */; };
 		525C5BEF2B86B32600287B61 /* JDStatusBarNotification in Frameworks */ = {isa = PBXBuildFile; productRef = 525C5BEE2B86B32600287B61 /* JDStatusBarNotification */; };
@@ -94,6 +96,8 @@
 
 /* Begin PBXFileReference section */
 		520527DA2BD2F58600C36EC3 /* winningAnimation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = winningAnimation.gif; sourceTree = SOURCE_ROOT; };
+		520527DC2BDC1A3300C36EC3 /* DiceActionBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceActionBarView.swift; sourceTree = "<group>"; };
+		520527DE2BDC2BD500C36EC3 /* EventBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBus.swift; sourceTree = "<group>"; };
 		521DE8F92B9E67E70045C9F0 /* names-fr.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "names-fr.json"; sourceTree = "<group>"; };
 		521DE8FC2BA9CB070045C9F0 /* EditDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDeckView.swift; sourceTree = "<group>"; };
 		522307F32B861CAA007CE1A7 /* ScoreCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoreCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,7 +113,7 @@
 		524B87702B864FA500DECBF9 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		524B87722B864FF300DECBF9 /* PlayerEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEditView.swift; sourceTree = "<group>"; };
 		524B87742B86579000DECBF9 /* PlayerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRow.swift; sourceTree = "<group>"; };
-		524B87762B866BC700DECBF9 /* DeckActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckActionsView.swift; sourceTree = "<group>"; };
+		524B87762B866BC700DECBF9 /* DeckActionBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckActionBarView.swift; sourceTree = "<group>"; };
 		524B87782B866C6900DECBF9 /* PlayerFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFunctions.swift; sourceTree = "<group>"; };
 		524B877A2B86731500DECBF9 /* LandingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageView.swift; sourceTree = "<group>"; };
 		525C5BF02B86B9F700287B61 /* FileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoader.swift; sourceTree = "<group>"; };
@@ -316,10 +320,11 @@
 				5252D96E2B98FC5600F049AE /* SideMenuView */,
 				5252D96D2B97DE2400F049AE /* PlayerView */,
 				528D63A22B9798B600417E66 /* SettingsView */,
-				524B87762B866BC700DECBF9 /* DeckActionsView.swift */,
+				524B87762B866BC700DECBF9 /* DeckActionBarView.swift */,
+				52F3D59E2B912FAF00BC359C /* DeckRowView.swift */,
+				520527DC2BDC1A3300C36EC3 /* DiceActionBarView.swift */,
 				525C5C132B89362400287B61 /* BottomTaskBarView.swift */,
 				524B877A2B86731500DECBF9 /* LandingPageView.swift */,
-				52F3D59E2B912FAF00BC359C /* DeckRowView.swift */,
 				52F3D5A82B96090100BC359C /* CustomStepper.swift */,
 			);
 			path = Views;
@@ -332,6 +337,7 @@
 				524B87782B866C6900DECBF9 /* PlayerFunctions.swift */,
 				525C5C392B8A23D400287B61 /* DataController+SettingsController.swift */,
 				5267E4BD2B8B746F00A71997 /* DeckController.swift */,
+				520527DE2BDC2BD500C36EC3 /* EventBus.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -656,6 +662,7 @@
 				521DE8FD2BA9CB070045C9F0 /* EditDeckView.swift in Sources */,
 				525C5C2A2B89F4F400287B61 /* UIView.swift in Sources */,
 				525C5C282B89F4D700287B61 /* SKTexture+Gradient.swift in Sources */,
+				520527DF2BDC2BD500C36EC3 /* EventBus.swift in Sources */,
 				5267E4BA2B8B5B2D00A71997 /* SideMenu.swift in Sources */,
 				5267E4BC2B8B631A00A71997 /* SideMenuView.swift in Sources */,
 				525C5C1E2B89F37B00287B61 /* DiceSide.swift in Sources */,
@@ -663,12 +670,13 @@
 				525C5C352B89F63600287B61 /* GameViewController.swift in Sources */,
 				525C5C1A2B8956A400287B61 /* SeedDb.swift in Sources */,
 				525C5C162B89424C00287B61 /* PlayersView.swift in Sources */,
-				524B87772B866BC700DECBF9 /* DeckActionsView.swift in Sources */,
+				524B87772B866BC700DECBF9 /* DeckActionBarView.swift in Sources */,
 				524B87752B86579000DECBF9 /* PlayerRow.swift in Sources */,
 				52F3D5A72B95EA6D00BC359C /* EditWinningScoreView.swift in Sources */,
 				525C5C1C2B89F35E00287B61 /* DiceRepresentationModel.swift in Sources */,
 				524B877B2B86731600DECBF9 /* LandingPageView.swift in Sources */,
 				5267E4BE2B8B746F00A71997 /* DeckController.swift in Sources */,
+				520527DD2BDC1A3300C36EC3 /* DiceActionBarView.swift in Sources */,
 				525C5C2D2B89F52B00287B61 /* ShakeDetectable.swift in Sources */,
 				525C5C3A2B8A23D400287B61 /* DataController+SettingsController.swift in Sources */,
 				525C5C122B89333100287B61 /* AppSettings.swift in Sources */,

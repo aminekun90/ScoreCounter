@@ -27,7 +27,8 @@ final class DiceNode: SKShapeNode {
     private var dimpleFrame: CGRect = .zero
     private var dotsFrame: CGRect = .zero
     private var dotNodes = [SKShapeNode]()
-
+    private var side = DiceRepresentationModel(diceSide: DiceSide.allCases.randomElement() ?? .one)
+    
     private var randomSide: DiceSide {
         return DiceSide.allCases.randomElement() ?? .one
     }
@@ -47,13 +48,13 @@ final class DiceNode: SKShapeNode {
     // MARK: Draw
 
     func draw(_ side: DiceRepresentationModel? = nil) {
-        let side = side ?? DiceRepresentationModel(diceSide: randomSide)
+        self.side = side ?? DiceRepresentationModel(diceSide: randomSide)
         let shift = dotsFrame.width * Constants.numberOfRows
 
         let initialPoint = CGPoint(x: -shift, y: shift)
         var currentPoint = initialPoint
 
-        for row in side.rows {
+        for row in self.side.rows {
             for dot in row {
                 if dot == 1 {
                     drawDot(at: currentPoint)
@@ -127,6 +128,7 @@ final class DiceNode: SKShapeNode {
     private func redrawDice(_ dice: SKNode) {
         dotNodes.forEach { $0.removeFromParent() }
         (dice as? DiceNode)?.draw()
+        EventBus.shared.publish(event: .diceShuffle("dice shuffle",self.side))
     }
 
     func shuffle() {
