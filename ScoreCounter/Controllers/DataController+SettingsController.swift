@@ -24,11 +24,6 @@ class DataController: ObservableObject {
 }
 
 class SettingsController: ObservableObject {
-    @Published var emojiText = "😃😄"{
-        willSet {
-            objectWillChange.send()
-        }
-    }
     @Published var textColor:Color = .black
     @Published var backgroundColor:Color = .white
     @Published var appSettings: AppSettings{
