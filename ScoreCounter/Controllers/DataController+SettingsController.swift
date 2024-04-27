@@ -53,8 +53,8 @@ class SettingsController: ObservableObject {
         case .system:
             let currentTraitCollection = UIScreen.main.traitCollection
             let isDarkMode = currentTraitCollection.userInterfaceStyle == .dark
-//            let isDarkMode = colorScheme == .dark
-            print("System isDarkMode \(isDarkMode)")
+            //  let isDarkMode = colorScheme == .dark
+            //  print("System isDarkMode \(isDarkMode)")
             
             if(isDarkMode){
                 return .dark

@@ -13,20 +13,24 @@ final class GameViewController: UIViewController {
     private var scene: SKScene?
 
     override func loadView() {
-        super.loadView()
+          super.loadView()
 
-        let skView = SKView(frame: view.frame)
-        skView.ignoresSiblingOrder = true
-        #if DEBUG
-        skView.showsFPS = true
-        skView.showsNodeCount = true
-        #endif
-        skView.contentMode = .center
-        scene = SceneCreator.create(scene: GameScene(), size: view.frameSize)
-        skView.presentScene(scene)
-        
-        view = skView
-    }
+          let skView = SKView(frame: view.frame)
+          skView.ignoresSiblingOrder = true
+          #if DEBUG
+          skView.showsFPS = true // Show frames per second in debug mode
+          skView.showsNodeCount = true // Show node count in debug mode
+          #endif
+          skView.contentMode = .center // Content alignment
+          
+          // Create a new GameScene with the appropriate size
+          let gameScene = GameScene(size: view.frame.size)
+          scene = gameScene // Assign to the `scene` property
+          
+          skView.presentScene(scene) // Present the scene in the SKView
+          
+          view = skView // Set the SKView as the main view of the UIViewController
+      }
 
     override var shouldAutorotate: Bool {
         return true

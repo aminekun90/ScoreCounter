@@ -27,7 +27,7 @@ final class DiceNode: SKShapeNode {
     private var dimpleFrame: CGRect = .zero
     private var dotsFrame: CGRect = .zero
     private var dotNodes = [SKShapeNode]()
-    private var side = DiceRepresentationModel(diceSide: DiceSide.allCases.randomElement() ?? .one)
+    public var side = DiceRepresentationModel(diceSide: DiceSide.allCases.randomElement() ?? .one)
     
     private var randomSide: DiceSide {
         return DiceSide.allCases.randomElement() ?? .one

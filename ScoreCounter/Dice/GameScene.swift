@@ -7,11 +7,38 @@
 
 
 import SpriteKit
+import Combine
 
 final class GameScene: SKScene {
 
     private var dices = [DiceNode]()
-    
+    private var text = SKLabelNode()
+    private var cancellables = Set<AnyCancellable>() 
+    required init?(coder aDecoder: NSCoder) {
+            super.init(coder: aDecoder)
+            setupEventSubscription() // Set up Combine subscription here
+        }
+
+        override init(size: CGSize) {
+            super.init(size: size)
+            setupEventSubscription() // Set up Combine subscription here
+        }
+    // Setting up the Combine subscription
+     private func setupEventSubscription() {
+         EventBus.shared.eventPublisher
+             .sink { [weak self] event in
+                 guard let self = self else { return }
+
+                 switch event {
+                 case .diceShuffle(_, let dice):
+                     // Update the text in the SKLabelNode
+                     self.text.text = "\(dice.getSideValue())"
+                 default:
+                     break
+                 }
+             }
+             .store(in: &cancellables) // Keep the subscription to avoid deallocation
+     }
     override func didMove(to view: SKView) {
         createDice(at: view.center)
     }
@@ -42,11 +69,22 @@ final class GameScene: SKScene {
         dice.position = point
         dices.append(dice)
         addChild(dice)
+        // Create a label node to display text
+        self.text = SKLabelNode(text: "\(dice.side.getSideValue())")
+        
+        self.text.fontName = "Helvetica"     // Font type
+        self.text.fontSize = 20              // Smaller font size
+        self.text.fontColor = .white         // Text color
+
+        // Position the label below the dice
+        text.position = CGPoint(x: dice.position.x, y: dice.position.y - 120) // Adjust as needed
+        addChild(text) // Add the label to the scene
     }
 
     private func shuffleIfTouched(node: SKNode) -> Bool {
         let nodeCanBeShuffled = [NodeType.dimple.rawValue, NodeType.dot.rawValue, NodeType.dice.rawValue].contains(node.name)
         dices.first?.shuffle()//first is shuffled
+        
         // uncomment if you want to shuffle the touced dice
 //        guard nodeCanBeShuffled else { return false }
 //        dices.first { $0 === node.parent }?.shuffle()
