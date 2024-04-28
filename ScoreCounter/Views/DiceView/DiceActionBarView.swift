@@ -14,12 +14,10 @@ class DiceActionBarModel: ObservableObject {
 
                 // Handle events without capturing `self` directly
                 switch event {
-                case .diceShuffle(let message, let dice):
+                case .diceShuffled(_,_):
                     let newEmojis = "\(self.randomEmoji())\(self.randomEmoji())"
                     self.emojiText = newEmojis
-                    print("Event received:", dice.side, message)
-                    print("Updated emojiText:", self.emojiText)
-
+                    break
                 default:
                     break
                 }
@@ -51,12 +49,12 @@ class DiceActionBarModel: ObservableObject {
 
 struct DiceActionBarView: View {
     @ObservedObject var viewModel = DiceActionBarModel() // Observed object
-
+    @State var presentSettings: Bool = false
     var body: some View {
         VStack{
             HStack{
                 Button(action:{
-                    print("Dice type clicked")
+                    presentSettings.toggle()
                 }){
                     Text("1d6").font(.custom("Oswald-Bold", size: 20))
                 }
@@ -64,7 +62,7 @@ struct DiceActionBarView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 5))
                 Spacer()
                 Button(action:{
-                    print("emoji clicked")
+                    EventBus.shared.publish(event: .shuffleDiceAction)
                 }){
                     Text(viewModel.emojiText)
                 }.padding()
@@ -72,7 +70,7 @@ struct DiceActionBarView: View {
                 
                 Spacer()
                 Button(action:{
-                    print("Settings clicked")
+                    presentSettings.toggle()
                 }){
                     Image(systemName: "gearshape")
                         .imageScale(.large)
@@ -84,6 +82,9 @@ struct DiceActionBarView: View {
         }.padding(0.0)
         .background(SettingsController.shared.backgroundColor)
         .foregroundColor(SettingsController.shared.textColor)
+        .sheet(isPresented: $presentSettings, content: {
+            DiceSettingsView(isPresented: $presentSettings)
+        })
     }
 }
 

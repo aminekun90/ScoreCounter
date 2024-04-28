@@ -128,11 +128,12 @@ final class DiceNode: SKShapeNode {
     private func redrawDice(_ dice: SKNode) {
         dotNodes.forEach { $0.removeFromParent() }
         (dice as? DiceNode)?.draw()
-        EventBus.shared.publish(event: .diceShuffle("dice shuffle",self.side))
+        EventBus.shared.publish(event: .diceShuffled("dice shuffle",self.side))
     }
 
     func shuffle() {
         performRollAnimation()
+        vibratePhone()
     }
 
 }

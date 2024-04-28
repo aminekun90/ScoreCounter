@@ -30,9 +30,12 @@ final class GameScene: SKScene {
                  guard let self = self else { return }
 
                  switch event {
-                 case .diceShuffle(_, let dice):
-                     // Update the text in the SKLabelNode
+                 case .diceShuffled(_, let dice):
                      self.text.text = "\(dice.getSideValue())"
+                     break
+                 case .shuffleDiceAction:
+                     dices.forEach { $0.shuffle() }
+                     break
                  default:
                      break
                  }
@@ -55,7 +58,6 @@ final class GameScene: SKScene {
 //                createDice(at: position)// commented
             }
         }
-        vibratePhone()
     }
 
     override func didChangeSize(_ oldSize: CGSize) {
@@ -82,8 +84,10 @@ final class GameScene: SKScene {
     }
 
     private func shuffleIfTouched(node: SKNode) -> Bool {
-        let nodeCanBeShuffled = [NodeType.dimple.rawValue, NodeType.dot.rawValue, NodeType.dice.rawValue].contains(node.name)
-        dices.first?.shuffle()//first is shuffled
+        // shuffle all dices
+        dices.forEach { $0.shuffle() }
+        // let nodeCanBeShuffled = [NodeType.dimple.rawValue, NodeType.dot.rawValue, NodeType.dice.rawValue].contains(node.name)
+        //dices.first?.shuffle()//first is shuffled
         
         // uncomment if you want to shuffle the touced dice
 //        guard nodeCanBeShuffled else { return false }
@@ -99,7 +103,6 @@ extension GameScene: ShakeDetectable {
 
     func shake() {
         dices.forEach { $0.shuffle() }
-        vibratePhone()
     }
 
 }

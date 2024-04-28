@@ -46,6 +46,13 @@ struct DeckActionBarView: View {
                         .padding()
                         .clipShape(RoundedRectangle(cornerRadius: 5))
                 }
+                Button(action: {
+                    print("History clicked")
+                }) {
+                    Image(systemName: "calendar.circle")
+                        .imageScale(.large)
+                        .clipShape(RoundedRectangle(cornerRadius: 5))
+                }
                 Menu {
                     Button(action: {
                         print("Sort deck clicked")

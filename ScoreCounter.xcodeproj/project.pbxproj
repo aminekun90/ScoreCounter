@@ -10,6 +10,7 @@
 		520527DB2BD2F58600C36EC3 /* winningAnimation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 520527DA2BD2F58600C36EC3 /* winningAnimation.gif */; };
 		520527DD2BDC1A3300C36EC3 /* DiceActionBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520527DC2BDC1A3300C36EC3 /* DiceActionBarView.swift */; };
 		520527DF2BDC2BD500C36EC3 /* EventBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520527DE2BDC2BD500C36EC3 /* EventBus.swift */; };
+		520527E22BDEA36B00C36EC3 /* DiceSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520527E12BDEA36B00C36EC3 /* DiceSettingsView.swift */; };
 		521DE8FA2B9E67E70045C9F0 /* names-fr.json in Resources */ = {isa = PBXBuildFile; fileRef = 521DE8F92B9E67E70045C9F0 /* names-fr.json */; };
 		521DE8FD2BA9CB070045C9F0 /* EditDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DE8FC2BA9CB070045C9F0 /* EditDeckView.swift */; };
 		522307F72B861CAA007CE1A7 /* ScoreCounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522307F62B861CAA007CE1A7 /* ScoreCounterApp.swift */; };
@@ -98,6 +99,7 @@
 		520527DA2BD2F58600C36EC3 /* winningAnimation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = winningAnimation.gif; sourceTree = SOURCE_ROOT; };
 		520527DC2BDC1A3300C36EC3 /* DiceActionBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceActionBarView.swift; sourceTree = "<group>"; };
 		520527DE2BDC2BD500C36EC3 /* EventBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBus.swift; sourceTree = "<group>"; };
+		520527E12BDEA36B00C36EC3 /* DiceSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceSettingsView.swift; sourceTree = "<group>"; };
 		521DE8F92B9E67E70045C9F0 /* names-fr.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "names-fr.json"; sourceTree = "<group>"; };
 		521DE8FC2BA9CB070045C9F0 /* EditDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDeckView.swift; sourceTree = "<group>"; };
 		522307F32B861CAA007CE1A7 /* ScoreCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoreCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,10 +197,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		520527E02BDEA30400C36EC3 /* DiceView */ = {
+			isa = PBXGroup;
+			children = (
+				520527DC2BDC1A3300C36EC3 /* DiceActionBarView.swift */,
+				520527E12BDEA36B00C36EC3 /* DiceSettingsView.swift */,
+			);
+			path = DiceView;
+			sourceTree = "<group>";
+		};
 		521DE8FB2BA9CAEB0045C9F0 /* DeckView */ = {
 			isa = PBXGroup;
 			children = (
+				524B87762B866BC700DECBF9 /* DeckActionBarView.swift */,
 				521DE8FC2BA9CB070045C9F0 /* EditDeckView.swift */,
+				52F3D59E2B912FAF00BC359C /* DeckRowView.swift */,
 			);
 			path = DeckView;
 			sourceTree = "<group>";
@@ -316,13 +329,11 @@
 		525C5BFF2B88BDD800287B61 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				520527E02BDEA30400C36EC3 /* DiceView */,
 				521DE8FB2BA9CAEB0045C9F0 /* DeckView */,
 				5252D96E2B98FC5600F049AE /* SideMenuView */,
 				5252D96D2B97DE2400F049AE /* PlayerView */,
 				528D63A22B9798B600417E66 /* SettingsView */,
-				524B87762B866BC700DECBF9 /* DeckActionBarView.swift */,
-				52F3D59E2B912FAF00BC359C /* DeckRowView.swift */,
-				520527DC2BDC1A3300C36EC3 /* DiceActionBarView.swift */,
 				525C5C132B89362400287B61 /* BottomTaskBarView.swift */,
 				524B877A2B86731500DECBF9 /* LandingPageView.swift */,
 				52F3D5A82B96090100BC359C /* CustomStepper.swift */,
@@ -649,6 +660,7 @@
 				525C5C182B89560C00287B61 /* SettingsView.swift in Sources */,
 				522307F92B861CAA007CE1A7 /* ContentView.swift in Sources */,
 				52F3D59F2B912FAF00BC359C /* DeckRowView.swift in Sources */,
+				520527E22BDEA36B00C36EC3 /* DiceSettingsView.swift in Sources */,
 				524B87732B864FF300DECBF9 /* PlayerEditView.swift in Sources */,
 				528D63A42B9798F100417E66 /* ScoreIncrementsSection.swift in Sources */,
 				525C5C242B89F49300287B61 /* CGPoint+Distance.swift in Sources */,

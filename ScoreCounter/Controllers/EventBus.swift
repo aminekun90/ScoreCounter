@@ -12,7 +12,8 @@ import Combine
 enum AppEvent {
     case diceAdded
     case shakedPhone
-    case diceShuffle(String,DiceRepresentationModel)
+    case diceShuffled(String,DiceRepresentationModel)
+    case shuffleDiceAction
 }
 // Event bus to publish and listen for events
 final class EventBus {
