@@ -33,7 +33,8 @@ final class GameScene: SKScene {
                  switch event {
                      
                  case .updateDices(_,let numberOfDices):
-                     dices = []
+                     dices.removeAll()
+                     removeAllChildren()
                      for _ in 0..<numberOfDices {
                                  createDice()
                         }
