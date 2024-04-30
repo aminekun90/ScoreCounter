@@ -14,15 +14,23 @@ struct DiceButtonsView: View {
     @Binding var dicesSidesLabel:[SimpleValueId]
     @Binding var numberOfDices:Int
     @Binding var numberOfDicesSides:Int
+    var closeDiceSettings: () -> Void
 
     var body: some View {
         HStack {
             ForEach(dicesSidesLabel, id: \.id) { label in
                 Button(action: {
                     print("Button \(label.value) pressed")
+                    
                     if label.value.range(of: "x",options:.caseInsensitive) != nil {
                         // to do display an input to use it
+                    }else{
+                        numberOfDices = Int(label.value) ?? 1
+                        numberOfDicesSides = Int(label.value) ?? 6
+                        EventBus.shared.publish(event: .updateDices( numberOfDicesSides, numberOfDices))
                     }
+                    closeDiceSettings()
+                    
                     
                 }) {
                     Text(label.value)
@@ -63,14 +71,18 @@ struct DiceSettingsView: View {
         NavigationView {
             Form {
                 Section(header: Text("Settings")) {
-                    DiceButtonsView(dicesSidesLabel: $dicesNumberLabel,numberOfDices: $numberOfDices,numberOfDicesSides: $numberOfDicesSides)
+                    DiceButtonsView(dicesSidesLabel: $dicesNumberLabel,numberOfDices: $numberOfDices,numberOfDicesSides: $numberOfDicesSides, closeDiceSettings:{
+                        isPresented.toggle()
+                    })
                     HStack(alignment:.center){
                         Text("X")
                             .font(.custom("Oswald-Bold", size: 20))
                             .foregroundStyle(.orange)
                         
                     }.frame(maxWidth: .infinity)
-                    DiceButtonsView(dicesSidesLabel: $dicesSidesLabel, numberOfDices: $numberOfDices,numberOfDicesSides: $numberOfDicesSides)
+                    DiceButtonsView(dicesSidesLabel: $dicesSidesLabel, numberOfDices: $numberOfDices,numberOfDicesSides: $numberOfDicesSides,closeDiceSettings:{
+                        isPresented.toggle()
+                    })
                     Toggle("Shake to roll", isOn: $enableShakeToRoll)
                     Toggle("Play sound", isOn: $enableSound)
                 }

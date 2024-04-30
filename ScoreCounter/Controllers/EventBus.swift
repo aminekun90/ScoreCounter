@@ -11,6 +11,7 @@ import Combine
 // Define the type of event to be published
 enum AppEvent {
     case diceAdded
+    case updateDices(Int,Int)
     case shakedPhone
     case diceShuffled(String,DiceRepresentationModel)
     case shuffleDiceAction

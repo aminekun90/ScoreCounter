@@ -12,26 +12,34 @@ import Combine
 final class GameScene: SKScene {
 
     private var dices = [DiceNode]()
+    private let maxDices = 10
     private var text = SKLabelNode()
     private var cancellables = Set<AnyCancellable>() 
     required init?(coder aDecoder: NSCoder) {
             super.init(coder: aDecoder)
-            setupEventSubscription() // Set up Combine subscription here
+            setupEventSubscription()
         }
 
         override init(size: CGSize) {
             super.init(size: size)
-            setupEventSubscription() // Set up Combine subscription here
+            setupEventSubscription()
         }
-    // Setting up the Combine subscription
+    
      private func setupEventSubscription() {
          EventBus.shared.eventPublisher
              .sink { [weak self] event in
                  guard let self = self else { return }
 
                  switch event {
-                 case .diceShuffled(_, let dice):
-                     self.text.text = "\(dice.getSideValue())"
+                     
+                 case .updateDices(_,let numberOfDices):
+                     dices = []
+                     for _ in 0..<numberOfDices {
+                                 createDice()
+                        }
+                     
+                 case .diceShuffled(_,_):
+                     updateSum()
                      break
                  case .shuffleDiceAction:
                      dices.forEach { $0.shuffle() }
@@ -66,23 +74,59 @@ final class GameScene: SKScene {
         }
     }
 
-    private func createDice(at point: CGPoint, size: CGSize = CGSize(width: 100, height: 100)) {
-        let dice = DiceNode(size: size)
-        dice.position = point
-        dices.append(dice)
-        addChild(dice)
-        // Create a label node to display text
-        self.text = SKLabelNode(text: "\(dice.side.getSideValue())")
+    func createDice(at point: CGPoint? = nil, size: CGSize = CGSize(width: 100, height: 100)) {
+            if dices.count >= maxDices {
+                print("Cannot add more than \(maxDices) dices")
+                return
+            }
+
+            let dice = DiceNode(size: size)
+            
+            if dices.isEmpty {
+                // Default position for the first dice
+                dice.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
+            } else if let point = point {
+                dice.position = point
+            } else {
+                // Position the new dice around the first dice
+                let firstDice = dices[0]
+                let angle = (CGFloat(dices.count) / CGFloat(maxDices)) * 2 * .pi // Determine position based on angle
+                let radius: CGFloat = 150 // Distance from the center dice
+                
+                let newPosition = CGPoint(
+                    x: firstDice.position.x + radius * cos(angle),
+                    y: firstDice.position.y + radius * sin(angle)
+                )
+
+                dice.position = newPosition
+            }
+
+            dices.append(dice)
+            addChild(dice)
         
-        self.text.fontName = "Helvetica"     // Font type
-        self.text.fontSize = 20              // Smaller font size
-        self.text.fontColor = .white         // Text color
+            
+            if !children.contains(text){
+                addChild(text) // Add to the scene
+                
+                text.fontName = "Helvetica"
+                text.fontSize = 20
+                text.fontColor = .white
+                
+                // Position the text below the dice with some space
+                text.position = CGPoint(x: dice.position.x, y: dice.position.y - 120) // Adjusted position
+                    }
+            updateSum()
+        }
+    func updateSum() {
+           let sum = dices.reduce(0) { result, dice in
+               result + dice.side.getSideValue() // Sum of all dice
+           }
 
-        // Position the label below the dice
-        text.position = CGPoint(x: dice.position.x, y: dice.position.y - 120) // Adjust as needed
-        addChild(text) // Add the label to the scene
-    }
-
+        let components = dices.map { "\($0.side.getSideValue())" }
+           let sumText = "\(sum) : " + components.joined(separator: "+")
+           
+        text.text = dices.count > 1 ? sumText : "\(sum)"      
+       }
     private func shuffleIfTouched(node: SKNode) -> Bool {
         // shuffle all dices
         dices.forEach { $0.shuffle() }
