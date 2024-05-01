@@ -14,6 +14,8 @@ struct DiceButtonsView: View {
     @Binding var dicesSidesLabel:[SimpleValueId]
     @Binding var numberOfDices:Int
     @Binding var numberOfDicesSides:Int
+    @State var numberString:String = ""
+    @State private var showingAlert = false
     var closeDiceSettings: () -> Void
 
     var body: some View {
@@ -23,14 +25,13 @@ struct DiceButtonsView: View {
                     print("Button \(label.value) pressed")
                     
                     if label.value.range(of: "x",options:.caseInsensitive) != nil {
-                        // to do display an input to use it
+                        showingAlert.toggle()
                     }else{
                         numberOfDices = Int(label.value) ?? 1
                         numberOfDicesSides = Int(label.value) ?? 6
                         EventBus.shared.publish(event: .updateDices( numberOfDicesSides, numberOfDices))
+                        closeDiceSettings()
                     }
-                    closeDiceSettings()
-                    
                     
                 }) {
                     Text(label.value)
@@ -40,7 +41,20 @@ struct DiceButtonsView: View {
                         .background(.blue)
                         .cornerRadius(10)
                         .foregroundColor(.white)
-                }.buttonStyle(BorderlessButtonStyle())
+                }.buttonStyle(BorderlessButtonStyle()).alert("Enter a number", isPresented: $showingAlert) {
+                    TextField("0..20", text: $numberString)
+                        .keyboardType(.numberPad)
+                    Button("OK", action: {
+                        print(numberString)
+                        numberOfDices = Int(numberString) ?? numberOfDices
+                        print(numberOfDices)
+                        numberString = ""
+                        EventBus.shared.publish(event: .updateDices( numberOfDicesSides, numberOfDices))
+                        closeDiceSettings()
+                    })
+                } message: {
+                    Text("Xcode will print whatever you type.")
+                }
             }
         }
         .frame(maxWidth: .infinity)
@@ -62,10 +76,10 @@ struct DiceSettingsView: View {
     ]
     @State var dicesSidesLabel = [
         SimpleValueId(value:"D6"),
-        SimpleValueId(value:"D8"),
-        SimpleValueId(value:"D12"),
-        SimpleValueId(value:"D20"),
-        SimpleValueId(value:"DX")
+//        SimpleValueId(value:"D8"),
+//        SimpleValueId(value:"D12"),
+//        SimpleValueId(value:"D20"),
+//        SimpleValueId(value:"DX")
     ]
     var body: some View {
         NavigationView {

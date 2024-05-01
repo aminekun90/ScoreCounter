@@ -12,7 +12,7 @@ import Combine
 final class GameScene: SKScene {
 
     private var dices = [DiceNode]()
-    private let maxDices = 10
+    private let maxDices = 20
     private var text = SKLabelNode()
     private var cancellables = Set<AnyCancellable>() 
     required init?(coder aDecoder: NSCoder) {
@@ -36,8 +36,8 @@ final class GameScene: SKScene {
                      dices.removeAll()
                      removeAllChildren()
                      for _ in 0..<numberOfDices {
-                                 createDice()
-                        }
+                        createDice()
+                    }
                      
                  case .diceShuffled(_,_):
                      updateSum()
@@ -109,12 +109,12 @@ final class GameScene: SKScene {
             if !children.contains(text){
                 addChild(text) // Add to the scene
                 
-                text.fontName = "Helvetica"
+                text.fontName = "Oswald-Bold"
                 text.fontSize = 20
                 text.fontColor = .white
                 
                 // Position the text below the dice with some space
-                text.position = CGPoint(x: dice.position.x, y: dice.position.y - 120) // Adjusted position
+                text.position = CGPoint(x: dice.position.x, y: dice.position.y - 250) // Adjusted position
                     }
             updateSum()
         }
@@ -124,7 +124,7 @@ final class GameScene: SKScene {
            }
 
         let components = dices.map { "\($0.side.getSideValue())" }
-           let sumText = "\(sum) : " + components.joined(separator: "+")
+        let sumText = dices.count < 11 ? "\(sum) : " + components.joined(separator: "+"):"\(sum) :\(randomEmoji())\(randomEmoji())\(randomEmoji())\(randomEmoji()) "
            
         text.text = dices.count > 1 ? sumText : "\(sum)"      
        }
