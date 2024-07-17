@@ -62,7 +62,7 @@ struct PlayerRow: View {
             Spacer()
             
             Button(action: {
-                deckController.updateScore(player.id, increment: false, amount: nil)
+                deckController.updateScore(player.id, increment: false, amount:  Int64(incrementBy) ?? 1)
                 isPresentedWin = deckController.shouldWin(player: player)
             }) {
                 Image(systemName: "minus")
@@ -84,7 +84,7 @@ struct PlayerRow: View {
                 .font(.custom("Oswald-Bold", size: 20))
             
             Button(action: {
-                deckController.updateScore(player.id, increment: true, amount: nil)
+                deckController.updateScore(player.id, increment: true, amount: Int64(incrementBy) ?? 1)
                 isPresentedWin = deckController.shouldWin(player: player)
             }) {
                 Image(systemName: "plus")
