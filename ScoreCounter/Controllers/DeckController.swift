@@ -152,6 +152,7 @@ class DeckController: ObservableObject {
     
     public func resetAllScores(){
         self.selectedDeck.resetAllScores()
+        self.selectedDeck.round = 1
         self.syncDeckList()
     }
 }

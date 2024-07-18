@@ -7,6 +7,9 @@
 
 import Foundation
 import SwiftUI
+class SharedData: ObservableObject {
+    @Published var round: Int64 = 1
+}
 
 struct PlayersView: View {
     @ObservedObject var deckController = DeckController.shared
@@ -17,7 +20,7 @@ struct PlayersView: View {
     @State private var draggedPlayer: Player?
     @State private var dropOccurred = false
     @State private var isEditingWinningScore = false
-    @State private var round = DeckController.shared.selectedDeck.round
+    @StateObject private var sharedData:SharedData = SharedData()
     let horizontalMargin: CGFloat = 10
     
     var body: some View {
@@ -49,9 +52,9 @@ struct PlayersView: View {
                     HStack{
                         Text("Round")
                         Button(action: {
-                            if(deckController.selectedDeck.round>0){
+                            if(deckController.selectedDeck.round>1){
                                 deckController.selectedDeck.round -= 1
-                                round = deckController.selectedDeck.round
+                                sharedData.round = deckController.selectedDeck.round
                             }
                         }) {
                             Image(systemName: "minus.circle")
@@ -60,11 +63,10 @@ struct PlayersView: View {
                                 .frame(width: 40, height: 40)
                         }
                         .contentShape(Rectangle())
-                        Text("\(round)")
+                        Text("\(sharedData.round)")
                         Button(action: {
-                            
                                 deckController.selectedDeck.round += 1
-                            round = deckController.selectedDeck.round
+                            sharedData.round = deckController.selectedDeck.round
                             
                         }) {
                             Image(systemName: "plus.circle")
@@ -106,7 +108,7 @@ struct PlayersView: View {
         }.ignoresSafeArea(.all, edges: .bottom))
         .sheet(item: $selectedPlayer) { player in
             PlayerEditView(selectedPlayer: $selectedPlayer)
-        }
+        }.environmentObject(sharedData)
     }
 }
 

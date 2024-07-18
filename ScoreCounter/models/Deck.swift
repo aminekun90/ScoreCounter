@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import SQLite
+import Combine
 
 public enum WinningLogic:String {
     case normal
@@ -31,16 +32,16 @@ extension WinningLogic: Value {
 
 
 
-public class Deck:Identifiable {
+public class Deck:Identifiable,ObservableObject {
     public var id = UUID()
     var name:String = UUID().uuidString
     var winningScore:Int = 42
     var increment:Int64 = 1
     var enableWinningScore:Bool = true
     var enableWinningAnimation:Bool = true
-    var round:Int64 = 1
+    @Published var round:Int64 = 1
     var enableScoreAutoSort:Bool = true
-    var players:[Player] = []
+    @Published var players:[Player] = []
     var winingLogic:WinningLogic = WinningLogic.normal
     
     init(
@@ -64,6 +65,7 @@ public class Deck:Identifiable {
     }
     
     public func resetAllScores() {
+        self.round = 1;
         for index in self.players.indices {
             self.players[index].score = 0
         }

@@ -6,7 +6,7 @@ struct DeckActionBarView: View {
     @Binding var isShowingDialog: Bool
     @Binding var presentSideMenu: Bool
     @State private var presentEditDeck = false // Added state for presenting edit deck view
-    
+    @EnvironmentObject var sharedData: SharedData
     var body: some View {
         VStack {
             HStack(alignment: .center) {
@@ -67,6 +67,7 @@ struct DeckActionBarView: View {
                     }
                     Button(action: {
                         deckController.resetAllScores()
+                        sharedData.round = 1
                     }) {
                         Label("Reset Scores", systemImage: "arrow.clockwise")
                     }
