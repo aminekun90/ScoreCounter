@@ -13,6 +13,7 @@ struct EditDeckView: View {
     @Binding var deck: Deck
     
     @State private var winningScore: Int
+    @State private var increment: Int64
     @State private var enableWinningScore: Bool
     @State private var enableWinningAnimation: Bool
     @State private var enableScoreAutoSort: Bool
@@ -21,10 +22,11 @@ struct EditDeckView: View {
         self._isPresented = isPresented
         self._deck = deck
         self._winningScore = State(initialValue: deck.wrappedValue.winningScore)
+        self._increment = State(initialValue: deck.wrappedValue.increment)
         self._enableWinningScore = State(initialValue: deck.wrappedValue.enableWinningScore)
         self._enableWinningAnimation = State(initialValue: deck.wrappedValue.enableWinningAnimation)
         self._enableScoreAutoSort = State(initialValue: deck.wrappedValue.enableScoreAutoSort)
-    }
+         }
     
     var body: some View {
         NavigationView {
@@ -32,6 +34,7 @@ struct EditDeckView: View {
                 Section(header: Text("Deck Info")) {
                     TextField("Name", text: $deck.name)
                     Stepper("Winning Score: \(winningScore)", value: $winningScore)
+                    Stepper("Increment: \(increment)", value: $increment)
                     Toggle("Enable Winning Score", isOn: $enableWinningScore.animation())
                     Toggle("Enable Winning Animation", isOn: $enableWinningAnimation.animation())
                     Toggle("Enable Auto Sort", isOn: $enableScoreAutoSort.animation())
@@ -45,6 +48,7 @@ struct EditDeckView: View {
                 trailing: Button("Save") {
                     // Perform save action here
                     deck.winningScore = winningScore
+                    deck.increment = increment
                     deck.enableWinningScore = enableWinningScore
                     deck.enableWinningAnimation = enableWinningAnimation
                     deck.enableScoreAutoSort = enableScoreAutoSort
