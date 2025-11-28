@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -168,6 +168,10 @@
 		52F3D5A82B96090100BC359C /* CustomStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStepper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		6795D2632EDA4C36003ADCD7 /* .github */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = .github; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		522307F02B861CAA007CE1A7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -219,6 +223,7 @@
 		522307EA2B861CAA007CE1A7 = {
 			isa = PBXGroup;
 			children = (
+				6795D2632EDA4C36003ADCD7 /* .github */,
 				5287D23E2B9938B2009E4809 /* fonts */,
 				525C5BF72B876FFF00287B61 /* .gitignore */,
 				525C5BF52B876FA800287B61 /* LICENSE */,
@@ -511,6 +516,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6795D2632EDA4C36003ADCD7 /* .github */,
 			);
 			name = ScoreCounter;
 			packageProductDependencies = (
