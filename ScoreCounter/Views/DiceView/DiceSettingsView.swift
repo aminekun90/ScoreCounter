@@ -42,10 +42,13 @@ struct DiceButtonsView: View {
                         .cornerRadius(10)
                         .foregroundColor(.white)
                 }.buttonStyle(BorderlessButtonStyle()).alert("Enter a number", isPresented: $showingAlert) {
-                    TextField("0..20", text: $numberString)
+                    TextField("1..20", text: $numberString)
                         .keyboardType(.numberPad)
                     Button("OK", action: {
                         print(numberString)
+                        if(Int(numberString) == nil || Int(numberString) == 0){
+                            numberString = "1"
+                        }
                         numberOfDices = Int(numberString) ?? numberOfDices
                         print(numberOfDices)
                         numberString = ""
@@ -53,7 +56,7 @@ struct DiceButtonsView: View {
                         closeDiceSettings()
                     })
                 } message: {
-                    Text("Xcode will print whatever you type.")
+                    Text("Between 1-20 Dices.")
                 }
             }
         }
