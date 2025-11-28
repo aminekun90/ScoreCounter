@@ -89,7 +89,11 @@ public class Player: Identifiable, Equatable {
            self.order = order
        }
     
+    /*
+     * increment Score by a given amount
+     */
      public func incrementScore(amount:Int64){
+         print("Amount to add: + " + String(amount) + " to " + String(score))
         score += amount
     }
 }

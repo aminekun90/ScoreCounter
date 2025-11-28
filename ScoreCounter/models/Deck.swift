@@ -163,6 +163,7 @@ public class Deck:Identifiable,ObservableObject {
     public func updateScore(_ playerId: UUID, increment: Bool, amount: Int64? = 1) {
         if let playerIndex = self.players.firstIndex(where: { $0.id == playerId }) {
             let delta = (increment ? 1 : -1) * (amount ?? self.increment)
+            print("delta : \(delta) for player: \(playerId) \n players: \(self.players) \n increment : \(increment) \n amount : \(amount ?? 0)")
             self.players[playerIndex].incrementScore(amount: delta)
             vibratePhone()
         }
