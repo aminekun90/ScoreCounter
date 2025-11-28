@@ -12,6 +12,7 @@ struct SideMenuView: View {
     @ObservedObject var deckController = DeckController.shared
     @Binding var selectedSideMenuTab: UUID
     @Binding var presentSideMenu: Bool
+    @State var presentEditDeck: Bool = false
     
     var body: some View {
         HStack {
@@ -33,6 +34,7 @@ struct SideMenuView: View {
                                 print("Item tapped: \(deck.name)")
                                 selectedSideMenuTab = deck.id
                                 deckController.selectDeck(with: deck.id)
+                                presentEditDeck.toggle()
                             },
                             removeAction: {
                                 // Handle remove action
@@ -47,6 +49,8 @@ struct SideMenuView: View {
                 .background(.white)
             }
             Spacer()
+        }.sheet(isPresented: $presentEditDeck) { // Present edit deck sheet
+            EditDeckView(isPresented: $presentEditDeck, deck: $deckController.selectedDeck)
         }
     }
     
