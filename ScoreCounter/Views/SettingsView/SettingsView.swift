@@ -52,7 +52,7 @@ struct SettingsView: View {
                         StoreView(isPresented: $showStore)
                     })
                     
-                    Text("Score counter Version \(settingsController.appSettings.appVersion)")
+                    Text("Score counter Version \(settingsController.appSettings.appVersion ?? "1.0.0")")
                         .font(.system(size: 12))
                         .fontWeight(.light)
                         .frame(alignment: .trailing)
