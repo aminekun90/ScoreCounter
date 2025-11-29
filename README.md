@@ -1,4 +1,4 @@
-#  Score counter app for iOS
+# Score counter app for iOS
 
 ![Score counter iOS App](docs/assets/Artboard.png)
 
@@ -13,9 +13,12 @@ An easy to use app on iOS to keep scores for all sort of games.
 - Dark theme for low-light conditions
 - Completely free to use, with **NO Ads**
 
-
 ## How to install
 
-Currently I dont have an apple developper, but there is a solution you can use [AltStore classic](https://altstore.io) and add my source to download the app [AmineDev Source](https://github.com/aminekun90/ScoreCounter/releases/download/1.0/app.json)
+Currently I dont have an apple developper account, but there is a solution you can use [AltStore classic](https://altstore.io) and add my source to download the app `https://github.com/aminekun90/ScoreCounter/releases/download/1.0/app.json`
 
-If you want it in the official app store you can donate I'll make it happen [Paypal me](https://www.paypal.com/paypalme/aminebouzahar)
+If like the app and you want it in the official apple app store you can donate I'll make it happen [Paypal me](https://www.paypal.com/paypalme/aminebouzahar)
+
+## Want to contribute or have any suggestions or questions?
+
+Open an issue or pull request [here on github](https://github.com/aminekun90/ScoreCounter)
