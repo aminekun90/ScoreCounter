@@ -15,7 +15,7 @@ An easy to use app on iOS to keep scores for all sort of games.
 
 ## How to install
 
-Currently I dont have an apple developper account, but there is a solution you can use [AltStore classic](https://altstore.io) and add my source to download the app `https://github.com/aminekun90/ScoreCounter/releases/download/1.0/app.json`
+Currently I dont have an apple developper account, but there is a solution you can use [AltStore classic](https://altstore.io) and add my source to download the app `https://gist.githubusercontent.com/aminekun90/7cc4885b56e0b0f1212db1ecf9c24369/raw/77d7ed4504db5a41b29770c65f452e1f6e5a05c8/altstore.json`
 
 If like the app and you want it in the official apple app store you can donate I'll make it happen [Paypal me](https://www.paypal.com/paypalme/aminebouzahar)
 
